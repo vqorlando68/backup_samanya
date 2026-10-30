@@ -1,0 +1,37 @@
+[2026-10-17 09:25:04] [INFO] ============================================================
+[2026-10-17 09:25:04] [INFO] INICIANDO AGENTE BACKUP - AMBIENTE: DESARROLLO
+[2026-10-17 09:25:04] [INFO] Conectando a tekerapp-db.maxapex.net:1521/orclpdb1 con usuario USUARIO_BACKUP_AGENT...
+[2026-10-17 09:25:04] [INFO] Esquema objetivo: TEKER_DEV
+[2026-10-17 09:25:05] [INFO] Conexion a Oracle establecida con exito.
+[2026-10-17 09:25:11] [INFO] Encontrados 2336 objetos en el esquema TEKER_DEV
+[2026-10-17 09:32:52] [INFO] ============================================================
+[2026-10-17 09:32:52] [INFO] INICIANDO AGENTE BACKUP - AMBIENTE: DESARROLLO
+[2026-10-17 09:32:52] [INFO] Conectando a tekerapp-db.maxapex.net:1521/orclpdb1 con usuario USUARIO_BACKUP_AGENT...
+[2026-10-17 09:32:52] [INFO] Esquema objetivo: TEKER_DEV
+[2026-10-17 09:32:53] [INFO] Conexion a Oracle establecida con exito.
+[2026-10-17 09:32:53] [INFO] Posicionando repositorio en la rama 'desarrollo'...
+[2026-10-17 09:32:57] [INFO] Encontrados 2328 objetos en el esquema TEKER_DEV
+[2026-10-17 09:33:00] [INFO] Objeto borrado en BD detectado: functions\indicador_tru.sql -> movido a schema_objects_borrados/functions\indicador_tru.sql
+[2026-10-17 09:33:00] [INFO] Objeto borrado en BD detectado: functions\indicador_true.sql -> movido a schema_objects_borrados/functions\indicador_true.sql
+[2026-10-17 09:33:00] [INFO] Objeto borrado en BD detectado: functions\indicador_truefalse.sql -> movido a schema_objects_borrados/functions\indicador_truefalse.sql
+[2026-10-17 09:33:00] [INFO] Objeto borrado en BD detectado: functions\indicador_truef_alse.sql -> movido a schema_objects_borrados/functions\indicador_truef_alse.sql
+[2026-10-17 09:33:00] [INFO] Objeto borrado en BD detectado: functions\indicador_truef_a_lse.sql -> movido a schema_objects_borrados/functions\indicador_truef_a_lse.sql
+[2026-10-17 09:33:00] [INFO] Objeto borrado en BD detectado: functions\indicador_tru_false.sql -> movido a schema_objects_borrados/functions\indicador_tru_false.sql
+[2026-10-17 09:33:00] [INFO] Objeto borrado en BD detectado: functions\indicaro_tru_false.sql -> movido a schema_objects_borrados/functions\indicaro_tru_false.sql
+[2026-10-17 09:33:00] [INFO] Objeto borrado en BD detectado: functions\indic_ador_truef_a_lse.sql -> movido a schema_objects_borrados/functions\indic_ador_truef_a_lse.sql
+[2026-10-17 09:33:01] [INFO] Resumen extraccion: 2 extraidos/actualizados, 2326 sin cambios (omitidos), 8 movidos a borrados.
+[2026-10-17 09:33:01] [INFO] Conexion a Oracle cerrada.
+[2026-10-17 09:33:01] [INFO] Iniciando sincronizacion con Git en la rama 'desarrollo'...
+[2026-10-17 09:33:01] [INFO] Se detectaron 8 archivo(s) de objetos para subir a Git:
+[2026-10-17 09:33:01] [INFO]   [RENOMBRADO] schema_objects/functions/indic_ador_truef_a_lse.sql -> schema_objects_borrados/functions/indic_ador_truef_a_lse.sql
+[2026-10-17 09:33:01] [INFO]   [RENOMBRADO] schema_objects/functions/indicador_tru.sql -> schema_objects_borrados/functions/indicador_tru.sql
+[2026-10-17 09:33:01] [INFO]   [RENOMBRADO] schema_objects/functions/indicador_tru_false.sql -> schema_objects_borrados/functions/indicador_tru_false.sql
+[2026-10-17 09:33:01] [INFO]   [RENOMBRADO] schema_objects/functions/indicador_true.sql -> schema_objects_borrados/functions/indicador_true.sql
+[2026-10-17 09:33:01] [INFO]   [RENOMBRADO] schema_objects/functions/indicador_truef_a_lse.sql -> schema_objects_borrados/functions/indicador_truef_a_lse.sql
+[2026-10-17 09:33:01] [INFO]   [RENOMBRADO] schema_objects/functions/indicador_truef_alse.sql -> schema_objects_borrados/functions/indicador_truef_alse.sql
+[2026-10-17 09:33:01] [INFO]   [RENOMBRADO] schema_objects/functions/indicador_truefalse.sql -> schema_objects_borrados/functions/indicador_truefalse.sql
+[2026-10-17 09:33:01] [INFO]   [RENOMBRADO] schema_objects/functions/indicaro_tru_false.sql -> schema_objects_borrados/functions/indicaro_tru_false.sql
+[2026-10-17 09:33:02] [INFO] Commit realizado: chore(sync): backup objetos desarrollo [2026-10-17 09:33:01]
+[2026-10-17 09:33:04] [INFO] Push completado exitosamente a https://***@github.com/vqorlando68/agente_backup.git (rama desarrollo).
+[2026-10-17 09:33:04] [INFO] FIN DE PROCESO - DESARROLLO
+[2026-10-17 09:33:04] [INFO] ============================================================

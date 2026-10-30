@@ -1,0 +1,1528 @@
+[2026-10-29 12:00:04] [INFO] ============================================================
+[2026-10-29 12:00:04] [INFO] INICIANDO AGENTE BACKUP - AMBIENTE: DESARROLLO
+[2026-10-29 12:00:04] [INFO] Conectando a tekerapp-db.maxapex.net:1521/orclpdb1 con usuario USUARIO_BACKUP_AGENT...
+[2026-10-29 12:00:04] [INFO] Esquema objetivo: TEKER_DEV
+[2026-10-29 12:00:04] [INFO] Conexion a Oracle establecida con exito.
+[2026-10-29 12:00:04] [INFO] Posicionando repositorio en la rama 'desarrollo'...
+[2026-10-29 12:00:08] [INFO] Encontrados 2343 objetos en el esquema TEKER_DEV
+[2026-10-29 12:00:11] [INFO] Cargados comentarios para 367 tablas.
+[2026-10-29 12:04:02] [INFO] Objeto borrado en BD detectado: functions\fn_auditar_cita_json.sql -> movido a schema_objects_borrados/functions\fn_auditar_cita_json.sql
+[2026-10-29 12:04:02] [INFO] Objeto borrado en BD detectado: functions\fn_valor_disponibilidad_medico.sql -> movido a schema_objects_borrados/functions\fn_valor_disponibilidad_medico.sql
+[2026-10-29 12:04:02] [INFO] Objeto borrado en BD detectado: functions\f_horas_especialidad.sql -> movido a schema_objects_borrados/functions\f_horas_especialidad.sql
+[2026-10-29 12:04:03] [INFO] Objeto borrado en BD detectado: functions\f_tkr_cols_json_bq.sql -> movido a schema_objects_borrados/functions\f_tkr_cols_json_bq.sql
+[2026-10-29 12:04:03] [INFO] Objeto borrado en BD detectado: functions\f_validar_clave_doctor2.sql -> movido a schema_objects_borrados/functions\f_validar_clave_doctor2.sql
+[2026-10-29 12:04:03] [INFO] Objeto borrado en BD detectado: functions\generar_uuid.sql -> movido a schema_objects_borrados/functions\generar_uuid.sql
+[2026-10-29 12:04:03] [INFO] Objeto borrado en BD detectado: jobs\actualizacion_contactos_crm_ghl.sql -> movido a schema_objects_borrados/jobs\actualizacion_contactos_crm_ghl.sql
+[2026-10-29 12:04:03] [INFO] Objeto borrado en BD detectado: jobs\actualizar_citas_crm.sql -> movido a schema_objects_borrados/jobs\actualizar_citas_crm.sql
+[2026-10-29 12:04:03] [INFO] Objeto borrado en BD detectado: jobs\generar_link_monitoreo_job.sql -> movido a schema_objects_borrados/jobs\generar_link_monitoreo_job.sql
+[2026-10-29 12:04:03] [INFO] Objeto borrado en BD detectado: jobs\job_crear_acceso_pacientes.sql -> movido a schema_objects_borrados/jobs\job_crear_acceso_pacientes.sql
+[2026-10-29 12:04:03] [INFO] Objeto borrado en BD detectado: jobs\job_crear_usuario_facturacion.sql -> movido a schema_objects_borrados/jobs\job_crear_usuario_facturacion.sql
+[2026-10-29 12:04:03] [INFO] Objeto borrado en BD detectado: jobs\job_get_token_ghl.sql -> movido a schema_objects_borrados/jobs\job_get_token_ghl.sql
+[2026-10-29 12:04:03] [INFO] Objeto borrado en BD detectado: jobs\job_get_token_ghl_extra.sql -> movido a schema_objects_borrados/jobs\job_get_token_ghl_extra.sql
+[2026-10-29 12:04:03] [INFO] Objeto borrado en BD detectado: jobs\job_giris_facturar_mensual.sql -> movido a schema_objects_borrados/jobs\job_giris_facturar_mensual.sql
+[2026-10-29 12:04:03] [INFO] Objeto borrado en BD detectado: jobs\job_marcar_activo_giris_horario.sql -> movido a schema_objects_borrados/jobs\job_marcar_activo_giris_horario.sql
+[2026-10-29 12:04:03] [INFO] Objeto borrado en BD detectado: jobs\job_marcar_citas_vencidas.sql -> movido a schema_objects_borrados/jobs\job_marcar_citas_vencidas.sql
+[2026-10-29 12:04:03] [INFO] Objeto borrado en BD detectado: jobs\job_minutos_zoom.sql -> movido a schema_objects_borrados/jobs\job_minutos_zoom.sql
+[2026-10-29 12:04:03] [INFO] Objeto borrado en BD detectado: jobs\job_pipeline_citas_voluntario_ghl.sql -> movido a schema_objects_borrados/jobs\job_pipeline_citas_voluntario_ghl.sql
+[2026-10-29 12:04:03] [INFO] Objeto borrado en BD detectado: jobs\job_pipeline_seguimiento_ghl.sql -> movido a schema_objects_borrados/jobs\job_pipeline_seguimiento_ghl.sql
+[2026-10-29 12:04:03] [INFO] Objeto borrado en BD detectado: jobs\job_procesos_diario.sql -> movido a schema_objects_borrados/jobs\job_procesos_diario.sql
+[2026-10-29 12:04:03] [INFO] Objeto borrado en BD detectado: jobs\job_process_sync_gcp.sql -> movido a schema_objects_borrados/jobs\job_process_sync_gcp.sql
+[2026-10-29 12:04:03] [INFO] Objeto borrado en BD detectado: jobs\job_reconstruir_logs_citas.sql -> movido a schema_objects_borrados/jobs\job_reconstruir_logs_citas.sql
+[2026-10-29 12:04:03] [INFO] Objeto borrado en BD detectado: jobs\job_recordatorio_citas_ws.sql -> movido a schema_objects_borrados/jobs\job_recordatorio_citas_ws.sql
+[2026-10-29 12:04:03] [INFO] Objeto borrado en BD detectado: jobs\job_recordatorio_pago.sql -> movido a schema_objects_borrados/jobs\job_recordatorio_pago.sql
+[2026-10-29 12:04:03] [INFO] Objeto borrado en BD detectado: jobs\job_reporte_diario_citas.sql -> movido a schema_objects_borrados/jobs\job_reporte_diario_citas.sql
+[2026-10-29 12:04:03] [INFO] Objeto borrado en BD detectado: jobs\job_resolver_ids_ghl.sql -> movido a schema_objects_borrados/jobs\job_resolver_ids_ghl.sql
+[2026-10-29 12:04:03] [INFO] Objeto borrado en BD detectado: jobs\job_sincroniza_agenda_20min.sql -> movido a schema_objects_borrados/jobs\job_sincroniza_agenda_20min.sql
+[2026-10-29 12:04:03] [INFO] Objeto borrado en BD detectado: jobs\job_validar_pagos.sql -> movido a schema_objects_borrados/jobs\job_validar_pagos.sql
+[2026-10-29 12:04:03] [INFO] Objeto borrado en BD detectado: jobs\scheduler_10_260716161645.sql -> movido a schema_objects_borrados/jobs\scheduler_10_260716161645.sql
+[2026-10-29 12:04:03] [INFO] Objeto borrado en BD detectado: jobs\scheduler_11_260716161706.sql -> movido a schema_objects_borrados/jobs\scheduler_11_260716161706.sql
+[2026-10-29 12:04:03] [INFO] Objeto borrado en BD detectado: jobs\scheduler_12_260716161731.sql -> movido a schema_objects_borrados/jobs\scheduler_12_260716161731.sql
+[2026-10-29 12:04:03] [INFO] Objeto borrado en BD detectado: jobs\scheduler_13_260716161759.sql -> movido a schema_objects_borrados/jobs\scheduler_13_260716161759.sql
+[2026-10-29 12:04:03] [INFO] Objeto borrado en BD detectado: jobs\scheduler_14_260708141225.sql -> movido a schema_objects_borrados/jobs\scheduler_14_260708141225.sql
+[2026-10-29 12:04:03] [INFO] Objeto borrado en BD detectado: jobs\scheduler_15_260716143818.sql -> movido a schema_objects_borrados/jobs\scheduler_15_260716143818.sql
+[2026-10-29 12:04:03] [INFO] Objeto borrado en BD detectado: jobs\scheduler_16_260716155248.sql -> movido a schema_objects_borrados/jobs\scheduler_16_260716155248.sql
+[2026-10-29 12:04:03] [INFO] Objeto borrado en BD detectado: jobs\scheduler_17_260729085722.sql -> movido a schema_objects_borrados/jobs\scheduler_17_260729085722.sql
+[2026-10-29 12:04:03] [INFO] Objeto borrado en BD detectado: jobs\scheduler_18_260729092452.sql -> movido a schema_objects_borrados/jobs\scheduler_18_260729092452.sql
+[2026-10-29 12:04:03] [INFO] Objeto borrado en BD detectado: jobs\scheduler_18_260729092455.sql -> movido a schema_objects_borrados/jobs\scheduler_18_260729092455.sql
+[2026-10-29 12:04:03] [INFO] Objeto borrado en BD detectado: jobs\scheduler_19_260917094039.sql -> movido a schema_objects_borrados/jobs\scheduler_19_260917094039.sql
+[2026-10-29 12:04:03] [INFO] Objeto borrado en BD detectado: jobs\scheduler_1_260617173448.sql -> movido a schema_objects_borrados/jobs\scheduler_1_260617173448.sql
+[2026-10-29 12:04:03] [INFO] Objeto borrado en BD detectado: jobs\scheduler_2_260716161014.sql -> movido a schema_objects_borrados/jobs\scheduler_2_260716161014.sql
+[2026-10-29 12:04:03] [INFO] Objeto borrado en BD detectado: jobs\scheduler_3_260716161216.sql -> movido a schema_objects_borrados/jobs\scheduler_3_260716161216.sql
+[2026-10-29 12:04:03] [INFO] Objeto borrado en BD detectado: jobs\scheduler_4_260716161341.sql -> movido a schema_objects_borrados/jobs\scheduler_4_260716161341.sql
+[2026-10-29 12:04:03] [INFO] Objeto borrado en BD detectado: jobs\scheduler_5_260716161448.sql -> movido a schema_objects_borrados/jobs\scheduler_5_260716161448.sql
+[2026-10-29 12:04:03] [INFO] Objeto borrado en BD detectado: jobs\scheduler_6_260716161509.sql -> movido a schema_objects_borrados/jobs\scheduler_6_260716161509.sql
+[2026-10-29 12:04:03] [INFO] Objeto borrado en BD detectado: jobs\scheduler_7_260716161530.sql -> movido a schema_objects_borrados/jobs\scheduler_7_260716161530.sql
+[2026-10-29 12:04:03] [INFO] Objeto borrado en BD detectado: jobs\scheduler_8_260716161551.sql -> movido a schema_objects_borrados/jobs\scheduler_8_260716161551.sql
+[2026-10-29 12:04:03] [INFO] Objeto borrado en BD detectado: jobs\scheduler_9_260716161610.sql -> movido a schema_objects_borrados/jobs\scheduler_9_260716161610.sql
+[2026-10-29 12:04:03] [INFO] Objeto borrado en BD detectado: packages\pkgcn_alertas.pkb -> movido a schema_objects_borrados/packages\pkgcn_alertas.pkb
+[2026-10-29 12:04:03] [INFO] Objeto borrado en BD detectado: packages\pkgcn_alertas.pks -> movido a schema_objects_borrados/packages\pkgcn_alertas.pks
+[2026-10-29 12:04:03] [INFO] Objeto borrado en BD detectado: packages\pkgcn_fhir.pkb -> movido a schema_objects_borrados/packages\pkgcn_fhir.pkb
+[2026-10-29 12:04:03] [INFO] Objeto borrado en BD detectado: packages\pkgcn_fhir.pks -> movido a schema_objects_borrados/packages\pkgcn_fhir.pks
+[2026-10-29 12:04:03] [INFO] Objeto borrado en BD detectado: packages\pkgcn_ghl2.pkb -> movido a schema_objects_borrados/packages\pkgcn_ghl2.pkb
+[2026-10-29 12:04:03] [INFO] Objeto borrado en BD detectado: packages\pkgcn_ghl2.pks -> movido a schema_objects_borrados/packages\pkgcn_ghl2.pks
+[2026-10-29 12:04:03] [INFO] Objeto borrado en BD detectado: packages\pkgln_estadisticas_bd.pkb -> movido a schema_objects_borrados/packages\pkgln_estadisticas_bd.pkb
+[2026-10-29 12:04:03] [INFO] Objeto borrado en BD detectado: packages\pkgln_estadisticas_bd.pks -> movido a schema_objects_borrados/packages\pkgln_estadisticas_bd.pks
+[2026-10-29 12:04:03] [INFO] Objeto borrado en BD detectado: packages\pkgln_evaluaciones.pkb -> movido a schema_objects_borrados/packages\pkgln_evaluaciones.pkb
+[2026-10-29 12:04:03] [INFO] Objeto borrado en BD detectado: packages\pkgln_evaluaciones.pks -> movido a schema_objects_borrados/packages\pkgln_evaluaciones.pks
+[2026-10-29 12:04:03] [INFO] Objeto borrado en BD detectado: packages\pkgln_fhir.pks -> movido a schema_objects_borrados/packages\pkgln_fhir.pks
+[2026-10-29 12:04:03] [INFO] Objeto borrado en BD detectado: packages\pkgln_ghl2.pkb -> movido a schema_objects_borrados/packages\pkgln_ghl2.pkb
+[2026-10-29 12:04:03] [INFO] Objeto borrado en BD detectado: packages\pkgln_ghl2.pks -> movido a schema_objects_borrados/packages\pkgln_ghl2.pks
+[2026-10-29 12:04:03] [INFO] Objeto borrado en BD detectado: packages\pkgln_mensajes_test.pkb -> movido a schema_objects_borrados/packages\pkgln_mensajes_test.pkb
+[2026-10-29 12:04:03] [INFO] Objeto borrado en BD detectado: packages\pkgln_mensajes_test.pks -> movido a schema_objects_borrados/packages\pkgln_mensajes_test.pks
+[2026-10-29 12:04:03] [INFO] Objeto borrado en BD detectado: packages\pkgln_suscripciones.pkb -> movido a schema_objects_borrados/packages\pkgln_suscripciones.pkb
+[2026-10-29 12:04:03] [INFO] Objeto borrado en BD detectado: packages\pkgln_suscripciones.pks -> movido a schema_objects_borrados/packages\pkgln_suscripciones.pks
+[2026-10-29 12:04:03] [INFO] Objeto borrado en BD detectado: packages\pkgtkr_preguntas_dao.pkb -> movido a schema_objects_borrados/packages\pkgtkr_preguntas_dao.pkb
+[2026-10-29 12:04:03] [INFO] Objeto borrado en BD detectado: packages\pkgtkr_preguntas_dao.pks -> movido a schema_objects_borrados/packages\pkgtkr_preguntas_dao.pks
+[2026-10-29 12:04:03] [INFO] Objeto borrado en BD detectado: procedures\prc_corregir_flujo_14_sin_citas.sql -> movido a schema_objects_borrados/procedures\prc_corregir_flujo_14_sin_citas.sql
+[2026-10-29 12:04:03] [INFO] Objeto borrado en BD detectado: procedures\prc_reconstruir_flujo_14.sql -> movido a schema_objects_borrados/procedures\prc_reconstruir_flujo_14.sql
+[2026-10-29 12:04:03] [INFO] Objeto borrado en BD detectado: procedures\prc_reconstruir_logs_citas.sql -> movido a schema_objects_borrados/procedures\prc_reconstruir_logs_citas.sql
+[2026-10-29 12:04:03] [INFO] Objeto borrado en BD detectado: procedures\prc_resumen.sql -> movido a schema_objects_borrados/procedures\prc_resumen.sql
+[2026-10-29 12:04:03] [INFO] Objeto borrado en BD detectado: procedures\prc_valores_citas.sql -> movido a schema_objects_borrados/procedures\prc_valores_citas.sql
+[2026-10-29 12:04:03] [INFO] Objeto borrado en BD detectado: procedures\p_ejecutar_script_pdf.sql -> movido a schema_objects_borrados/procedures\p_ejecutar_script_pdf.sql
+[2026-10-29 12:04:03] [INFO] Objeto borrado en BD detectado: procedures\p_ejecutar_script_pdf_bkp.sql -> movido a schema_objects_borrados/procedures\p_ejecutar_script_pdf_bkp.sql
+[2026-10-29 12:04:03] [INFO] Objeto borrado en BD detectado: procedures\p_ejecutar_script_pdf_debug.sql -> movido a schema_objects_borrados/procedures\p_ejecutar_script_pdf_debug.sql
+[2026-10-29 12:04:03] [INFO] Objeto borrado en BD detectado: procedures\p_reliquidar.sql -> movido a schema_objects_borrados/procedures\p_reliquidar.sql
+[2026-10-29 12:04:03] [INFO] Objeto borrado en BD detectado: procedures\p_reporte_diario_citas1.sql -> movido a schema_objects_borrados/procedures\p_reporte_diario_citas1.sql
+[2026-10-29 12:04:03] [INFO] Objeto borrado en BD detectado: procedures\p_tkr_envios_bq_gcs.sql -> movido a schema_objects_borrados/procedures\p_tkr_envios_bq_gcs.sql
+[2026-10-29 12:04:03] [INFO] Objeto borrado en BD detectado: procedures\p_tkr_envios_bq_gcs_todas.sql -> movido a schema_objects_borrados/procedures\p_tkr_envios_bq_gcs_todas.sql
+[2026-10-29 12:04:03] [INFO] Objeto borrado en BD detectado: procedures\p_tkr_recarga_bq_gcs.sql -> movido a schema_objects_borrados/procedures\p_tkr_recarga_bq_gcs.sql
+[2026-10-29 12:04:03] [INFO] Objeto borrado en BD detectado: procedures\sp_insert_patologias_usuario.sql -> movido a schema_objects_borrados/procedures\sp_insert_patologias_usuario.sql
+[2026-10-29 12:04:03] [INFO] Objeto borrado en BD detectado: procedures\sp_obtener_tarifas_usuario.sql -> movido a schema_objects_borrados/procedures\sp_obtener_tarifas_usuario.sql
+[2026-10-29 12:04:03] [INFO] Objeto borrado en BD detectado: sequences\tkrbq_borrados_ghl_seq.sql -> movido a schema_objects_borrados/sequences\tkrbq_borrados_ghl_seq.sql
+[2026-10-29 12:04:03] [INFO] Objeto borrado en BD detectado: sequences\tkr_analisis_contactos_ghl_seq.sql -> movido a schema_objects_borrados/sequences\tkr_analisis_contactos_ghl_seq.sql
+[2026-10-29 12:04:03] [INFO] Objeto borrado en BD detectado: sequences\tkr_asignacion_ids_ghl_seq.sql -> movido a schema_objects_borrados/sequences\tkr_asignacion_ids_ghl_seq.sql
+[2026-10-29 12:04:03] [INFO] Objeto borrado en BD detectado: sequences\tkr_auditoria_envio_ghl_seq.sql -> movido a schema_objects_borrados/sequences\tkr_auditoria_envio_ghl_seq.sql
+[2026-10-29 12:04:03] [INFO] Objeto borrado en BD detectado: sequences\tkr_bitacora_ghl_seq.sql -> movido a schema_objects_borrados/sequences\tkr_bitacora_ghl_seq.sql
+[2026-10-29 12:04:03] [INFO] Objeto borrado en BD detectado: sequences\tkr_busqueda_contacto_ghl_seq.sql -> movido a schema_objects_borrados/sequences\tkr_busqueda_contacto_ghl_seq.sql
+[2026-10-29 12:04:03] [INFO] Objeto borrado en BD detectado: sequences\tkr_cie10_seq.sql -> movido a schema_objects_borrados/sequences\tkr_cie10_seq.sql
+[2026-10-29 12:04:03] [INFO] Objeto borrado en BD detectado: sequences\tkr_cie3_seq.sql -> movido a schema_objects_borrados/sequences\tkr_cie3_seq.sql
+[2026-10-29 12:04:03] [INFO] Objeto borrado en BD detectado: sequences\tkr_citas_audit_update_seq.sql -> movido a schema_objects_borrados/sequences\tkr_citas_audit_update_seq.sql
+[2026-10-29 12:04:03] [INFO] Objeto borrado en BD detectado: sequences\tkr_citas_eventos_ghl_seq.sql -> movido a schema_objects_borrados/sequences\tkr_citas_eventos_ghl_seq.sql
+[2026-10-29 12:04:03] [INFO] Objeto borrado en BD detectado: sequences\tkr_citas_hora_seq.sql -> movido a schema_objects_borrados/sequences\tkr_citas_hora_seq.sql
+[2026-10-29 12:04:03] [INFO] Objeto borrado en BD detectado: sequences\tkr_citas_pipeline_ghl_seq.sql -> movido a schema_objects_borrados/sequences\tkr_citas_pipeline_ghl_seq.sql
+[2026-10-29 12:04:03] [INFO] Objeto borrado en BD detectado: sequences\tkr_disponibilidad_seq.sql -> movido a schema_objects_borrados/sequences\tkr_disponibilidad_seq.sql
+[2026-10-29 12:04:04] [INFO] Objeto borrado en BD detectado: sequences\tkr_grupo_medicamentos_seq.sql -> movido a schema_objects_borrados/sequences\tkr_grupo_medicamentos_seq.sql
+[2026-10-29 12:04:04] [INFO] Objeto borrado en BD detectado: sequences\tkr_migracion_oport_ghl_seq.sql -> movido a schema_objects_borrados/sequences\tkr_migracion_oport_ghl_seq.sql
+[2026-10-29 12:04:04] [INFO] Objeto borrado en BD detectado: sequences\tkr_modelos_relacionales_seq.sql -> movido a schema_objects_borrados/sequences\tkr_modelos_relacionales_seq.sql
+[2026-10-29 12:04:04] [INFO] Objeto borrado en BD detectado: sequences\tkr_mov_citas_pipeline_ghl_seq.sql -> movido a schema_objects_borrados/sequences\tkr_mov_citas_pipeline_ghl_seq.sql
+[2026-10-29 12:04:04] [INFO] Objeto borrado en BD detectado: sequences\tkr_mov_oportunidad_ghl_seq.sql -> movido a schema_objects_borrados/sequences\tkr_mov_oportunidad_ghl_seq.sql
+[2026-10-29 12:04:04] [INFO] Objeto borrado en BD detectado: sequences\tkr_operadores_seq.sql -> movido a schema_objects_borrados/sequences\tkr_operadores_seq.sql
+[2026-10-29 12:04:04] [INFO] Objeto borrado en BD detectado: sequences\tkr_oportunidades_ghl_seq.sql -> movido a schema_objects_borrados/sequences\tkr_oportunidades_ghl_seq.sql
+[2026-10-29 12:04:04] [INFO] Objeto borrado en BD detectado: sequences\tkr_permisos_reporte_seq.sql -> movido a schema_objects_borrados/sequences\tkr_permisos_reporte_seq.sql
+[2026-10-29 12:04:04] [INFO] Objeto borrado en BD detectado: sequences\tkr_rangos_interp_seq.sql -> movido a schema_objects_borrados/sequences\tkr_rangos_interp_seq.sql
+[2026-10-29 12:04:04] [INFO] Objeto borrado en BD detectado: sequences\tkr_solicitudes_workflow_ghl_seq.sql -> movido a schema_objects_borrados/sequences\tkr_solicitudes_workflow_ghl_seq.sql
+[2026-10-29 12:04:04] [INFO] Objeto borrado en BD detectado: sequences\tkr_subgrupo_medicamentos_seq.sql -> movido a schema_objects_borrados/sequences\tkr_subgrupo_medicamentos_seq.sql
+[2026-10-29 12:04:04] [INFO] Objeto borrado en BD detectado: sequences\tkr_tablas_auditorias_seq.sql -> movido a schema_objects_borrados/sequences\tkr_tablas_auditorias_seq.sql
+[2026-10-29 12:04:04] [INFO] Objeto borrado en BD detectado: sequences\tkr_tipos_cuest_seq.sql -> movido a schema_objects_borrados/sequences\tkr_tipos_cuest_seq.sql
+[2026-10-29 12:04:04] [INFO] Objeto borrado en BD detectado: sequences\tkr_usuarios_temas_seq.sql -> movido a schema_objects_borrados/sequences\tkr_usuarios_temas_seq.sql
+[2026-10-29 12:04:04] [INFO] Objeto borrado en BD detectado: sequences\trk_whatsapp_conversaciones_seq.sql -> movido a schema_objects_borrados/sequences\trk_whatsapp_conversaciones_seq.sql
+[2026-10-29 12:04:04] [INFO] Objeto borrado en BD detectado: tables\tabla_prueba_json.sql -> movido a schema_objects_borrados/tables\tabla_prueba_json.sql
+[2026-10-29 12:04:04] [INFO] Objeto borrado en BD detectado: tables\tkrbq_archivos.sql -> movido a schema_objects_borrados/tables\tkrbq_archivos.sql
+[2026-10-29 12:04:04] [INFO] Objeto borrado en BD detectado: tables\tkrbq_auditorias.sql -> movido a schema_objects_borrados/tables\tkrbq_auditorias.sql
+[2026-10-29 12:04:04] [INFO] Objeto borrado en BD detectado: tables\tkrbq_ausencias_profesional.sql -> movido a schema_objects_borrados/tables\tkrbq_ausencias_profesional.sql
+[2026-10-29 12:04:04] [INFO] Objeto borrado en BD detectado: tables\tkrbq_borrados_ghl.sql -> movido a schema_objects_borrados/tables\tkrbq_borrados_ghl.sql
+[2026-10-29 12:04:04] [INFO] Objeto borrado en BD detectado: tables\tkrbq_cie3.sql -> movido a schema_objects_borrados/tables\tkrbq_cie3.sql
+[2026-10-29 12:04:04] [INFO] Objeto borrado en BD detectado: tables\tkrbq_citas_facturadas.sql -> movido a schema_objects_borrados/tables\tkrbq_citas_facturadas.sql
+[2026-10-29 12:04:04] [INFO] Objeto borrado en BD detectado: tables\tkrbq_citas_medicas_notsync.sql -> movido a schema_objects_borrados/tables\tkrbq_citas_medicas_notsync.sql
+[2026-10-29 12:04:04] [INFO] Objeto borrado en BD detectado: tables\tkrbq_conceptos_pago.sql -> movido a schema_objects_borrados/tables\tkrbq_conceptos_pago.sql
+[2026-10-29 12:04:04] [INFO] Objeto borrado en BD detectado: tables\tkrbq_cuestionarios.sql -> movido a schema_objects_borrados/tables\tkrbq_cuestionarios.sql
+[2026-10-29 12:04:04] [INFO] Objeto borrado en BD detectado: tables\tkrbq_cuestionario_respuesta.sql -> movido a schema_objects_borrados/tables\tkrbq_cuestionario_respuesta.sql
+[2026-10-29 12:04:04] [INFO] Objeto borrado en BD detectado: tables\tkrbq_detalle_contrato.sql -> movido a schema_objects_borrados/tables\tkrbq_detalle_contrato.sql
+[2026-10-29 12:04:04] [INFO] Objeto borrado en BD detectado: tables\tkrbq_estados_pago.sql -> movido a schema_objects_borrados/tables\tkrbq_estados_pago.sql
+[2026-10-29 12:04:04] [INFO] Objeto borrado en BD detectado: tables\tkrbq_fechas_contrato.sql -> movido a schema_objects_borrados/tables\tkrbq_fechas_contrato.sql
+[2026-10-29 12:04:04] [INFO] Objeto borrado en BD detectado: tables\tkrbq_giris_facturar.sql -> movido a schema_objects_borrados/tables\tkrbq_giris_facturar.sql
+[2026-10-29 12:04:04] [INFO] Objeto borrado en BD detectado: tables\tkrbq_grupo_medicamentos.sql -> movido a schema_objects_borrados/tables\tkrbq_grupo_medicamentos.sql
+[2026-10-29 12:04:04] [INFO] Objeto borrado en BD detectado: tables\tkrbq_horarios_doctor.sql -> movido a schema_objects_borrados/tables\tkrbq_horarios_doctor.sql
+[2026-10-29 12:04:04] [INFO] Objeto borrado en BD detectado: tables\tkrbq_medicamentos.sql -> movido a schema_objects_borrados/tables\tkrbq_medicamentos.sql
+[2026-10-29 12:04:04] [INFO] Objeto borrado en BD detectado: tables\tkrbq_observaciones_clinicas.sql -> movido a schema_objects_borrados/tables\tkrbq_observaciones_clinicas.sql
+[2026-10-29 12:04:04] [INFO] Objeto borrado en BD detectado: tables\tkrbq_opciones_pregunta.sql -> movido a schema_objects_borrados/tables\tkrbq_opciones_pregunta.sql
+[2026-10-29 12:04:04] [INFO] Objeto borrado en BD detectado: tables\tkrbq_organizaciones.sql -> movido a schema_objects_borrados/tables\tkrbq_organizaciones.sql
+[2026-10-29 12:04:04] [INFO] Objeto borrado en BD detectado: tables\tkrbq_preguntas.sql -> movido a schema_objects_borrados/tables\tkrbq_preguntas.sql
+[2026-10-29 12:04:04] [INFO] Objeto borrado en BD detectado: tables\tkrbq_pregunta_asociativa.sql -> movido a schema_objects_borrados/tables\tkrbq_pregunta_asociativa.sql
+[2026-10-29 12:04:04] [INFO] Objeto borrado en BD detectado: tables\tkrbq_prescripciones.sql -> movido a schema_objects_borrados/tables\tkrbq_prescripciones.sql
+[2026-10-29 12:04:04] [INFO] Objeto borrado en BD detectado: tables\tkrbq_rangos_interpretacion.sql -> movido a schema_objects_borrados/tables\tkrbq_rangos_interpretacion.sql
+[2026-10-29 12:04:04] [INFO] Objeto borrado en BD detectado: tables\tkrbq_respuestas.sql -> movido a schema_objects_borrados/tables\tkrbq_respuestas.sql
+[2026-10-29 12:04:04] [INFO] Objeto borrado en BD detectado: tables\tkrbq_respuesta_opciones.sql -> movido a schema_objects_borrados/tables\tkrbq_respuesta_opciones.sql
+[2026-10-29 12:04:04] [INFO] Objeto borrado en BD detectado: tables\tkrbq_resultados_cuestionario.sql -> movido a schema_objects_borrados/tables\tkrbq_resultados_cuestionario.sql
+[2026-10-29 12:04:04] [INFO] Objeto borrado en BD detectado: tables\tkrbq_secciones_cuestionario.sql -> movido a schema_objects_borrados/tables\tkrbq_secciones_cuestionario.sql
+[2026-10-29 12:04:04] [INFO] Objeto borrado en BD detectado: tables\tkrbq_servicios_profesional.sql -> movido a schema_objects_borrados/tables\tkrbq_servicios_profesional.sql
+[2026-10-29 12:04:04] [INFO] Objeto borrado en BD detectado: tables\tkrbq_servicio_especialidad.sql -> movido a schema_objects_borrados/tables\tkrbq_servicio_especialidad.sql
+[2026-10-29 12:04:04] [INFO] Objeto borrado en BD detectado: tables\tkrbq_subgrupo_medicamentos.sql -> movido a schema_objects_borrados/tables\tkrbq_subgrupo_medicamentos.sql
+[2026-10-29 12:04:04] [INFO] Objeto borrado en BD detectado: tables\tkrbq_tipos_cuestionario.sql -> movido a schema_objects_borrados/tables\tkrbq_tipos_cuestionario.sql
+[2026-10-29 12:04:04] [INFO] Objeto borrado en BD detectado: tables\tkrbq_variables_calculadas.sql -> movido a schema_objects_borrados/tables\tkrbq_variables_calculadas.sql
+[2026-10-29 12:04:04] [INFO] Objeto borrado en BD detectado: tables\tkr_360.sql -> movido a schema_objects_borrados/tables\tkr_360.sql
+[2026-10-29 12:04:04] [INFO] Objeto borrado en BD detectado: tables\tkr_360_1.sql -> movido a schema_objects_borrados/tables\tkr_360_1.sql
+[2026-10-29 12:04:04] [INFO] Objeto borrado en BD detectado: tables\tkr_360_2.sql -> movido a schema_objects_borrados/tables\tkr_360_2.sql
+[2026-10-29 12:04:04] [INFO] Objeto borrado en BD detectado: tables\tkr_analisis_contactos_ghl.sql -> movido a schema_objects_borrados/tables\tkr_analisis_contactos_ghl.sql
+[2026-10-29 12:04:04] [INFO] Objeto borrado en BD detectado: tables\tkr_asignacion_ids_ghl.sql -> movido a schema_objects_borrados/tables\tkr_asignacion_ids_ghl.sql
+[2026-10-29 12:04:04] [INFO] Objeto borrado en BD detectado: tables\tkr_auditoria_citas_temp.sql -> movido a schema_objects_borrados/tables\tkr_auditoria_citas_temp.sql
+[2026-10-29 12:04:04] [INFO] Objeto borrado en BD detectado: tables\tkr_auditoria_envio_ghl.sql -> movido a schema_objects_borrados/tables\tkr_auditoria_envio_ghl.sql
+[2026-10-29 12:04:04] [INFO] Objeto borrado en BD detectado: tables\tkr_bitacora_ghl.sql -> movido a schema_objects_borrados/tables\tkr_bitacora_ghl.sql
+[2026-10-29 12:04:04] [INFO] Objeto borrado en BD detectado: tables\tkr_borrrar.sql -> movido a schema_objects_borrados/tables\tkr_borrrar.sql
+[2026-10-29 12:04:04] [INFO] Objeto borrado en BD detectado: tables\tkr_busqueda_contacto_ghl.sql -> movido a schema_objects_borrados/tables\tkr_busqueda_contacto_ghl.sql
+[2026-10-29 12:04:04] [INFO] Objeto borrado en BD detectado: tables\tkr_cargue_emsanar.sql -> movido a schema_objects_borrados/tables\tkr_cargue_emsanar.sql
+[2026-10-29 12:04:04] [INFO] Objeto borrado en BD detectado: tables\tkr_citas_eventos_ghl.sql -> movido a schema_objects_borrados/tables\tkr_citas_eventos_ghl.sql
+[2026-10-29 12:04:04] [INFO] Objeto borrado en BD detectado: tables\tkr_citas_no_enviadas_ghl.sql -> movido a schema_objects_borrados/tables\tkr_citas_no_enviadas_ghl.sql
+[2026-10-29 12:04:04] [INFO] Objeto borrado en BD detectado: tables\tkr_citas_pipeline_ghl.sql -> movido a schema_objects_borrados/tables\tkr_citas_pipeline_ghl.sql
+[2026-10-29 12:04:04] [INFO] Objeto borrado en BD detectado: tables\tkr_computadores.sql -> movido a schema_objects_borrados/tables\tkr_computadores.sql
+[2026-10-29 12:04:04] [INFO] Objeto borrado en BD detectado: tables\tkr_cons_bak_20261009_0813.sql -> movido a schema_objects_borrados/tables\tkr_cons_bak_20261009_0813.sql
+[2026-10-29 12:04:04] [INFO] Objeto borrado en BD detectado: tables\tkr_cons_bak_20261009_0818.sql -> movido a schema_objects_borrados/tables\tkr_cons_bak_20261009_0818.sql
+[2026-10-29 12:04:04] [INFO] Objeto borrado en BD detectado: tables\tkr_cons_bak_20261009_0819.sql -> movido a schema_objects_borrados/tables\tkr_cons_bak_20261009_0819.sql
+[2026-10-29 12:04:04] [INFO] Objeto borrado en BD detectado: tables\tkr_cons_bak_20261009_222847.sql -> movido a schema_objects_borrados/tables\tkr_cons_bak_20261009_222847.sql
+[2026-10-29 12:04:04] [INFO] Objeto borrado en BD detectado: tables\tkr_contactos_ghl_subcuenta_obligatorio.sql -> movido a schema_objects_borrados/tables\tkr_contactos_ghl_subcuenta_obligatorio.sql
+[2026-10-29 12:04:04] [INFO] Objeto borrado en BD detectado: tables\tkr_contactos_ghl_subcuenta_soporte.sql -> movido a schema_objects_borrados/tables\tkr_contactos_ghl_subcuenta_soporte.sql
+[2026-10-29 12:04:04] [INFO] Objeto borrado en BD detectado: tables\tkr_contactos_ghl_subcuenta_teker.sql -> movido a schema_objects_borrados/tables\tkr_contactos_ghl_subcuenta_teker.sql
+[2026-10-29 12:04:04] [INFO] Objeto borrado en BD detectado: tables\tkr_contactos_ghl_temp.sql -> movido a schema_objects_borrados/tables\tkr_contactos_ghl_temp.sql
+[2026-10-29 12:04:04] [INFO] Objeto borrado en BD detectado: tables\tkr_cuestionario_respuesta_bkp_rec.sql -> movido a schema_objects_borrados/tables\tkr_cuestionario_respuesta_bkp_rec.sql
+[2026-10-29 12:04:04] [INFO] Objeto borrado en BD detectado: tables\tkr_cuestionario_respuesta_px.sql -> movido a schema_objects_borrados/tables\tkr_cuestionario_respuesta_px.sql
+[2026-10-29 12:04:04] [INFO] Objeto borrado en BD detectado: tables\tkr_disponibilidad_temp.sql -> movido a schema_objects_borrados/tables\tkr_disponibilidad_temp.sql
+[2026-10-29 12:04:04] [INFO] Objeto borrado en BD detectado: tables\tkr_envios_bq_gcs.sql -> movido a schema_objects_borrados/tables\tkr_envios_bq_gcs.sql
+[2026-10-29 12:04:04] [INFO] Objeto borrado en BD detectado: tables\tkr_fhir_causas_externas.sql -> movido a schema_objects_borrados/tables\tkr_fhir_causas_externas.sql
+[2026-10-29 12:04:04] [INFO] Objeto borrado en BD detectado: tables\tkr_fhir_envios.sql -> movido a schema_objects_borrados/tables\tkr_fhir_envios.sql
+[2026-10-29 12:04:04] [INFO] Objeto borrado en BD detectado: tables\tkr_fhir_especialidades.sql -> movido a schema_objects_borrados/tables\tkr_fhir_especialidades.sql
+[2026-10-29 12:04:04] [INFO] Objeto borrado en BD detectado: tables\tkr_fhir_estatus_consumo_medicamento.sql -> movido a schema_objects_borrados/tables\tkr_fhir_estatus_consumo_medicamento.sql
+[2026-10-29 12:04:04] [INFO] Objeto borrado en BD detectado: tables\tkr_fhir_generos.sql -> movido a schema_objects_borrados/tables\tkr_fhir_generos.sql
+[2026-10-29 12:04:04] [INFO] Objeto borrado en BD detectado: tables\tkr_fhir_medicamentos_mipres.sql -> movido a schema_objects_borrados/tables\tkr_fhir_medicamentos_mipres.sql
+[2026-10-29 12:04:04] [INFO] Objeto borrado en BD detectado: tables\tkr_fhir_procedimientos.sql -> movido a schema_objects_borrados/tables\tkr_fhir_procedimientos.sql
+[2026-10-29 12:04:04] [INFO] Objeto borrado en BD detectado: tables\tkr_fhir_tipos_diagnosticos.sql -> movido a schema_objects_borrados/tables\tkr_fhir_tipos_diagnosticos.sql
+[2026-10-29 12:04:04] [INFO] Objeto borrado en BD detectado: tables\tkr_fhir_tipos_identificacion.sql -> movido a schema_objects_borrados/tables\tkr_fhir_tipos_identificacion.sql
+[2026-10-29 12:04:04] [INFO] Objeto borrado en BD detectado: tables\tkr_lotes_bq_gcs.sql -> movido a schema_objects_borrados/tables\tkr_lotes_bq_gcs.sql
+[2026-10-29 12:04:04] [INFO] Objeto borrado en BD detectado: tables\tkr_medicamentos_nueva.sql -> movido a schema_objects_borrados/tables\tkr_medicamentos_nueva.sql
+[2026-10-29 12:04:04] [INFO] Objeto borrado en BD detectado: tables\tkr_medicamentos_oavq.sql -> movido a schema_objects_borrados/tables\tkr_medicamentos_oavq.sql
+[2026-10-29 12:04:04] [INFO] Objeto borrado en BD detectado: tables\tkr_migracion_oportunidades_ghl.sql -> movido a schema_objects_borrados/tables\tkr_migracion_oportunidades_ghl.sql
+[2026-10-29 12:04:04] [INFO] Objeto borrado en BD detectado: tables\tkr_modelos_relacionales.sql -> movido a schema_objects_borrados/tables\tkr_modelos_relacionales.sql
+[2026-10-29 12:04:04] [INFO] Objeto borrado en BD detectado: tables\tkr_movimientos_oportunidad_ghl.sql -> movido a schema_objects_borrados/tables\tkr_movimientos_oportunidad_ghl.sql
+[2026-10-29 12:04:04] [INFO] Objeto borrado en BD detectado: tables\tkr_mov_citas_pipeline_ghl.sql -> movido a schema_objects_borrados/tables\tkr_mov_citas_pipeline_ghl.sql
+[2026-10-29 12:04:04] [INFO] Objeto borrado en BD detectado: tables\tkr_oportunidades_ghl.sql -> movido a schema_objects_borrados/tables\tkr_oportunidades_ghl.sql
+[2026-10-29 12:04:04] [INFO] Objeto borrado en BD detectado: tables\tkr_permisos_reporte.sql -> movido a schema_objects_borrados/tables\tkr_permisos_reporte.sql
+[2026-10-29 12:04:04] [INFO] Objeto borrado en BD detectado: tables\tkr_reportes.sql -> movido a schema_objects_borrados/tables\tkr_reportes.sql
+[2026-10-29 12:04:04] [INFO] Objeto borrado en BD detectado: tables\tkr_responsable.sql -> movido a schema_objects_borrados/tables\tkr_responsable.sql
+[2026-10-29 12:04:04] [INFO] Objeto borrado en BD detectado: tables\tkr_respuestas_bkp_rec.sql -> movido a schema_objects_borrados/tables\tkr_respuestas_bkp_rec.sql
+[2026-10-29 12:04:04] [INFO] Objeto borrado en BD detectado: tables\tkr_respuestas_px.sql -> movido a schema_objects_borrados/tables\tkr_respuestas_px.sql
+[2026-10-29 12:04:04] [INFO] Objeto borrado en BD detectado: tables\tkr_respuesta_opciones_bkp_rec.sql -> movido a schema_objects_borrados/tables\tkr_respuesta_opciones_bkp_rec.sql
+[2026-10-29 12:04:04] [INFO] Objeto borrado en BD detectado: tables\tkr_respuesta_opciones_px.sql -> movido a schema_objects_borrados/tables\tkr_respuesta_opciones_px.sql
+[2026-10-29 12:04:04] [INFO] Objeto borrado en BD detectado: tables\tkr_seguimiento_emsanar.sql -> movido a schema_objects_borrados/tables\tkr_seguimiento_emsanar.sql
+[2026-10-29 12:04:04] [INFO] Objeto borrado en BD detectado: tables\tkr_solicitudes_workflow_ghl.sql -> movido a schema_objects_borrados/tables\tkr_solicitudes_workflow_ghl.sql
+[2026-10-29 12:04:04] [INFO] Objeto borrado en BD detectado: tables\tkr_sync_bq_expr.sql -> movido a schema_objects_borrados/tables\tkr_sync_bq_expr.sql
+[2026-10-29 12:04:04] [INFO] Objeto borrado en BD detectado: tables\tkr_tareas.sql -> movido a schema_objects_borrados/tables\tkr_tareas.sql
+[2026-10-29 12:04:04] [INFO] Objeto borrado en BD detectado: tables\tkr_temas_reporte.sql -> movido a schema_objects_borrados/tables\tkr_temas_reporte.sql
+[2026-10-29 12:04:04] [INFO] Objeto borrado en BD detectado: tables\tkr_temporal.sql -> movido a schema_objects_borrados/tables\tkr_temporal.sql
+[2026-10-29 12:04:04] [INFO] Objeto borrado en BD detectado: tables\tkr_temp_emsanar.sql -> movido a schema_objects_borrados/tables\tkr_temp_emsanar.sql
+[2026-10-29 12:04:04] [INFO] Objeto borrado en BD detectado: tables\tkr_temp_sura.sql -> movido a schema_objects_borrados/tables\tkr_temp_sura.sql
+[2026-10-29 12:04:04] [INFO] Objeto borrado en BD detectado: tables\tkr_usuarios_temas.sql -> movido a schema_objects_borrados/tables\tkr_usuarios_temas.sql
+[2026-10-29 12:04:04] [INFO] Objeto borrado en BD detectado: tables\trk_whatsapp_conversaciones.sql -> movido a schema_objects_borrados/tables\trk_whatsapp_conversaciones.sql
+[2026-10-29 12:04:04] [INFO] Objeto borrado en BD detectado: triggers\tkr_citas_audit_update.sql -> movido a schema_objects_borrados/triggers\tkr_citas_audit_update.sql
+[2026-10-29 12:04:04] [INFO] Objeto borrado en BD detectado: triggers\tkr_usuarios_temas_bi.sql -> movido a schema_objects_borrados/triggers\tkr_usuarios_temas_bi.sql
+[2026-10-29 12:04:04] [INFO] Objeto borrado en BD detectado: triggers\trg_bi_tablas_auditorias.sql -> movido a schema_objects_borrados/triggers\trg_bi_tablas_auditorias.sql
+[2026-10-29 12:04:04] [INFO] Objeto borrado en BD detectado: triggers\trg_bi_tkr_cie10.sql -> movido a schema_objects_borrados/triggers\trg_bi_tkr_cie10.sql
+[2026-10-29 12:04:04] [INFO] Objeto borrado en BD detectado: triggers\trg_bi_tkr_cie3.sql -> movido a schema_objects_borrados/triggers\trg_bi_tkr_cie3.sql
+[2026-10-29 12:04:04] [INFO] Objeto borrado en BD detectado: triggers\trg_bi_tkr_grupo_medicamentos.sql -> movido a schema_objects_borrados/triggers\trg_bi_tkr_grupo_medicamentos.sql
+[2026-10-29 12:04:04] [INFO] Objeto borrado en BD detectado: triggers\trg_bi_tkr_modelos_relacionales.sql -> movido a schema_objects_borrados/triggers\trg_bi_tkr_modelos_relacionales.sql
+[2026-10-29 12:04:04] [INFO] Objeto borrado en BD detectado: triggers\trg_bi_tkr_subgrupo_medicamentos.sql -> movido a schema_objects_borrados/triggers\trg_bi_tkr_subgrupo_medicamentos.sql
+[2026-10-29 12:04:04] [INFO] Objeto borrado en BD detectado: triggers\trg_sync_tkr_archivos.sql -> movido a schema_objects_borrados/triggers\trg_sync_tkr_archivos.sql
+[2026-10-29 12:04:04] [INFO] Objeto borrado en BD detectado: triggers\trg_sync_tkr_auditorias.sql -> movido a schema_objects_borrados/triggers\trg_sync_tkr_auditorias.sql
+[2026-10-29 12:04:04] [INFO] Objeto borrado en BD detectado: triggers\trg_sync_tkr_ausencias_profesional.sql -> movido a schema_objects_borrados/triggers\trg_sync_tkr_ausencias_profesional.sql
+[2026-10-29 12:04:04] [INFO] Objeto borrado en BD detectado: triggers\trg_sync_tkr_cie3.sql -> movido a schema_objects_borrados/triggers\trg_sync_tkr_cie3.sql
+[2026-10-29 12:04:04] [INFO] Objeto borrado en BD detectado: triggers\trg_sync_tkr_citas_facturadas.sql -> movido a schema_objects_borrados/triggers\trg_sync_tkr_citas_facturadas.sql
+[2026-10-29 12:04:04] [INFO] Objeto borrado en BD detectado: triggers\trg_sync_tkr_conceptos_pago.sql -> movido a schema_objects_borrados/triggers\trg_sync_tkr_conceptos_pago.sql
+[2026-10-29 12:04:04] [INFO] Objeto borrado en BD detectado: triggers\trg_sync_tkr_cuestionarios.sql -> movido a schema_objects_borrados/triggers\trg_sync_tkr_cuestionarios.sql
+[2026-10-29 12:04:04] [INFO] Objeto borrado en BD detectado: triggers\trg_sync_tkr_cuestionario_respuesta.sql -> movido a schema_objects_borrados/triggers\trg_sync_tkr_cuestionario_respuesta.sql
+[2026-10-29 12:04:04] [INFO] Objeto borrado en BD detectado: triggers\trg_sync_tkr_detalle_contrato.sql -> movido a schema_objects_borrados/triggers\trg_sync_tkr_detalle_contrato.sql
+[2026-10-29 12:04:05] [INFO] Objeto borrado en BD detectado: triggers\trg_sync_tkr_estados_pago.sql -> movido a schema_objects_borrados/triggers\trg_sync_tkr_estados_pago.sql
+[2026-10-29 12:04:05] [INFO] Objeto borrado en BD detectado: triggers\trg_sync_tkr_fechas_contrato.sql -> movido a schema_objects_borrados/triggers\trg_sync_tkr_fechas_contrato.sql
+[2026-10-29 12:04:05] [INFO] Objeto borrado en BD detectado: triggers\trg_sync_tkr_giris_facturar.sql -> movido a schema_objects_borrados/triggers\trg_sync_tkr_giris_facturar.sql
+[2026-10-29 12:04:05] [INFO] Objeto borrado en BD detectado: triggers\trg_sync_tkr_grupo_medicamentos.sql -> movido a schema_objects_borrados/triggers\trg_sync_tkr_grupo_medicamentos.sql
+[2026-10-29 12:04:05] [INFO] Objeto borrado en BD detectado: triggers\trg_sync_tkr_horarios_doctor.sql -> movido a schema_objects_borrados/triggers\trg_sync_tkr_horarios_doctor.sql
+[2026-10-29 12:04:05] [INFO] Objeto borrado en BD detectado: triggers\trg_sync_tkr_medicamentos.sql -> movido a schema_objects_borrados/triggers\trg_sync_tkr_medicamentos.sql
+[2026-10-29 12:04:05] [INFO] Objeto borrado en BD detectado: triggers\trg_sync_tkr_observaciones_clinicas.sql -> movido a schema_objects_borrados/triggers\trg_sync_tkr_observaciones_clinicas.sql
+[2026-10-29 12:04:05] [INFO] Objeto borrado en BD detectado: triggers\trg_sync_tkr_opciones_pregunta.sql -> movido a schema_objects_borrados/triggers\trg_sync_tkr_opciones_pregunta.sql
+[2026-10-29 12:04:05] [INFO] Objeto borrado en BD detectado: triggers\trg_sync_tkr_organizaciones.sql -> movido a schema_objects_borrados/triggers\trg_sync_tkr_organizaciones.sql
+[2026-10-29 12:04:05] [INFO] Objeto borrado en BD detectado: triggers\trg_sync_tkr_preguntas.sql -> movido a schema_objects_borrados/triggers\trg_sync_tkr_preguntas.sql
+[2026-10-29 12:04:05] [INFO] Objeto borrado en BD detectado: triggers\trg_sync_tkr_pregunta_asociativa.sql -> movido a schema_objects_borrados/triggers\trg_sync_tkr_pregunta_asociativa.sql
+[2026-10-29 12:04:05] [INFO] Objeto borrado en BD detectado: triggers\trg_sync_tkr_prescripciones.sql -> movido a schema_objects_borrados/triggers\trg_sync_tkr_prescripciones.sql
+[2026-10-29 12:04:05] [INFO] Objeto borrado en BD detectado: triggers\trg_sync_tkr_rangos_interpretacion.sql -> movido a schema_objects_borrados/triggers\trg_sync_tkr_rangos_interpretacion.sql
+[2026-10-29 12:04:05] [INFO] Objeto borrado en BD detectado: triggers\trg_sync_tkr_respuestas.sql -> movido a schema_objects_borrados/triggers\trg_sync_tkr_respuestas.sql
+[2026-10-29 12:04:05] [INFO] Objeto borrado en BD detectado: triggers\trg_sync_tkr_respuesta_opciones.sql -> movido a schema_objects_borrados/triggers\trg_sync_tkr_respuesta_opciones.sql
+[2026-10-29 12:04:05] [INFO] Objeto borrado en BD detectado: triggers\trg_sync_tkr_resultados_cuestionario.sql -> movido a schema_objects_borrados/triggers\trg_sync_tkr_resultados_cuestionario.sql
+[2026-10-29 12:04:05] [INFO] Objeto borrado en BD detectado: triggers\trg_sync_tkr_secciones_cuestionario.sql -> movido a schema_objects_borrados/triggers\trg_sync_tkr_secciones_cuestionario.sql
+[2026-10-29 12:04:05] [INFO] Objeto borrado en BD detectado: triggers\trg_sync_tkr_servicios_profesional.sql -> movido a schema_objects_borrados/triggers\trg_sync_tkr_servicios_profesional.sql
+[2026-10-29 12:04:05] [INFO] Objeto borrado en BD detectado: triggers\trg_sync_tkr_servicio_especialidad.sql -> movido a schema_objects_borrados/triggers\trg_sync_tkr_servicio_especialidad.sql
+[2026-10-29 12:04:05] [INFO] Objeto borrado en BD detectado: triggers\trg_sync_tkr_subgrupo_medicamentos.sql -> movido a schema_objects_borrados/triggers\trg_sync_tkr_subgrupo_medicamentos.sql
+[2026-10-29 12:04:05] [INFO] Objeto borrado en BD detectado: triggers\trg_sync_tkr_tipos_cuestionario.sql -> movido a schema_objects_borrados/triggers\trg_sync_tkr_tipos_cuestionario.sql
+[2026-10-29 12:04:05] [INFO] Objeto borrado en BD detectado: triggers\trg_sync_tkr_variables_calculadas.sql -> movido a schema_objects_borrados/triggers\trg_sync_tkr_variables_calculadas.sql
+[2026-10-29 12:04:05] [INFO] Objeto borrado en BD detectado: triggers\trg_tareas_color.sql -> movido a schema_objects_borrados/triggers\trg_tareas_color.sql
+[2026-10-29 12:04:05] [INFO] Objeto borrado en BD detectado: triggers\trg_tkr_operadores_bi.sql -> movido a schema_objects_borrados/triggers\trg_tkr_operadores_bi.sql
+[2026-10-29 12:04:05] [INFO] Objeto borrado en BD detectado: triggers\trg_tkr_rangos_interp_bi.sql -> movido a schema_objects_borrados/triggers\trg_tkr_rangos_interp_bi.sql
+[2026-10-29 12:04:05] [INFO] Objeto borrado en BD detectado: triggers\trg_tkr_secciones_cuest_bi.sql -> movido a schema_objects_borrados/triggers\trg_tkr_secciones_cuest_bi.sql
+[2026-10-29 12:04:05] [INFO] Objeto borrado en BD detectado: triggers\trg_tkr_tipos_cuest_bi.sql -> movido a schema_objects_borrados/triggers\trg_tkr_tipos_cuest_bi.sql
+[2026-10-29 12:04:05] [INFO] Objeto borrado en BD detectado: triggers\trg_vl_tkr_fecha_unix_vl.sql -> movido a schema_objects_borrados/triggers\trg_vl_tkr_fecha_unix_vl.sql
+[2026-10-29 12:04:05] [INFO] Resumen extraccion: 421 extraidos/actualizados, 1922 sin cambios (omitidos), 250 movidos a borrados.
+[2026-10-29 12:04:05] [INFO] Conexion a Oracle cerrada.
+[2026-10-29 12:04:06] [INFO] Catalogo de buscador actualizado en objects_index.json (2778 objetos indexados para desarrollo).
+[2026-10-29 12:04:06] [INFO] Iniciando sincronizacion con Git en la rama 'desarrollo'...
+[2026-10-29 12:04:09] [INFO] Se detectaron 497 archivo(s) de objetos para subir a Git:
+[2026-10-29 12:04:09] [INFO]   [MODIFICADO] schema_objects/packages/pkgca_tkr_ausencias_profesional.pkb
+[2026-10-29 12:04:09] [INFO]   [MODIFICADO] schema_objects/packages/pkgca_tkr_ausencias_profesional.pks
+[2026-10-29 12:04:09] [INFO]   [MODIFICADO] schema_objects/packages/pkgca_tkr_citas.pkb
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects/packages/pkgca_tkr_disponibilidad_bitmap.pkb
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects/packages/pkgca_tkr_disponibilidad_bitmap.pks
+[2026-10-29 12:04:09] [INFO]   [MODIFICADO] schema_objects/packages/pkgca_tkr_festivos.pkb
+[2026-10-29 12:04:09] [INFO]   [MODIFICADO] schema_objects/packages/pkgca_tkr_festivos.pks
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects/packages/pkgca_tkr_tiempos_atencion.pkb
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects/packages/pkgca_tkr_tiempos_atencion.pks
+[2026-10-29 12:04:09] [INFO]   [MODIFICADO] schema_objects/packages/pkgca_tkr_usuarios_cohorte.pkb
+[2026-10-29 12:04:09] [INFO]   [MODIFICADO] schema_objects/packages/pkgca_tkr_usuarios_cohorte.pks
+[2026-10-29 12:04:09] [INFO]   [MODIFICADO] schema_objects/packages/pkgcn_citas.pkb
+[2026-10-29 12:04:09] [INFO]   [MODIFICADO] schema_objects/packages/pkgcn_cohortes.pkb
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects/packages/pkgcn_directorio_profesionales.pkb
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects/packages/pkgcn_directorio_profesionales.pks
+[2026-10-29 12:04:09] [INFO]   [MODIFICADO] schema_objects/packages/pkgcn_franjas.pkb
+[2026-10-29 12:04:09] [INFO]   [MODIFICADO] schema_objects/packages/pkgcn_franjas.pks
+[2026-10-29 12:04:09] [INFO]   [MODIFICADO] schema_objects/packages/pkgcn_historia_clinica.pkb
+[2026-10-29 12:04:09] [INFO]   [MODIFICADO] schema_objects/packages/pkgcn_horarios.pkb
+[2026-10-29 12:04:09] [INFO]   [MODIFICADO] schema_objects/packages/pkgcn_horarios.pks
+[2026-10-29 12:04:09] [INFO]   [MODIFICADO] schema_objects/packages/pkgcn_tiempos_atencion.pkb
+[2026-10-29 12:04:09] [INFO]   [MODIFICADO] schema_objects/packages/pkgcn_top_quality.pkb
+[2026-10-29 12:04:09] [INFO]   [MODIFICADO] schema_objects/packages/pkgln_automatizaciones.pkb
+[2026-10-29 12:04:09] [INFO]   [MODIFICADO] schema_objects/packages/pkgln_automatizaciones.pks
+[2026-10-29 12:04:09] [INFO]   [MODIFICADO] schema_objects/packages/pkgln_citas.pkb
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects/packages/pkgln_directorio_profesionales.pkb
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects/packages/pkgln_directorio_profesionales.pks
+[2026-10-29 12:04:09] [INFO]   [MODIFICADO] schema_objects/packages/pkgln_franjas.pkb
+[2026-10-29 12:04:09] [INFO]   [MODIFICADO] schema_objects/packages/pkgln_historia_clinica.pkb
+[2026-10-29 12:04:09] [INFO]   [MODIFICADO] schema_objects/packages/pkgln_horarios.pkb
+[2026-10-29 12:04:09] [INFO]   [MODIFICADO] schema_objects/packages/pkgln_horarios.pks
+[2026-10-29 12:04:09] [INFO]   [MODIFICADO] schema_objects/packages/pkgln_tiempos_atencion.pkb
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects/packages/pkgtkr_disponibilidad_bitmap_dao.pkb
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects/packages/pkgtkr_disponibilidad_bitmap_dao.pks
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects/packages/pkgtkr_horas_laboradas_dao.pkb
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects/packages/pkgtkr_horas_laboradas_dao.pks
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects/packages/uti_manejo_trazas_pkg.pkb
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects/packages/uti_manejo_trazas_pkg.pks
+[2026-10-29 12:04:09] [INFO]   [MODIFICADO] schema_objects/procedures/p_do_commit.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects/procedures/prc_ajustar_consultas.sql
+[2026-10-29 12:04:09] [INFO]   [MODIFICADO] schema_objects/procedures/prc_proceso_diario.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects/sequences/tkr_convenios_tq_seq.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects/sequences/tkr_disponibilidad_bitmap_seq.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects/sequences/tkr_factores_riesgo_seq.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects/sequences/tkr_factores_riesgo_usuario_seq.sql
+[2026-10-29 12:04:09] [INFO]   [MODIFICADO] schema_objects/sequences/tkr_franjas_profesional_seq.sql
+[2026-10-29 12:04:09] [INFO]   [MODIFICADO] schema_objects/sequences/tkr_horarios_profesional_seq.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects/sequences/tkr_horas_laboradas_seq.sql
+[2026-10-29 12:04:09] [INFO]   [MODIFICADO] schema_objects/sequences/tkr_tiempos_atencion_seq.sql
+[2026-10-29 12:04:09] [INFO]   [MODIFICADO] schema_objects/tables/tkr_consultas.sql
+[2026-10-29 12:04:09] [INFO]   [MODIFICADO] schema_objects/tables/tkr_consultas_borradas.sql
+[2026-10-29 12:04:09] [INFO]   [MODIFICADO] schema_objects/tables/tkr_consumo_medicamentos.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects/tables/tkr_convenios_tq.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects/tables/tkr_disponibilidad_bitmap.sql
+[2026-10-29 12:04:09] [INFO]   [MODIFICADO] schema_objects/tables/tkr_entidades.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects/tables/tkr_factores_riesgo.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects/tables/tkr_factores_riesgo_usuario.sql
+[2026-10-29 12:04:09] [INFO]   [MODIFICADO] schema_objects/tables/tkr_franjas_profesional.sql
+[2026-10-29 12:04:09] [INFO]   [MODIFICADO] schema_objects/tables/tkr_giris_facturar.sql
+[2026-10-29 12:04:09] [INFO]   [MODIFICADO] schema_objects/tables/tkr_horarios_profesional.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects/tables/tkr_horas_laboradas.sql
+[2026-10-29 12:04:09] [INFO]   [MODIFICADO] schema_objects/tables/tkr_medicamentos.sql
+[2026-10-29 12:04:09] [INFO]   [MODIFICADO] schema_objects/tables/tkr_tiempos_atencion.sql
+[2026-10-29 12:04:09] [INFO]   [MODIFICADO] schema_objects/tables/tkr_usuarios.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects/triggers/trg_bi_tkr_convenios_tq.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects/triggers/trg_bi_tkr_disp_bitmap.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects/triggers/trg_bi_tkr_factores_riesgo.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects/triggers/trg_bi_tkr_factores_riesgo_usuario.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects/triggers/trg_bi_tkr_horas_laboradas.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects/triggers/trg_bu_tkr_citas.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/functions/cursor_to_json.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/functions/f_detecta_traslapes_horario.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/functions/f_horas_especialidad.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/functions/f_tarifas_json_ui.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/functions/f_tarifas_particular_json.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/functions/f_tkr_cols_json_bq.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/functions/f_validar_clave_doctor2.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/functions/f_validar_token.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/functions/fn_auditar_cita_json.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/functions/fn_autenticacion_usuario.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/functions/fn_valor_disponibilidad_medico.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/functions/generar_uuid.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/functions/indi_c_ador_truef_a_lse.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/functions/sql_to_json.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/functions/sql_to_jsonr.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/functions/transformar_a_json.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/jobs/actualizacion_contactos_crm_ghl.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/jobs/actualizar_citas_crm.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/jobs/generar_link_monitoreo_job.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/jobs/job_crear_acceso_pacientes.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/jobs/job_crear_usuario_facturacion.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/jobs/job_get_token_ghl.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/jobs/job_get_token_ghl_extra.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/jobs/job_giris_facturar_mensual.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/jobs/job_marcar_activo_giris_horario.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/jobs/job_marcar_citas_vencidas.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/jobs/job_minutos_zoom.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/jobs/job_pipeline_citas_voluntario_ghl.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/jobs/job_pipeline_seguimiento_ghl.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/jobs/job_procesos_diario.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/jobs/job_process_sync_gcp.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/jobs/job_reconstruir_logs_citas.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/jobs/job_recordatorio_citas_ws.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/jobs/job_recordatorio_pago.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/jobs/job_reporte_diario_citas.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/jobs/job_resolver_ids_ghl.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/jobs/job_sincroniza_agenda_20min.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/jobs/job_validar_pagos.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/jobs/run_script_job.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/jobs/scheduler_10_260716161645.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/jobs/scheduler_11_260716161706.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/jobs/scheduler_12_260716161731.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/jobs/scheduler_13_260716161759.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/jobs/scheduler_14_260708141225.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/jobs/scheduler_15_260716143818.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/jobs/scheduler_16_260716155248.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/jobs/scheduler_17_260729085722.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/jobs/scheduler_18_260729092452.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/jobs/scheduler_18_260729092455.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/jobs/scheduler_19_260917094039.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/jobs/scheduler_1_260617173448.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/jobs/scheduler_2_260716161014.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/jobs/scheduler_3_260716161216.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/jobs/scheduler_4_260716161341.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/jobs/scheduler_5_260716161448.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/jobs/scheduler_6_260716161509.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/jobs/scheduler_7_260716161530.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/jobs/scheduler_8_260716161551.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/jobs/scheduler_9_260716161610.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/packages/chatgpt_pkg.pkb
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/packages/chatgpt_pkg.pks
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/packages/eba_demo_ig_text_pkg.pkb
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/packages/eba_demo_ig_text_pkg.pks
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/packages/pkgca_tkr_franjas_profesional.pkb
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/packages/pkgca_tkr_franjas_profesional.pks
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/packages/pkgca_tkr_horarios_profesional.pkb
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/packages/pkgca_tkr_horarios_profesional.pks
+[2026-10-29 12:04:09] [INFO]   [RENOMBRADO] schema_objects/packages/pkgca_tkr_param_membresia_ent.pkb -> schema_objects_borrados/packages/pkgca_tkr_param_membresia_ent.pkb
+[2026-10-29 12:04:09] [INFO]   [RENOMBRADO] schema_objects/packages/pkgca_tkr_param_membresia_ent.pks -> schema_objects_borrados/packages/pkgca_tkr_param_membresia_ent.pks
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/packages/pkgca_tkr_plantillas.pkb
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/packages/pkgca_tkr_plantillas.pks
+[2026-10-29 12:04:09] [INFO]   [RENOMBRADO] schema_objects/packages/pkgca_tkr_servicios_categoria.pkb -> schema_objects_borrados/packages/pkgca_tkr_servicios_categoria.pkb
+[2026-10-29 12:04:09] [INFO]   [RENOMBRADO] schema_objects/packages/pkgca_tkr_servicios_categoria.pks -> schema_objects_borrados/packages/pkgca_tkr_servicios_categoria.pks
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/packages/pkgcn_alertas.pkb
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/packages/pkgcn_alertas.pks
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/packages/pkgcn_citas_nvo.pkb
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/packages/pkgcn_citas_nvo.pks
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/packages/pkgcn_fhir.pkb
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/packages/pkgcn_fhir.pks
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/packages/pkgcn_franjas.pkb
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/packages/pkgcn_franjas.pks
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/packages/pkgcn_ghl2.pkb
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/packages/pkgcn_ghl2.pks
+[2026-10-29 12:04:09] [INFO]   [RENOMBRADO] schema_objects/packages/pkgcn_membresias.pkb -> schema_objects_borrados/packages/pkgcn_membresias.pkb
+[2026-10-29 12:04:09] [INFO]   [RENOMBRADO] schema_objects/packages/pkgcn_membresias.pks -> schema_objects_borrados/packages/pkgcn_membresias.pks
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/packages/pkgcn_notificaciones.pkb
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/packages/pkgcn_notificaciones.pks
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/packages/pkgcn_perfil_profesional_nvo.pkb
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/packages/pkgcn_perfil_profesional_nvo.pks
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/packages/pkgcn_plantillas.pkb
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/packages/pkgcn_plantillas.pks
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/packages/pkgcn_tiempos_atencion.pkb
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/packages/pkgcn_tiempos_atencion.pks
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/packages/pkgdca_all_directories.pks
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/packages/pkgln_constructor.pkb
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/packages/pkgln_constructor.pks
+[2026-10-29 12:04:09] [INFO]   [RENOMBRADO] schema_objects/packages/pkgln_envios.pkb -> schema_objects_borrados/packages/pkgln_envios.pkb
+[2026-10-29 12:04:09] [INFO]   [RENOMBRADO] schema_objects/packages/pkgln_envios.pks -> schema_objects_borrados/packages/pkgln_envios.pks
+[2026-10-29 12:04:09] [INFO]   [RENOMBRADO] schema_objects/packages/pkgln_estadisticas_bd.pkb -> schema_objects_borrados/packages/pkgln_estadisticas_bd.pkb
+[2026-10-29 12:04:09] [INFO]   [RENOMBRADO] schema_objects/packages/pkgln_estadisticas_bd.pks -> schema_objects_borrados/packages/pkgln_estadisticas_bd.pks
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/packages/pkgln_evaluaciones.pkb
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/packages/pkgln_evaluaciones.pks
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/packages/pkgln_fhir.pks
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/packages/pkgln_franjas.pkb
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/packages/pkgln_franjas.pks
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/packages/pkgln_ghl2.pkb
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/packages/pkgln_ghl2.pks
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/packages/pkgln_incidentes.pkb
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/packages/pkgln_incidentes.pks
+[2026-10-29 12:04:09] [INFO]   [RENOMBRADO] schema_objects/packages/pkgln_membresias.pkb -> schema_objects_borrados/packages/pkgln_membresias.pkb
+[2026-10-29 12:04:09] [INFO]   [RENOMBRADO] schema_objects/packages/pkgln_membresias.pks -> schema_objects_borrados/packages/pkgln_membresias.pks
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/packages/pkgln_mensajes_nvo.pkb
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/packages/pkgln_mensajes_nvo.pks
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/packages/pkgln_mensajes_test.pkb
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/packages/pkgln_mensajes_test.pks
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/packages/pkgln_plantillas.pkb
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/packages/pkgln_plantillas.pks
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/packages/pkgln_suscripciones.pkb
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/packages/pkgln_suscripciones.pks
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/packages/pkgln_tiempos_atencion.pkb
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/packages/pkgln_tiempos_atencion.pks
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/packages/pkgtkr_horarios_profesional_dao.pkb
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/packages/pkgtkr_horarios_profesional_dao.pks
+[2026-10-29 12:04:09] [INFO]   [RENOMBRADO] schema_objects/packages/pkgtkr_param_membresia_ent_dao.pkb -> schema_objects_borrados/packages/pkgtkr_param_membresia_ent_dao.pkb
+[2026-10-29 12:04:09] [INFO]   [RENOMBRADO] schema_objects/packages/pkgtkr_param_membresia_ent_dao.pks -> schema_objects_borrados/packages/pkgtkr_param_membresia_ent_dao.pks
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/packages/pkgtkr_preguntas_dao.pkb
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/packages/pkgtkr_preguntas_dao.pks
+[2026-10-29 12:04:09] [INFO]   [RENOMBRADO] schema_objects/packages/pkgtkr_servicios_categoria_dao.pkb -> schema_objects_borrados/packages/pkgtkr_servicios_categoria_dao.pkb
+[2026-10-29 12:04:09] [INFO]   [RENOMBRADO] schema_objects/packages/pkgtkr_servicios_categoria_dao.pks -> schema_objects_borrados/packages/pkgtkr_servicios_categoria_dao.pks
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/packages/pkgtkr_test_asercion_dao.pkb
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/packages/pkgtkr_test_asercion_dao.pks
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/packages/pkgtkr_test_caso_dao.pkb
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/packages/pkgtkr_test_caso_dao.pks
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/packages/pkgtkr_test_detalle_ejecucion_dao.pkb
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/packages/pkgtkr_test_detalle_ejecucion_dao.pks
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/packages/pkgtkr_test_ejecucion_dao.pkb
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/packages/pkgtkr_test_ejecucion_dao.pks
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/packages/pkgtkr_test_mock_dato_dao.pkb
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/packages/pkgtkr_test_mock_dato_dao.pks
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/packages/pkgtkr_test_objeto_dao.pkb
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/packages/pkgtkr_test_objeto_dao.pks
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/packages/pkgtkr_test_suite_dao.pkb
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/packages/pkgtkr_test_suite_dao.pks
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/packages/pkgtkr_traza_config_dao.pkb
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/packages/pkgtkr_traza_config_dao.pks
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/packages/pkgtkr_traza_ejecucion_dao.pkb
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/packages/pkgtkr_traza_ejecucion_dao.pks
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/packages/pkgtkr_traza_estadistica_dao.pkb
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/packages/pkgtkr_traza_estadistica_dao.pks
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/packages/pkgtkr_traza_llamado_dao.pkb
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/packages/pkgtkr_traza_llamado_dao.pks
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/packages/plantillas_pkg.pks
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/packages/session_context.pkb
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/packages/session_context.pks
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/packages/uti_zoom_request_pkg.pkb
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/packages/uti_zoom_request_pkg.pks
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/procedures/create_request.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/procedures/eba_demo_ig_data.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/procedures/f_traer_consulta_x_id.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/procedures/log_debug.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/procedures/mi_procedimiento_json.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/procedures/p_autograbar_historia.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/procedures/p_cadena_epayco.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/procedures/p_ejecutar_python.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/procedures/p_ejecutar_script_pdf.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/procedures/p_ejecutar_script_pdf_bkp.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/procedures/p_ejecutar_script_pdf_debug.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/procedures/p_exportar_database.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/procedures/p_reliquidar.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/procedures/p_reporte_diario_citas1.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/procedures/p_tkr_envios_bq_gcs.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/procedures/p_tkr_envios_bq_gcs_todas.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/procedures/p_tkr_recarga_bq_gcs.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/procedures/prc_corregir_flujo_14_sin_citas.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/procedures/prc_reconstruir_flujo_14.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/procedures/prc_reconstruir_logs_citas.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/procedures/prc_resumen.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/procedures/prc_valores_citas.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/procedures/sp_insert_patologias_usuario.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/procedures/sp_obtener_tarifas_usuario.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/sequences/eba_demo_ig_dept_seq.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/sequences/eba_demo_ig_emp_seq.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/sequences/eba_demo_ig_people_seq.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/sequences/tkr_analisis_contactos_ghl_seq.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/sequences/tkr_asignacion_ids_ghl_seq.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/sequences/tkr_auditoria_envio_ghl_seq.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/sequences/tkr_bitacora_ghl_seq.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/sequences/tkr_borrar_json_seq.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/sequences/tkr_busqueda_contacto_ghl_seq.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/sequences/tkr_cie10_seq.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/sequences/tkr_cie3_seq.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/sequences/tkr_citas_audit_update_seq.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/sequences/tkr_citas_eventos_ghl_seq.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/sequences/tkr_citas_hora_seq.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/sequences/tkr_citas_pipeline_ghl_seq.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/sequences/tkr_conversiones_seq.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/sequences/tkr_cuestionario_respuesta_seq.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/sequences/tkr_disponibilidad_seq.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/sequences/tkr_franjas_profesional_seq.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/sequences/tkr_grupo_medicamentos_seq.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/sequences/tkr_horarios_profesional_seq.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/sequences/tkr_incidentes_novedades_seq.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/sequences/tkr_incidentes_seq.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/sequences/tkr_json_pagos_seq.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/sequences/tkr_log_ingreso_seq.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/sequences/tkr_migracion_oport_ghl_seq.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/sequences/tkr_modelos_relacionales_seq.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/sequences/tkr_mov_citas_pipeline_ghl_seq.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/sequences/tkr_mov_oportunidad_ghl_seq.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/sequences/tkr_operadores_seq.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/sequences/tkr_oportunidades_ghl_seq.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/sequences/tkr_permisos_reporte_seq.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/sequences/tkr_pregunta_asociativa_seq.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/sequences/tkr_rangos_interp_seq.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/sequences/tkr_rangos_interpretacion_seq.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/sequences/tkr_rangos_seq.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/sequences/tkr_respuesta_opciones_seq.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/sequences/tkr_solicitudes_workflow_ghl_seq.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/sequences/tkr_subgrupo_medicamentos_seq.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/sequences/tkr_tablas_auditorias_seq.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/sequences/tkr_tiempos_atencion_seq.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/sequences/tkr_tipos_cuest_seq.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/sequences/tkr_tipos_cuestionario_seq.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/sequences/tkr_tipos_incidente_seq.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/sequences/tkr_usuarios_api_seq.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/sequences/tkr_usuarios_temas_seq.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/sequences/tkr_variables_calculadas_det_seq.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/sequences/tkr_variables_calculadas_seq.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/sequences/tkr_variables_lista_seq.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/sequences/tkr_variables_medicas_seq.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/sequences/tkrbq_borrados_ghl_seq.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/sequences/trk_whatsapp_conversaciones_seq.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/sequences/ts_estados_tarea_seq.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/sequences/ts_log_tareas_seq.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/sequences/ts_roles_seq.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/sequences/ts_roles_usuario_seq.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/sequences/ts_tareas_seq.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/tables/borrar.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/tables/eba_demo_ig_dept.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/tables/eba_demo_ig_emp.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/tables/eba_demo_ig_people.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/tables/eba_ut_chart_projects.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/tables/eba_ut_chart_tasks.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/tables/eba_ut_demo_cards.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/tables/fhir_code_system.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/tables/fhir_content_type.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/tables/fhir_endpoint.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/tables/fhir_interaccion.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/tables/fhir_param_busqueda.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/tables/fhir_recurso.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/tables/fhir_status_recurso.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/tables/fhir_value_set.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/tables/fhir_value_set_detalle.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/tables/htmldb_plan_table.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/tables/log_debug_apex.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/tables/rel_endpoint_param.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/tables/suppliers.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/tables/tabla_prueba_json.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/tables/tkr_360.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/tables/tkr_360_1.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/tables/tkr_360_2.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/tables/tkr_analisis_contactos_ghl.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/tables/tkr_asignacion_ids_ghl.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/tables/tkr_auditoria_citas_temp.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/tables/tkr_auditoria_envio_ghl.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/tables/tkr_bitacora_ghl.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/tables/tkr_borrar_json.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/tables/tkr_borrrar.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/tables/tkr_busqueda_contacto_ghl.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/tables/tkr_campos_consulta_b.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/tables/tkr_cargue_emsanar.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/tables/tkr_citas_eventos_ghl.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/tables/tkr_citas_no_enviadas_ghl.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/tables/tkr_citas_pipeline_ghl.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/tables/tkr_computadores.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/tables/tkr_cons_bak_20261009_0813.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/tables/tkr_cons_bak_20261009_0818.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/tables/tkr_cons_bak_20261009_0819.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/tables/tkr_cons_bak_20261009_222847.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/tables/tkr_consultas_err$.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/tables/tkr_contactos_ghl_subcuenta_obligatorio.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/tables/tkr_contactos_ghl_subcuenta_soporte.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/tables/tkr_contactos_ghl_subcuenta_teker.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/tables/tkr_contactos_ghl_temp.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/tables/tkr_cuestionario_respuesta_bkp_rec.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/tables/tkr_cuestionario_respuesta_px.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/tables/tkr_disponibilidad_temp.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/tables/tkr_envios_bq_gcs.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/tables/tkr_fhir_causas_externas.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/tables/tkr_fhir_envios.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/tables/tkr_fhir_especialidades.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/tables/tkr_fhir_estatus_consumo_medicamento.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/tables/tkr_fhir_generos.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/tables/tkr_fhir_medicamentos_mipres.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/tables/tkr_fhir_procedimientos.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/tables/tkr_fhir_tipos_diagnosticos.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/tables/tkr_fhir_tipos_identificacion.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/tables/tkr_franjas_profesional.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/tables/tkr_horarios_profesional.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/tables/tkr_incidentes.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/tables/tkr_incidentes_novedades.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/tables/tkr_json_pagos.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/tables/tkr_lotes_bq_gcs.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/tables/tkr_med_old.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/tables/tkr_medicamentos_nueva.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/tables/tkr_medicamentos_oavq.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/tables/tkr_migracion_oportunidades_ghl.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/tables/tkr_modelos_relacionales.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/tables/tkr_mov_citas_pipeline_ghl.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/tables/tkr_movimientos_oportunidad_ghl.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/tables/tkr_oportunidades_ghl.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/tables/tkr_permisos_reporte.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/tables/tkr_plantillas_temp.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/tables/tkr_prueba_enc.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/tables/tkr_reporte_citas.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/tables/tkr_reportes.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/tables/tkr_responsable.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/tables/tkr_respuesta_opciones_bkp_rec.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/tables/tkr_respuesta_opciones_px.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/tables/tkr_respuestas_bkp_rec.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/tables/tkr_respuestas_px.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/tables/tkr_seguimiento_emsanar.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/tables/tkr_solicitudes_workflow_ghl.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/tables/tkr_sync_bq_expr.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/tables/tkr_tareas.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/tables/tkr_temas_reporte.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/tables/tkr_temp_emsanar.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/tables/tkr_temp_sura.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/tables/tkr_temporal.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/tables/tkr_tiempos_atencion.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/tables/tkr_tipos_incidente.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/tables/tkr_usuarios_api.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/tables/tkr_usuarios_temas.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/tables/tkr_variables_listas.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/tables/tkr_variables_rangos.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/tables/tkrbq_archivos.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/tables/tkrbq_auditorias.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/tables/tkrbq_ausencias_profesional.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/tables/tkrbq_borrados_ghl.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/tables/tkrbq_cie3.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/tables/tkrbq_citas_facturadas.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/tables/tkrbq_citas_medicas_notsync.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/tables/tkrbq_conceptos_pago.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/tables/tkrbq_cuestionario_respuesta.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/tables/tkrbq_cuestionarios.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/tables/tkrbq_detalle_contrato.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/tables/tkrbq_estados_pago.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/tables/tkrbq_fechas_contrato.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/tables/tkrbq_giris_facturar.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/tables/tkrbq_grupo_medicamentos.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/tables/tkrbq_horarios_doctor.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/tables/tkrbq_medicamentos.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/tables/tkrbq_observaciones_clinicas.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/tables/tkrbq_opciones_pregunta.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/tables/tkrbq_organizaciones.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/tables/tkrbq_pregunta_asociativa.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/tables/tkrbq_preguntas.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/tables/tkrbq_prescripciones.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/tables/tkrbq_rangos_interpretacion.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/tables/tkrbq_respuesta_opciones.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/tables/tkrbq_respuestas.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/tables/tkrbq_resultados_cuestionario.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/tables/tkrbq_secciones_cuestionario.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/tables/tkrbq_servicio_especialidad.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/tables/tkrbq_servicios_profesional.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/tables/tkrbq_subgrupo_medicamentos.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/tables/tkrbq_tipos_cuestionario.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/tables/tkrbq_variables_calculadas.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/tables/trk_whatsapp_conversaciones.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/triggers/bi_eba_demo_ig_dept.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/triggers/bi_eba_demo_ig_emp.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/triggers/bi_eba_demo_ig_people.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/triggers/tkr_citas_audit_update.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/triggers/tkr_usuarios_temas_bi.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/triggers/trg_au_tkr_bonos.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/triggers/trg_au_tkr_usuarios_grupo.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/triggers/trg_bi_tablas_auditorias.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/triggers/trg_bi_tkr_borrar_json.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/triggers/trg_bi_tkr_cie10.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/triggers/trg_bi_tkr_cie3.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/triggers/trg_bi_tkr_grupo_medicamentos.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/triggers/trg_bi_tkr_horarios_prof.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/triggers/trg_bi_tkr_modelos_relacionales.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/triggers/trg_bi_tkr_rangos_interpretacion.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/triggers/trg_bi_tkr_subgrupo_medicamentos.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/triggers/trg_bi_tkr_tiempos_atencion.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/triggers/trg_bi_tkr_usuarios_api.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/triggers/trg_logs_cita_estado.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/triggers/trg_sync_tkr_archivos.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/triggers/trg_sync_tkr_auditorias.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/triggers/trg_sync_tkr_ausencias_profesional.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/triggers/trg_sync_tkr_cie3.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/triggers/trg_sync_tkr_citas_facturadas.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/triggers/trg_sync_tkr_conceptos_pago.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/triggers/trg_sync_tkr_cuestionario_respuesta.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/triggers/trg_sync_tkr_cuestionarios.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/triggers/trg_sync_tkr_detalle_contrato.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/triggers/trg_sync_tkr_estados_pago.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/triggers/trg_sync_tkr_fechas_contrato.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/triggers/trg_sync_tkr_giris_facturar.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/triggers/trg_sync_tkr_grupo_medicamentos.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/triggers/trg_sync_tkr_horarios_doctor.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/triggers/trg_sync_tkr_medicamentos.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/triggers/trg_sync_tkr_observaciones_clinicas.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/triggers/trg_sync_tkr_opciones_pregunta.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/triggers/trg_sync_tkr_organizaciones.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/triggers/trg_sync_tkr_pregunta_asociativa.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/triggers/trg_sync_tkr_preguntas.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/triggers/trg_sync_tkr_prescripciones.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/triggers/trg_sync_tkr_rangos_interpretacion.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/triggers/trg_sync_tkr_respuesta_opciones.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/triggers/trg_sync_tkr_respuestas.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/triggers/trg_sync_tkr_resultados_cuestionario.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/triggers/trg_sync_tkr_secciones_cuestionario.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/triggers/trg_sync_tkr_servicio_especialidad.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/triggers/trg_sync_tkr_servicios_profesional.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/triggers/trg_sync_tkr_subgrupo_medicamentos.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/triggers/trg_sync_tkr_tipos_cuestionario.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/triggers/trg_sync_tkr_variables_calculadas.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/triggers/trg_tareas_color.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/triggers/trg_tkr_operadores_bi.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/triggers/trg_tkr_rangos_interp_bi.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/triggers/trg_tkr_secciones_cuest_bi.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/triggers/trg_tkr_secciones_cuestionario_bi.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/triggers/trg_tkr_tipos_cuest_bi.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/triggers/trg_vl_tkr_fecha_unix_vl.sql
+[2026-10-29 12:04:09] [INFO]   [NUEVO] schema_objects_borrados/views/v_medico_especialidad.sql
+[2026-10-29 12:04:11] [INFO] Commit realizado: chore(sync): backup objetos desarrollo [2026-10-29 12:04:09]
+[2026-10-29 12:04:15] [INFO] Push completado exitosamente a https://***@github.com/vqorlando68/agente_backup.git (rama desarrollo).
+[2026-10-29 12:04:15] [INFO] FIN DE PROCESO - DESARROLLO
+[2026-10-29 12:04:15] [INFO] ============================================================
+[2026-10-29 19:41:12] [INFO] ============================================================
+[2026-10-29 19:41:12] [INFO] INICIANDO AGENTE BACKUP - AMBIENTE: DESARROLLO
+[2026-10-29 19:41:12] [INFO] Conectando a tekerapp-db.maxapex.net:1521/orclpdb1 con usuario USUARIO_BACKUP_AGENT...
+[2026-10-29 19:41:12] [INFO] Esquema objetivo: TEKER_DEV
+[2026-10-29 19:41:14] [INFO] Conexion a Oracle establecida con exito.
+[2026-10-29 19:41:14] [INFO] Posicionando repositorio en la rama 'desarrollo'...
+[2026-10-29 19:41:21] [INFO] Encontrados 2354 objetos en el esquema TEKER_DEV
+[2026-10-29 19:41:24] [INFO] Cargados comentarios para 370 tablas.
+[2026-10-29 19:43:13] [INFO] Objeto borrado en BD detectado: functions\fn_auditar_cita_json.sql -> movido a schema_objects_borrados/functions\fn_auditar_cita_json.sql
+[2026-10-29 19:43:13] [INFO] Objeto borrado en BD detectado: functions\fn_valor_disponibilidad_medico.sql -> movido a schema_objects_borrados/functions\fn_valor_disponibilidad_medico.sql
+[2026-10-29 19:43:13] [INFO] Objeto borrado en BD detectado: functions\f_horas_especialidad.sql -> movido a schema_objects_borrados/functions\f_horas_especialidad.sql
+[2026-10-29 19:43:13] [INFO] Objeto borrado en BD detectado: functions\f_tkr_cols_json_bq.sql -> movido a schema_objects_borrados/functions\f_tkr_cols_json_bq.sql
+[2026-10-29 19:43:13] [INFO] Objeto borrado en BD detectado: functions\f_validar_clave_doctor2.sql -> movido a schema_objects_borrados/functions\f_validar_clave_doctor2.sql
+[2026-10-29 19:43:13] [INFO] Objeto borrado en BD detectado: functions\generar_uuid.sql -> movido a schema_objects_borrados/functions\generar_uuid.sql
+[2026-10-29 19:43:13] [INFO] Objeto borrado en BD detectado: jobs\actualizacion_contactos_crm_ghl.sql -> movido a schema_objects_borrados/jobs\actualizacion_contactos_crm_ghl.sql
+[2026-10-29 19:43:13] [INFO] Objeto borrado en BD detectado: jobs\actualizar_citas_crm.sql -> movido a schema_objects_borrados/jobs\actualizar_citas_crm.sql
+[2026-10-29 19:43:13] [INFO] Objeto borrado en BD detectado: jobs\generar_link_monitoreo_job.sql -> movido a schema_objects_borrados/jobs\generar_link_monitoreo_job.sql
+[2026-10-29 19:43:13] [INFO] Objeto borrado en BD detectado: jobs\job_crear_acceso_pacientes.sql -> movido a schema_objects_borrados/jobs\job_crear_acceso_pacientes.sql
+[2026-10-29 19:43:13] [INFO] Objeto borrado en BD detectado: jobs\job_crear_usuario_facturacion.sql -> movido a schema_objects_borrados/jobs\job_crear_usuario_facturacion.sql
+[2026-10-29 19:43:13] [INFO] Objeto borrado en BD detectado: jobs\job_get_token_ghl.sql -> movido a schema_objects_borrados/jobs\job_get_token_ghl.sql
+[2026-10-29 19:43:13] [INFO] Objeto borrado en BD detectado: jobs\job_get_token_ghl_extra.sql -> movido a schema_objects_borrados/jobs\job_get_token_ghl_extra.sql
+[2026-10-29 19:43:13] [INFO] Objeto borrado en BD detectado: jobs\job_giris_facturar_mensual.sql -> movido a schema_objects_borrados/jobs\job_giris_facturar_mensual.sql
+[2026-10-29 19:43:13] [INFO] Objeto borrado en BD detectado: jobs\job_marcar_activo_giris_horario.sql -> movido a schema_objects_borrados/jobs\job_marcar_activo_giris_horario.sql
+[2026-10-29 19:43:13] [INFO] Objeto borrado en BD detectado: jobs\job_marcar_citas_vencidas.sql -> movido a schema_objects_borrados/jobs\job_marcar_citas_vencidas.sql
+[2026-10-29 19:43:13] [INFO] Objeto borrado en BD detectado: jobs\job_minutos_zoom.sql -> movido a schema_objects_borrados/jobs\job_minutos_zoom.sql
+[2026-10-29 19:43:13] [INFO] Objeto borrado en BD detectado: jobs\job_pipeline_citas_voluntario_ghl.sql -> movido a schema_objects_borrados/jobs\job_pipeline_citas_voluntario_ghl.sql
+[2026-10-29 19:43:13] [INFO] Objeto borrado en BD detectado: jobs\job_pipeline_seguimiento_ghl.sql -> movido a schema_objects_borrados/jobs\job_pipeline_seguimiento_ghl.sql
+[2026-10-29 19:43:13] [INFO] Objeto borrado en BD detectado: jobs\job_procesos_diario.sql -> movido a schema_objects_borrados/jobs\job_procesos_diario.sql
+[2026-10-29 19:43:13] [INFO] Objeto borrado en BD detectado: jobs\job_process_sync_gcp.sql -> movido a schema_objects_borrados/jobs\job_process_sync_gcp.sql
+[2026-10-29 19:43:13] [INFO] Objeto borrado en BD detectado: jobs\job_reconstruir_logs_citas.sql -> movido a schema_objects_borrados/jobs\job_reconstruir_logs_citas.sql
+[2026-10-29 19:43:13] [INFO] Objeto borrado en BD detectado: jobs\job_recordatorio_citas_ws.sql -> movido a schema_objects_borrados/jobs\job_recordatorio_citas_ws.sql
+[2026-10-29 19:43:13] [INFO] Objeto borrado en BD detectado: jobs\job_recordatorio_pago.sql -> movido a schema_objects_borrados/jobs\job_recordatorio_pago.sql
+[2026-10-29 19:43:13] [INFO] Objeto borrado en BD detectado: jobs\job_reporte_diario_citas.sql -> movido a schema_objects_borrados/jobs\job_reporte_diario_citas.sql
+[2026-10-29 19:43:13] [INFO] Objeto borrado en BD detectado: jobs\job_resolver_ids_ghl.sql -> movido a schema_objects_borrados/jobs\job_resolver_ids_ghl.sql
+[2026-10-29 19:43:13] [INFO] Objeto borrado en BD detectado: jobs\job_sincroniza_agenda_20min.sql -> movido a schema_objects_borrados/jobs\job_sincroniza_agenda_20min.sql
+[2026-10-29 19:43:13] [INFO] Objeto borrado en BD detectado: jobs\job_validar_pagos.sql -> movido a schema_objects_borrados/jobs\job_validar_pagos.sql
+[2026-10-29 19:43:13] [INFO] Objeto borrado en BD detectado: jobs\scheduler_10_260716161645.sql -> movido a schema_objects_borrados/jobs\scheduler_10_260716161645.sql
+[2026-10-29 19:43:13] [INFO] Objeto borrado en BD detectado: jobs\scheduler_11_260716161706.sql -> movido a schema_objects_borrados/jobs\scheduler_11_260716161706.sql
+[2026-10-29 19:43:13] [INFO] Objeto borrado en BD detectado: jobs\scheduler_12_260716161731.sql -> movido a schema_objects_borrados/jobs\scheduler_12_260716161731.sql
+[2026-10-29 19:43:13] [INFO] Objeto borrado en BD detectado: jobs\scheduler_13_260716161759.sql -> movido a schema_objects_borrados/jobs\scheduler_13_260716161759.sql
+[2026-10-29 19:43:13] [INFO] Objeto borrado en BD detectado: jobs\scheduler_14_260708141225.sql -> movido a schema_objects_borrados/jobs\scheduler_14_260708141225.sql
+[2026-10-29 19:43:13] [INFO] Objeto borrado en BD detectado: jobs\scheduler_15_260716143818.sql -> movido a schema_objects_borrados/jobs\scheduler_15_260716143818.sql
+[2026-10-29 19:43:13] [INFO] Objeto borrado en BD detectado: jobs\scheduler_16_260716155248.sql -> movido a schema_objects_borrados/jobs\scheduler_16_260716155248.sql
+[2026-10-29 19:43:13] [INFO] Objeto borrado en BD detectado: jobs\scheduler_17_260729085722.sql -> movido a schema_objects_borrados/jobs\scheduler_17_260729085722.sql
+[2026-10-29 19:43:13] [INFO] Objeto borrado en BD detectado: jobs\scheduler_18_260729092452.sql -> movido a schema_objects_borrados/jobs\scheduler_18_260729092452.sql
+[2026-10-29 19:43:13] [INFO] Objeto borrado en BD detectado: jobs\scheduler_18_260729092455.sql -> movido a schema_objects_borrados/jobs\scheduler_18_260729092455.sql
+[2026-10-29 19:43:13] [INFO] Objeto borrado en BD detectado: jobs\scheduler_19_260917094039.sql -> movido a schema_objects_borrados/jobs\scheduler_19_260917094039.sql
+[2026-10-29 19:43:13] [INFO] Objeto borrado en BD detectado: jobs\scheduler_1_260617173448.sql -> movido a schema_objects_borrados/jobs\scheduler_1_260617173448.sql
+[2026-10-29 19:43:13] [INFO] Objeto borrado en BD detectado: jobs\scheduler_2_260716161014.sql -> movido a schema_objects_borrados/jobs\scheduler_2_260716161014.sql
+[2026-10-29 19:43:13] [INFO] Objeto borrado en BD detectado: jobs\scheduler_3_260716161216.sql -> movido a schema_objects_borrados/jobs\scheduler_3_260716161216.sql
+[2026-10-29 19:43:13] [INFO] Objeto borrado en BD detectado: jobs\scheduler_4_260716161341.sql -> movido a schema_objects_borrados/jobs\scheduler_4_260716161341.sql
+[2026-10-29 19:43:13] [INFO] Objeto borrado en BD detectado: jobs\scheduler_5_260716161448.sql -> movido a schema_objects_borrados/jobs\scheduler_5_260716161448.sql
+[2026-10-29 19:43:13] [INFO] Objeto borrado en BD detectado: jobs\scheduler_6_260716161509.sql -> movido a schema_objects_borrados/jobs\scheduler_6_260716161509.sql
+[2026-10-29 19:43:13] [INFO] Objeto borrado en BD detectado: jobs\scheduler_7_260716161530.sql -> movido a schema_objects_borrados/jobs\scheduler_7_260716161530.sql
+[2026-10-29 19:43:13] [INFO] Objeto borrado en BD detectado: jobs\scheduler_8_260716161551.sql -> movido a schema_objects_borrados/jobs\scheduler_8_260716161551.sql
+[2026-10-29 19:43:13] [INFO] Objeto borrado en BD detectado: jobs\scheduler_9_260716161610.sql -> movido a schema_objects_borrados/jobs\scheduler_9_260716161610.sql
+[2026-10-29 19:43:13] [INFO] Objeto borrado en BD detectado: packages\pkgcn_alertas.pkb -> movido a schema_objects_borrados/packages\pkgcn_alertas.pkb
+[2026-10-29 19:43:13] [INFO] Objeto borrado en BD detectado: packages\pkgcn_alertas.pks -> movido a schema_objects_borrados/packages\pkgcn_alertas.pks
+[2026-10-29 19:43:13] [INFO] Objeto borrado en BD detectado: packages\pkgcn_fhir.pkb -> movido a schema_objects_borrados/packages\pkgcn_fhir.pkb
+[2026-10-29 19:43:13] [INFO] Objeto borrado en BD detectado: packages\pkgcn_fhir.pks -> movido a schema_objects_borrados/packages\pkgcn_fhir.pks
+[2026-10-29 19:43:13] [INFO] Objeto borrado en BD detectado: packages\pkgcn_ghl2.pkb -> movido a schema_objects_borrados/packages\pkgcn_ghl2.pkb
+[2026-10-29 19:43:13] [INFO] Objeto borrado en BD detectado: packages\pkgcn_ghl2.pks -> movido a schema_objects_borrados/packages\pkgcn_ghl2.pks
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: packages\pkgln_estadisticas_bd.pkb -> movido a schema_objects_borrados/packages\pkgln_estadisticas_bd.pkb
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: packages\pkgln_estadisticas_bd.pks -> movido a schema_objects_borrados/packages\pkgln_estadisticas_bd.pks
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: packages\pkgln_evaluaciones.pkb -> movido a schema_objects_borrados/packages\pkgln_evaluaciones.pkb
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: packages\pkgln_evaluaciones.pks -> movido a schema_objects_borrados/packages\pkgln_evaluaciones.pks
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: packages\pkgln_fhir.pkb -> movido a schema_objects_borrados/packages\pkgln_fhir.pkb
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: packages\pkgln_fhir.pks -> movido a schema_objects_borrados/packages\pkgln_fhir.pks
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: packages\pkgln_ghl2.pkb -> movido a schema_objects_borrados/packages\pkgln_ghl2.pkb
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: packages\pkgln_ghl2.pks -> movido a schema_objects_borrados/packages\pkgln_ghl2.pks
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: packages\pkgln_mensajes_test.pkb -> movido a schema_objects_borrados/packages\pkgln_mensajes_test.pkb
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: packages\pkgln_mensajes_test.pks -> movido a schema_objects_borrados/packages\pkgln_mensajes_test.pks
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: packages\pkgln_suscripciones.pkb -> movido a schema_objects_borrados/packages\pkgln_suscripciones.pkb
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: packages\pkgln_suscripciones.pks -> movido a schema_objects_borrados/packages\pkgln_suscripciones.pks
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: packages\pkgtkr_convenios_tq_dao.pkb -> movido a schema_objects_borrados/packages\pkgtkr_convenios_tq_dao.pkb
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: packages\pkgtkr_convenios_tq_dao.pks -> movido a schema_objects_borrados/packages\pkgtkr_convenios_tq_dao.pks
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: packages\pkgtkr_preguntas_dao.pkb -> movido a schema_objects_borrados/packages\pkgtkr_preguntas_dao.pkb
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: packages\pkgtkr_preguntas_dao.pks -> movido a schema_objects_borrados/packages\pkgtkr_preguntas_dao.pks
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: procedures\prc_corregir_flujo_14_sin_citas.sql -> movido a schema_objects_borrados/procedures\prc_corregir_flujo_14_sin_citas.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: procedures\prc_reconstruir_flujo_14.sql -> movido a schema_objects_borrados/procedures\prc_reconstruir_flujo_14.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: procedures\prc_reconstruir_logs_citas.sql -> movido a schema_objects_borrados/procedures\prc_reconstruir_logs_citas.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: procedures\prc_resumen.sql -> movido a schema_objects_borrados/procedures\prc_resumen.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: procedures\prc_valores_citas.sql -> movido a schema_objects_borrados/procedures\prc_valores_citas.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: procedures\p_ejecutar_script_pdf.sql -> movido a schema_objects_borrados/procedures\p_ejecutar_script_pdf.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: procedures\p_ejecutar_script_pdf_bkp.sql -> movido a schema_objects_borrados/procedures\p_ejecutar_script_pdf_bkp.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: procedures\p_ejecutar_script_pdf_debug.sql -> movido a schema_objects_borrados/procedures\p_ejecutar_script_pdf_debug.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: procedures\p_enviar_aviso_teams.sql -> movido a schema_objects_borrados/procedures\p_enviar_aviso_teams.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: procedures\p_reliquidar.sql -> movido a schema_objects_borrados/procedures\p_reliquidar.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: procedures\p_reporte_diario_citas1.sql -> movido a schema_objects_borrados/procedures\p_reporte_diario_citas1.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: procedures\p_tkr_envios_bq_gcs.sql -> movido a schema_objects_borrados/procedures\p_tkr_envios_bq_gcs.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: procedures\p_tkr_envios_bq_gcs_todas.sql -> movido a schema_objects_borrados/procedures\p_tkr_envios_bq_gcs_todas.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: procedures\p_tkr_recarga_bq_gcs.sql -> movido a schema_objects_borrados/procedures\p_tkr_recarga_bq_gcs.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: procedures\sp_insert_patologias_usuario.sql -> movido a schema_objects_borrados/procedures\sp_insert_patologias_usuario.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: procedures\sp_obtener_tarifas_usuario.sql -> movido a schema_objects_borrados/procedures\sp_obtener_tarifas_usuario.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: sequences\tkrbq_borrados_ghl_seq.sql -> movido a schema_objects_borrados/sequences\tkrbq_borrados_ghl_seq.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: sequences\tkr_analisis_contactos_ghl_seq.sql -> movido a schema_objects_borrados/sequences\tkr_analisis_contactos_ghl_seq.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: sequences\tkr_asignacion_ids_ghl_seq.sql -> movido a schema_objects_borrados/sequences\tkr_asignacion_ids_ghl_seq.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: sequences\tkr_auditoria_envio_ghl_seq.sql -> movido a schema_objects_borrados/sequences\tkr_auditoria_envio_ghl_seq.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: sequences\tkr_bitacora_ghl_seq.sql -> movido a schema_objects_borrados/sequences\tkr_bitacora_ghl_seq.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: sequences\tkr_busqueda_contacto_ghl_seq.sql -> movido a schema_objects_borrados/sequences\tkr_busqueda_contacto_ghl_seq.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: sequences\tkr_cie10_seq.sql -> movido a schema_objects_borrados/sequences\tkr_cie10_seq.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: sequences\tkr_cie3_seq.sql -> movido a schema_objects_borrados/sequences\tkr_cie3_seq.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: sequences\tkr_citas_audit_update_seq.sql -> movido a schema_objects_borrados/sequences\tkr_citas_audit_update_seq.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: sequences\tkr_citas_eventos_ghl_seq.sql -> movido a schema_objects_borrados/sequences\tkr_citas_eventos_ghl_seq.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: sequences\tkr_citas_hora_seq.sql -> movido a schema_objects_borrados/sequences\tkr_citas_hora_seq.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: sequences\tkr_citas_pipeline_ghl_seq.sql -> movido a schema_objects_borrados/sequences\tkr_citas_pipeline_ghl_seq.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: sequences\tkr_disponibilidad_seq.sql -> movido a schema_objects_borrados/sequences\tkr_disponibilidad_seq.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: sequences\tkr_fhir_auditoria_sura_seq.sql -> movido a schema_objects_borrados/sequences\tkr_fhir_auditoria_sura_seq.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: sequences\tkr_fhir_lotes_sura_seq.sql -> movido a schema_objects_borrados/sequences\tkr_fhir_lotes_sura_seq.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: sequences\tkr_grupo_medicamentos_seq.sql -> movido a schema_objects_borrados/sequences\tkr_grupo_medicamentos_seq.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: sequences\tkr_migracion_oport_ghl_seq.sql -> movido a schema_objects_borrados/sequences\tkr_migracion_oport_ghl_seq.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: sequences\tkr_modelos_relacionales_seq.sql -> movido a schema_objects_borrados/sequences\tkr_modelos_relacionales_seq.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: sequences\tkr_mov_citas_pipeline_ghl_seq.sql -> movido a schema_objects_borrados/sequences\tkr_mov_citas_pipeline_ghl_seq.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: sequences\tkr_mov_oportunidad_ghl_seq.sql -> movido a schema_objects_borrados/sequences\tkr_mov_oportunidad_ghl_seq.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: sequences\tkr_operadores_seq.sql -> movido a schema_objects_borrados/sequences\tkr_operadores_seq.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: sequences\tkr_oportunidades_ghl_seq.sql -> movido a schema_objects_borrados/sequences\tkr_oportunidades_ghl_seq.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: sequences\tkr_permisos_reporte_seq.sql -> movido a schema_objects_borrados/sequences\tkr_permisos_reporte_seq.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: sequences\tkr_rangos_interp_seq.sql -> movido a schema_objects_borrados/sequences\tkr_rangos_interp_seq.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: sequences\tkr_solicitudes_workflow_ghl_seq.sql -> movido a schema_objects_borrados/sequences\tkr_solicitudes_workflow_ghl_seq.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: sequences\tkr_subgrupo_medicamentos_seq.sql -> movido a schema_objects_borrados/sequences\tkr_subgrupo_medicamentos_seq.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: sequences\tkr_tablas_auditorias_seq.sql -> movido a schema_objects_borrados/sequences\tkr_tablas_auditorias_seq.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: sequences\tkr_tipos_cuest_seq.sql -> movido a schema_objects_borrados/sequences\tkr_tipos_cuest_seq.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: sequences\tkr_usuarios_temas_seq.sql -> movido a schema_objects_borrados/sequences\tkr_usuarios_temas_seq.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: sequences\trk_whatsapp_conversaciones_seq.sql -> movido a schema_objects_borrados/sequences\trk_whatsapp_conversaciones_seq.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: tables\tabla_prueba_json.sql -> movido a schema_objects_borrados/tables\tabla_prueba_json.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: tables\tkrbq_archivos.sql -> movido a schema_objects_borrados/tables\tkrbq_archivos.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: tables\tkrbq_auditorias.sql -> movido a schema_objects_borrados/tables\tkrbq_auditorias.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: tables\tkrbq_ausencias_profesional.sql -> movido a schema_objects_borrados/tables\tkrbq_ausencias_profesional.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: tables\tkrbq_borrados_ghl.sql -> movido a schema_objects_borrados/tables\tkrbq_borrados_ghl.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: tables\tkrbq_categorias_causa.sql -> movido a schema_objects_borrados/tables\tkrbq_categorias_causa.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: tables\tkrbq_causas.sql -> movido a schema_objects_borrados/tables\tkrbq_causas.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: tables\tkrbq_cie3.sql -> movido a schema_objects_borrados/tables\tkrbq_cie3.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: tables\tkrbq_citas_facturadas.sql -> movido a schema_objects_borrados/tables\tkrbq_citas_facturadas.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: tables\tkrbq_citas_medicas_notsync.sql -> movido a schema_objects_borrados/tables\tkrbq_citas_medicas_notsync.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: tables\tkrbq_conceptos_pago.sql -> movido a schema_objects_borrados/tables\tkrbq_conceptos_pago.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: tables\tkrbq_cuestionarios.sql -> movido a schema_objects_borrados/tables\tkrbq_cuestionarios.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: tables\tkrbq_cuestionario_respuesta.sql -> movido a schema_objects_borrados/tables\tkrbq_cuestionario_respuesta.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: tables\tkrbq_detalle_contrato.sql -> movido a schema_objects_borrados/tables\tkrbq_detalle_contrato.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: tables\tkrbq_equipo_medico.sql -> movido a schema_objects_borrados/tables\tkrbq_equipo_medico.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: tables\tkrbq_estados_pago.sql -> movido a schema_objects_borrados/tables\tkrbq_estados_pago.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: tables\tkrbq_fechas_contrato.sql -> movido a schema_objects_borrados/tables\tkrbq_fechas_contrato.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: tables\tkrbq_giris_facturar.sql -> movido a schema_objects_borrados/tables\tkrbq_giris_facturar.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: tables\tkrbq_grupo_medicamentos.sql -> movido a schema_objects_borrados/tables\tkrbq_grupo_medicamentos.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: tables\tkrbq_horarios_doctor.sql -> movido a schema_objects_borrados/tables\tkrbq_horarios_doctor.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: tables\tkrbq_medicamentos.sql -> movido a schema_objects_borrados/tables\tkrbq_medicamentos.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: tables\tkrbq_observaciones_clinicas.sql -> movido a schema_objects_borrados/tables\tkrbq_observaciones_clinicas.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: tables\tkrbq_opciones_pregunta.sql -> movido a schema_objects_borrados/tables\tkrbq_opciones_pregunta.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: tables\tkrbq_organizaciones.sql -> movido a schema_objects_borrados/tables\tkrbq_organizaciones.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: tables\tkrbq_preguntas.sql -> movido a schema_objects_borrados/tables\tkrbq_preguntas.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: tables\tkrbq_pregunta_asociativa.sql -> movido a schema_objects_borrados/tables\tkrbq_pregunta_asociativa.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: tables\tkrbq_prescripciones.sql -> movido a schema_objects_borrados/tables\tkrbq_prescripciones.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: tables\tkrbq_rangos_interpretacion.sql -> movido a schema_objects_borrados/tables\tkrbq_rangos_interpretacion.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: tables\tkrbq_respuestas.sql -> movido a schema_objects_borrados/tables\tkrbq_respuestas.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: tables\tkrbq_respuesta_opciones.sql -> movido a schema_objects_borrados/tables\tkrbq_respuesta_opciones.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: tables\tkrbq_resultados_cuestionario.sql -> movido a schema_objects_borrados/tables\tkrbq_resultados_cuestionario.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: tables\tkrbq_secciones_cuestionario.sql -> movido a schema_objects_borrados/tables\tkrbq_secciones_cuestionario.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: tables\tkrbq_servicios_profesional.sql -> movido a schema_objects_borrados/tables\tkrbq_servicios_profesional.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: tables\tkrbq_servicio_especialidad.sql -> movido a schema_objects_borrados/tables\tkrbq_servicio_especialidad.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: tables\tkrbq_subgrupo_medicamentos.sql -> movido a schema_objects_borrados/tables\tkrbq_subgrupo_medicamentos.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: tables\tkrbq_tipos_cuestionario.sql -> movido a schema_objects_borrados/tables\tkrbq_tipos_cuestionario.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: tables\tkrbq_usuarios_variables.sql -> movido a schema_objects_borrados/tables\tkrbq_usuarios_variables.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: tables\tkrbq_valores_usu_riesgo.sql -> movido a schema_objects_borrados/tables\tkrbq_valores_usu_riesgo.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: tables\tkrbq_variables_calculadas.sql -> movido a schema_objects_borrados/tables\tkrbq_variables_calculadas.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: tables\tkrbq_variables_medicas.sql -> movido a schema_objects_borrados/tables\tkrbq_variables_medicas.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: tables\tkrbq_variables_monitoreo.sql -> movido a schema_objects_borrados/tables\tkrbq_variables_monitoreo.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: tables\tkr_360.sql -> movido a schema_objects_borrados/tables\tkr_360.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: tables\tkr_360_1.sql -> movido a schema_objects_borrados/tables\tkr_360_1.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: tables\tkr_360_2.sql -> movido a schema_objects_borrados/tables\tkr_360_2.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: tables\tkr_analisis_contactos_ghl.sql -> movido a schema_objects_borrados/tables\tkr_analisis_contactos_ghl.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: tables\tkr_asignacion_ids_ghl.sql -> movido a schema_objects_borrados/tables\tkr_asignacion_ids_ghl.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: tables\tkr_auditoria_citas_temp.sql -> movido a schema_objects_borrados/tables\tkr_auditoria_citas_temp.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: tables\tkr_auditoria_envio_ghl.sql -> movido a schema_objects_borrados/tables\tkr_auditoria_envio_ghl.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: tables\tkr_bitacora_ghl.sql -> movido a schema_objects_borrados/tables\tkr_bitacora_ghl.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: tables\tkr_borrrar.sql -> movido a schema_objects_borrados/tables\tkr_borrrar.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: tables\tkr_busqueda_contacto_ghl.sql -> movido a schema_objects_borrados/tables\tkr_busqueda_contacto_ghl.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: tables\tkr_cargue_emsanar.sql -> movido a schema_objects_borrados/tables\tkr_cargue_emsanar.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: tables\tkr_citas_eventos_ghl.sql -> movido a schema_objects_borrados/tables\tkr_citas_eventos_ghl.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: tables\tkr_citas_no_enviadas_ghl.sql -> movido a schema_objects_borrados/tables\tkr_citas_no_enviadas_ghl.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: tables\tkr_citas_pipeline_ghl.sql -> movido a schema_objects_borrados/tables\tkr_citas_pipeline_ghl.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: tables\tkr_computadores.sql -> movido a schema_objects_borrados/tables\tkr_computadores.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: tables\tkr_cons_bak_20261009_0813.sql -> movido a schema_objects_borrados/tables\tkr_cons_bak_20261009_0813.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: tables\tkr_cons_bak_20261009_0818.sql -> movido a schema_objects_borrados/tables\tkr_cons_bak_20261009_0818.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: tables\tkr_cons_bak_20261009_0819.sql -> movido a schema_objects_borrados/tables\tkr_cons_bak_20261009_0819.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: tables\tkr_cons_bak_20261009_222847.sql -> movido a schema_objects_borrados/tables\tkr_cons_bak_20261009_222847.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: tables\tkr_contactos_ghl_subcuenta_obligatorio.sql -> movido a schema_objects_borrados/tables\tkr_contactos_ghl_subcuenta_obligatorio.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: tables\tkr_contactos_ghl_subcuenta_soporte.sql -> movido a schema_objects_borrados/tables\tkr_contactos_ghl_subcuenta_soporte.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: tables\tkr_contactos_ghl_subcuenta_teker.sql -> movido a schema_objects_borrados/tables\tkr_contactos_ghl_subcuenta_teker.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: tables\tkr_contactos_ghl_temp.sql -> movido a schema_objects_borrados/tables\tkr_contactos_ghl_temp.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: tables\tkr_cuestionario_respuesta_bkp_rec.sql -> movido a schema_objects_borrados/tables\tkr_cuestionario_respuesta_bkp_rec.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: tables\tkr_cuestionario_respuesta_px.sql -> movido a schema_objects_borrados/tables\tkr_cuestionario_respuesta_px.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: tables\tkr_disponibilidad_temp.sql -> movido a schema_objects_borrados/tables\tkr_disponibilidad_temp.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: tables\tkr_envios_bq_gcs.sql -> movido a schema_objects_borrados/tables\tkr_envios_bq_gcs.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: tables\tkr_fhir_auditoria_sura.sql -> movido a schema_objects_borrados/tables\tkr_fhir_auditoria_sura.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: tables\tkr_fhir_causas_externas.sql -> movido a schema_objects_borrados/tables\tkr_fhir_causas_externas.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: tables\tkr_fhir_envios.sql -> movido a schema_objects_borrados/tables\tkr_fhir_envios.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: tables\tkr_fhir_especialidades.sql -> movido a schema_objects_borrados/tables\tkr_fhir_especialidades.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: tables\tkr_fhir_estatus_consumo_medicamento.sql -> movido a schema_objects_borrados/tables\tkr_fhir_estatus_consumo_medicamento.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: tables\tkr_fhir_generos.sql -> movido a schema_objects_borrados/tables\tkr_fhir_generos.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: tables\tkr_fhir_lotes_sura.sql -> movido a schema_objects_borrados/tables\tkr_fhir_lotes_sura.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: tables\tkr_fhir_medicamentos_mipres.sql -> movido a schema_objects_borrados/tables\tkr_fhir_medicamentos_mipres.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: tables\tkr_fhir_procedimientos.sql -> movido a schema_objects_borrados/tables\tkr_fhir_procedimientos.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: tables\tkr_fhir_tipos_diagnosticos.sql -> movido a schema_objects_borrados/tables\tkr_fhir_tipos_diagnosticos.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: tables\tkr_fhir_tipos_identificacion.sql -> movido a schema_objects_borrados/tables\tkr_fhir_tipos_identificacion.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: tables\tkr_lotes_bq_gcs.sql -> movido a schema_objects_borrados/tables\tkr_lotes_bq_gcs.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: tables\tkr_medicamentos_nueva.sql -> movido a schema_objects_borrados/tables\tkr_medicamentos_nueva.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: tables\tkr_medicamentos_oavq.sql -> movido a schema_objects_borrados/tables\tkr_medicamentos_oavq.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: tables\tkr_migracion_oportunidades_ghl.sql -> movido a schema_objects_borrados/tables\tkr_migracion_oportunidades_ghl.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: tables\tkr_modelos_relacionales.sql -> movido a schema_objects_borrados/tables\tkr_modelos_relacionales.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: tables\tkr_movimientos_oportunidad_ghl.sql -> movido a schema_objects_borrados/tables\tkr_movimientos_oportunidad_ghl.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: tables\tkr_mov_citas_pipeline_ghl.sql -> movido a schema_objects_borrados/tables\tkr_mov_citas_pipeline_ghl.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: tables\tkr_oportunidades_ghl.sql -> movido a schema_objects_borrados/tables\tkr_oportunidades_ghl.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: tables\tkr_permisos_reporte.sql -> movido a schema_objects_borrados/tables\tkr_permisos_reporte.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: tables\tkr_reportes.sql -> movido a schema_objects_borrados/tables\tkr_reportes.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: tables\tkr_responsable.sql -> movido a schema_objects_borrados/tables\tkr_responsable.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: tables\tkr_respuestas_bkp_rec.sql -> movido a schema_objects_borrados/tables\tkr_respuestas_bkp_rec.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: tables\tkr_respuestas_px.sql -> movido a schema_objects_borrados/tables\tkr_respuestas_px.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: tables\tkr_respuesta_opciones_bkp_rec.sql -> movido a schema_objects_borrados/tables\tkr_respuesta_opciones_bkp_rec.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: tables\tkr_respuesta_opciones_px.sql -> movido a schema_objects_borrados/tables\tkr_respuesta_opciones_px.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: tables\tkr_seguimiento_emsanar.sql -> movido a schema_objects_borrados/tables\tkr_seguimiento_emsanar.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: tables\tkr_solicitudes_workflow_ghl.sql -> movido a schema_objects_borrados/tables\tkr_solicitudes_workflow_ghl.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: tables\tkr_sync_bq_expr.sql -> movido a schema_objects_borrados/tables\tkr_sync_bq_expr.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: tables\tkr_tareas.sql -> movido a schema_objects_borrados/tables\tkr_tareas.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: tables\tkr_temas_reporte.sql -> movido a schema_objects_borrados/tables\tkr_temas_reporte.sql
+[2026-10-29 19:43:14] [INFO] Objeto borrado en BD detectado: tables\tkr_temporal.sql -> movido a schema_objects_borrados/tables\tkr_temporal.sql
+[2026-10-29 19:43:15] [INFO] Objeto borrado en BD detectado: tables\tkr_temp_emsanar.sql -> movido a schema_objects_borrados/tables\tkr_temp_emsanar.sql
+[2026-10-29 19:43:15] [INFO] Objeto borrado en BD detectado: tables\tkr_temp_sura.sql -> movido a schema_objects_borrados/tables\tkr_temp_sura.sql
+[2026-10-29 19:43:15] [INFO] Objeto borrado en BD detectado: tables\tkr_usuarios_temas.sql -> movido a schema_objects_borrados/tables\tkr_usuarios_temas.sql
+[2026-10-29 19:43:15] [INFO] Objeto borrado en BD detectado: tables\trk_whatsapp_conversaciones.sql -> movido a schema_objects_borrados/tables\trk_whatsapp_conversaciones.sql
+[2026-10-29 19:43:15] [INFO] Objeto borrado en BD detectado: triggers\tkr_citas_audit_update.sql -> movido a schema_objects_borrados/triggers\tkr_citas_audit_update.sql
+[2026-10-29 19:43:15] [INFO] Objeto borrado en BD detectado: triggers\tkr_usuarios_temas_bi.sql -> movido a schema_objects_borrados/triggers\tkr_usuarios_temas_bi.sql
+[2026-10-29 19:43:15] [INFO] Objeto borrado en BD detectado: triggers\trg_bi_tablas_auditorias.sql -> movido a schema_objects_borrados/triggers\trg_bi_tablas_auditorias.sql
+[2026-10-29 19:43:15] [INFO] Objeto borrado en BD detectado: triggers\trg_bi_tkr_cie10.sql -> movido a schema_objects_borrados/triggers\trg_bi_tkr_cie10.sql
+[2026-10-29 19:43:15] [INFO] Objeto borrado en BD detectado: triggers\trg_bi_tkr_cie3.sql -> movido a schema_objects_borrados/triggers\trg_bi_tkr_cie3.sql
+[2026-10-29 19:43:15] [INFO] Objeto borrado en BD detectado: triggers\trg_bi_tkr_grupo_medicamentos.sql -> movido a schema_objects_borrados/triggers\trg_bi_tkr_grupo_medicamentos.sql
+[2026-10-29 19:43:15] [INFO] Objeto borrado en BD detectado: triggers\trg_bi_tkr_modelos_relacionales.sql -> movido a schema_objects_borrados/triggers\trg_bi_tkr_modelos_relacionales.sql
+[2026-10-29 19:43:15] [INFO] Objeto borrado en BD detectado: triggers\trg_bi_tkr_subgrupo_medicamentos.sql -> movido a schema_objects_borrados/triggers\trg_bi_tkr_subgrupo_medicamentos.sql
+[2026-10-29 19:43:15] [INFO] Objeto borrado en BD detectado: triggers\trg_sync_tkr_archivos.sql -> movido a schema_objects_borrados/triggers\trg_sync_tkr_archivos.sql
+[2026-10-29 19:43:15] [INFO] Objeto borrado en BD detectado: triggers\trg_sync_tkr_auditorias.sql -> movido a schema_objects_borrados/triggers\trg_sync_tkr_auditorias.sql
+[2026-10-29 19:43:15] [INFO] Objeto borrado en BD detectado: triggers\trg_sync_tkr_ausencias_profesional.sql -> movido a schema_objects_borrados/triggers\trg_sync_tkr_ausencias_profesional.sql
+[2026-10-29 19:43:15] [INFO] Objeto borrado en BD detectado: triggers\trg_sync_tkr_categorias_causa.sql -> movido a schema_objects_borrados/triggers\trg_sync_tkr_categorias_causa.sql
+[2026-10-29 19:43:15] [INFO] Objeto borrado en BD detectado: triggers\trg_sync_tkr_causas.sql -> movido a schema_objects_borrados/triggers\trg_sync_tkr_causas.sql
+[2026-10-29 19:43:15] [INFO] Objeto borrado en BD detectado: triggers\trg_sync_tkr_cie3.sql -> movido a schema_objects_borrados/triggers\trg_sync_tkr_cie3.sql
+[2026-10-29 19:43:15] [INFO] Objeto borrado en BD detectado: triggers\trg_sync_tkr_citas_facturadas.sql -> movido a schema_objects_borrados/triggers\trg_sync_tkr_citas_facturadas.sql
+[2026-10-29 19:43:15] [INFO] Objeto borrado en BD detectado: triggers\trg_sync_tkr_conceptos_pago.sql -> movido a schema_objects_borrados/triggers\trg_sync_tkr_conceptos_pago.sql
+[2026-10-29 19:43:15] [INFO] Objeto borrado en BD detectado: triggers\trg_sync_tkr_cuestionarios.sql -> movido a schema_objects_borrados/triggers\trg_sync_tkr_cuestionarios.sql
+[2026-10-29 19:43:15] [INFO] Objeto borrado en BD detectado: triggers\trg_sync_tkr_cuestionario_respuesta.sql -> movido a schema_objects_borrados/triggers\trg_sync_tkr_cuestionario_respuesta.sql
+[2026-10-29 19:43:15] [INFO] Objeto borrado en BD detectado: triggers\trg_sync_tkr_detalle_contrato.sql -> movido a schema_objects_borrados/triggers\trg_sync_tkr_detalle_contrato.sql
+[2026-10-29 19:43:15] [INFO] Objeto borrado en BD detectado: triggers\trg_sync_tkr_equipo_medico.sql -> movido a schema_objects_borrados/triggers\trg_sync_tkr_equipo_medico.sql
+[2026-10-29 19:43:15] [INFO] Objeto borrado en BD detectado: triggers\trg_sync_tkr_estados_pago.sql -> movido a schema_objects_borrados/triggers\trg_sync_tkr_estados_pago.sql
+[2026-10-29 19:43:15] [INFO] Objeto borrado en BD detectado: triggers\trg_sync_tkr_fechas_contrato.sql -> movido a schema_objects_borrados/triggers\trg_sync_tkr_fechas_contrato.sql
+[2026-10-29 19:43:15] [INFO] Objeto borrado en BD detectado: triggers\trg_sync_tkr_giris_facturar.sql -> movido a schema_objects_borrados/triggers\trg_sync_tkr_giris_facturar.sql
+[2026-10-29 19:43:15] [INFO] Objeto borrado en BD detectado: triggers\trg_sync_tkr_grupo_medicamentos.sql -> movido a schema_objects_borrados/triggers\trg_sync_tkr_grupo_medicamentos.sql
+[2026-10-29 19:43:15] [INFO] Objeto borrado en BD detectado: triggers\trg_sync_tkr_horarios_doctor.sql -> movido a schema_objects_borrados/triggers\trg_sync_tkr_horarios_doctor.sql
+[2026-10-29 19:43:15] [INFO] Objeto borrado en BD detectado: triggers\trg_sync_tkr_medicamentos.sql -> movido a schema_objects_borrados/triggers\trg_sync_tkr_medicamentos.sql
+[2026-10-29 19:43:15] [INFO] Objeto borrado en BD detectado: triggers\trg_sync_tkr_observaciones_clinicas.sql -> movido a schema_objects_borrados/triggers\trg_sync_tkr_observaciones_clinicas.sql
+[2026-10-29 19:43:15] [INFO] Objeto borrado en BD detectado: triggers\trg_sync_tkr_opciones_pregunta.sql -> movido a schema_objects_borrados/triggers\trg_sync_tkr_opciones_pregunta.sql
+[2026-10-29 19:43:15] [INFO] Objeto borrado en BD detectado: triggers\trg_sync_tkr_organizaciones.sql -> movido a schema_objects_borrados/triggers\trg_sync_tkr_organizaciones.sql
+[2026-10-29 19:43:15] [INFO] Objeto borrado en BD detectado: triggers\trg_sync_tkr_preguntas.sql -> movido a schema_objects_borrados/triggers\trg_sync_tkr_preguntas.sql
+[2026-10-29 19:43:15] [INFO] Objeto borrado en BD detectado: triggers\trg_sync_tkr_pregunta_asociativa.sql -> movido a schema_objects_borrados/triggers\trg_sync_tkr_pregunta_asociativa.sql
+[2026-10-29 19:43:15] [INFO] Objeto borrado en BD detectado: triggers\trg_sync_tkr_prescripciones.sql -> movido a schema_objects_borrados/triggers\trg_sync_tkr_prescripciones.sql
+[2026-10-29 19:43:15] [INFO] Objeto borrado en BD detectado: triggers\trg_sync_tkr_rangos_interpretacion.sql -> movido a schema_objects_borrados/triggers\trg_sync_tkr_rangos_interpretacion.sql
+[2026-10-29 19:43:15] [INFO] Objeto borrado en BD detectado: triggers\trg_sync_tkr_respuestas.sql -> movido a schema_objects_borrados/triggers\trg_sync_tkr_respuestas.sql
+[2026-10-29 19:43:15] [INFO] Objeto borrado en BD detectado: triggers\trg_sync_tkr_respuesta_opciones.sql -> movido a schema_objects_borrados/triggers\trg_sync_tkr_respuesta_opciones.sql
+[2026-10-29 19:43:15] [INFO] Objeto borrado en BD detectado: triggers\trg_sync_tkr_resultados_cuestionario.sql -> movido a schema_objects_borrados/triggers\trg_sync_tkr_resultados_cuestionario.sql
+[2026-10-29 19:43:15] [INFO] Objeto borrado en BD detectado: triggers\trg_sync_tkr_secciones_cuestionario.sql -> movido a schema_objects_borrados/triggers\trg_sync_tkr_secciones_cuestionario.sql
+[2026-10-29 19:43:15] [INFO] Objeto borrado en BD detectado: triggers\trg_sync_tkr_servicios_profesional.sql -> movido a schema_objects_borrados/triggers\trg_sync_tkr_servicios_profesional.sql
+[2026-10-29 19:43:15] [INFO] Objeto borrado en BD detectado: triggers\trg_sync_tkr_servicio_especialidad.sql -> movido a schema_objects_borrados/triggers\trg_sync_tkr_servicio_especialidad.sql
+[2026-10-29 19:43:15] [INFO] Objeto borrado en BD detectado: triggers\trg_sync_tkr_subgrupo_medicamentos.sql -> movido a schema_objects_borrados/triggers\trg_sync_tkr_subgrupo_medicamentos.sql
+[2026-10-29 19:43:15] [INFO] Objeto borrado en BD detectado: triggers\trg_sync_tkr_tipos_cuestionario.sql -> movido a schema_objects_borrados/triggers\trg_sync_tkr_tipos_cuestionario.sql
+[2026-10-29 19:43:15] [INFO] Objeto borrado en BD detectado: triggers\trg_sync_tkr_usuarios_variables.sql -> movido a schema_objects_borrados/triggers\trg_sync_tkr_usuarios_variables.sql
+[2026-10-29 19:43:15] [INFO] Objeto borrado en BD detectado: triggers\trg_sync_tkr_valores_usu_riesgo.sql -> movido a schema_objects_borrados/triggers\trg_sync_tkr_valores_usu_riesgo.sql
+[2026-10-29 19:43:15] [INFO] Objeto borrado en BD detectado: triggers\trg_sync_tkr_variables_calculadas.sql -> movido a schema_objects_borrados/triggers\trg_sync_tkr_variables_calculadas.sql
+[2026-10-29 19:43:15] [INFO] Objeto borrado en BD detectado: triggers\trg_sync_tkr_variables_medicas.sql -> movido a schema_objects_borrados/triggers\trg_sync_tkr_variables_medicas.sql
+[2026-10-29 19:43:15] [INFO] Objeto borrado en BD detectado: triggers\trg_sync_tkr_variables_monitoreo.sql -> movido a schema_objects_borrados/triggers\trg_sync_tkr_variables_monitoreo.sql
+[2026-10-29 19:43:15] [INFO] Objeto borrado en BD detectado: triggers\trg_tareas_color.sql -> movido a schema_objects_borrados/triggers\trg_tareas_color.sql
+[2026-10-29 19:43:15] [INFO] Objeto borrado en BD detectado: triggers\trg_tkr_operadores_bi.sql -> movido a schema_objects_borrados/triggers\trg_tkr_operadores_bi.sql
+[2026-10-29 19:43:15] [INFO] Objeto borrado en BD detectado: triggers\trg_tkr_rangos_interp_bi.sql -> movido a schema_objects_borrados/triggers\trg_tkr_rangos_interp_bi.sql
+[2026-10-29 19:43:15] [INFO] Objeto borrado en BD detectado: triggers\trg_tkr_secciones_cuest_bi.sql -> movido a schema_objects_borrados/triggers\trg_tkr_secciones_cuest_bi.sql
+[2026-10-29 19:43:15] [INFO] Objeto borrado en BD detectado: triggers\trg_tkr_tipos_cuest_bi.sql -> movido a schema_objects_borrados/triggers\trg_tkr_tipos_cuest_bi.sql
+[2026-10-29 19:43:15] [INFO] Objeto borrado en BD detectado: triggers\trg_vl_tkr_fecha_unix_vl.sql -> movido a schema_objects_borrados/triggers\trg_vl_tkr_fecha_unix_vl.sql
+[2026-10-29 19:43:15] [INFO] Resumen extraccion: 198 extraidos/actualizados, 2156 sin cambios (omitidos), 272 movidos a borrados.
+[2026-10-29 19:43:15] [INFO] Conexion a Oracle cerrada.
+[2026-10-29 19:43:16] [INFO] Catalogo de buscador actualizado en objects_index.json (2826 objetos indexados para desarrollo).
+[2026-10-29 19:43:16] [INFO] Iniciando sincronizacion con Git en la rama 'desarrollo'...
+[2026-10-29 19:43:16] [INFO] Se detectaron 475 archivo(s) de objetos para subir a Git:
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/functions/cursor_to_json.sql
+[2026-10-29 19:43:16] [INFO]   [RENOMBRADO] schema_objects/packages/pkgcn_alertas.pkb -> schema_objects/functions/f_detecta_traslapes_horario.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/functions/f_horas_especialidad.sql
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/functions/f_tarifas_json_ui.sql
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/functions/f_tarifas_particular_json.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/functions/f_tkr_cols_json_bq.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/functions/f_validar_clave_doctor2.sql
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/functions/f_validar_token.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/functions/fn_auditar_cita_json.sql
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/functions/fn_autenticacion_usuario.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/functions/fn_valor_disponibilidad_medico.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/functions/generar_uuid.sql
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/functions/indi_c_ador_truef_a_lse.sql
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/functions/sql_to_json.sql
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/functions/sql_to_jsonr.sql
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/functions/transformar_a_json.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/jobs/actualizacion_contactos_crm_ghl.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/jobs/actualizar_citas_crm.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/jobs/generar_link_monitoreo_job.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/jobs/job_crear_acceso_pacientes.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/jobs/job_crear_usuario_facturacion.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/jobs/job_get_token_ghl.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/jobs/job_get_token_ghl_extra.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/jobs/job_giris_facturar_mensual.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/jobs/job_marcar_activo_giris_horario.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/jobs/job_marcar_citas_vencidas.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/jobs/job_minutos_zoom.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/jobs/job_pipeline_citas_voluntario_ghl.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/jobs/job_pipeline_seguimiento_ghl.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/jobs/job_procesos_diario.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/jobs/job_process_sync_gcp.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/jobs/job_reconstruir_logs_citas.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/jobs/job_recordatorio_citas_ws.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/jobs/job_recordatorio_pago.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/jobs/job_reporte_diario_citas.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/jobs/job_resolver_ids_ghl.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/jobs/job_sincroniza_agenda_20min.sql
+[2026-10-29 19:43:16] [INFO]   [RENOMBRADO] schema_objects/jobs/scheduler_1_260617173448.sql -> schema_objects/jobs/job_tkr_refrescar_agenda.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/jobs/job_validar_pagos.sql
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/jobs/run_script_job.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/jobs/scheduler_10_260716161645.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/jobs/scheduler_11_260716161706.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/jobs/scheduler_12_260716161731.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/jobs/scheduler_13_260716161759.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/jobs/scheduler_14_260708141225.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/jobs/scheduler_15_260716143818.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/jobs/scheduler_16_260716155248.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/jobs/scheduler_17_260729085722.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/jobs/scheduler_18_260729092452.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/jobs/scheduler_18_260729092455.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/jobs/scheduler_19_260917094039.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/jobs/scheduler_2_260716161014.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/jobs/scheduler_3_260716161216.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/jobs/scheduler_4_260716161341.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/jobs/scheduler_5_260716161448.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/jobs/scheduler_6_260716161509.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/jobs/scheduler_7_260716161530.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/jobs/scheduler_8_260716161551.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/jobs/scheduler_9_260716161610.sql
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/packages/chatgpt_pkg.pkb
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/packages/chatgpt_pkg.pks
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/packages/eba_demo_ig_text_pkg.pkb
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/packages/eba_demo_ig_text_pkg.pks
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/packages/pkgca_tkr_disponibilidad_bitmap.pkb
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/packages/pkgca_tkr_disponibilidad_bitmap.pks
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/packages/pkgca_tkr_franjas_profesional.pkb
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/packages/pkgca_tkr_franjas_profesional.pks
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/packages/pkgca_tkr_horarios_profesional.pkb
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/packages/pkgca_tkr_horarios_profesional.pks
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/packages/pkgca_tkr_plantillas.pkb
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/packages/pkgca_tkr_plantillas.pks
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/packages/pkgca_tkr_tiempos_atencion.pkb
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/packages/pkgca_tkr_tiempos_atencion.pks
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/packages/pkgcn_alertas.pks
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/packages/pkgcn_citas_nvo.pkb
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/packages/pkgcn_citas_nvo.pks
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/packages/pkgcn_directorio_profesionales.pkb
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/packages/pkgcn_directorio_profesionales.pks
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/packages/pkgcn_fhir.pkb
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/packages/pkgcn_fhir.pks
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/packages/pkgcn_franjas.pkb
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/packages/pkgcn_franjas.pks
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/packages/pkgcn_ghl2.pkb
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/packages/pkgcn_ghl2.pks
+[2026-10-29 19:43:16] [INFO]   [MODIFICADO] schema_objects/packages/pkgcn_horarios.pkb
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/packages/pkgcn_notificaciones.pkb
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/packages/pkgcn_notificaciones.pks
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/packages/pkgcn_perfil_profesional_nvo.pkb
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/packages/pkgcn_perfil_profesional_nvo.pks
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/packages/pkgcn_plantillas.pkb
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/packages/pkgcn_plantillas.pks
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/packages/pkgcn_tiempos_atencion.pkb
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/packages/pkgcn_tiempos_atencion.pks
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/packages/pkgdca_all_directories.pks
+[2026-10-29 19:43:16] [INFO]   [MODIFICADO] schema_objects/packages/pkgln_automatizaciones.pkb
+[2026-10-29 19:43:16] [INFO]   [MODIFICADO] schema_objects/packages/pkgln_automatizaciones.pks
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/packages/pkgln_constructor.pkb
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/packages/pkgln_constructor.pks
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/packages/pkgln_directorio_profesionales.pkb
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/packages/pkgln_directorio_profesionales.pks
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/packages/pkgln_estadisticas_bd.pkb
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/packages/pkgln_estadisticas_bd.pks
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/packages/pkgln_evaluaciones.pkb
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/packages/pkgln_evaluaciones.pks
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/packages/pkgln_fhir.pks
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/packages/pkgln_franjas.pkb
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/packages/pkgln_franjas.pks
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/packages/pkgln_ghl2.pkb
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/packages/pkgln_ghl2.pks
+[2026-10-29 19:43:16] [INFO]   [MODIFICADO] schema_objects/packages/pkgln_horarios.pkb
+[2026-10-29 19:43:16] [INFO]   [MODIFICADO] schema_objects/packages/pkgln_horarios.pks
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/packages/pkgln_incidentes.pkb
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/packages/pkgln_incidentes.pks
+[2026-10-29 19:43:16] [INFO]   [RENOMBRADO] schema_objects/packages/pkgln_mensajes_test.pkb -> schema_objects/packages/pkgln_mensajes_nvo.pkb
+[2026-10-29 19:43:16] [INFO]   [RENOMBRADO] schema_objects/packages/pkgln_mensajes_test.pks -> schema_objects/packages/pkgln_mensajes_nvo.pks
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/packages/pkgln_plantillas.pkb
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/packages/pkgln_plantillas.pks
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/packages/pkgln_suscripciones.pkb
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/packages/pkgln_suscripciones.pks
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/packages/pkgln_tiempos_atencion.pkb
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/packages/pkgln_tiempos_atencion.pks
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/packages/pkgtkr_disponibilidad_bitmap_dao.pkb
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/packages/pkgtkr_disponibilidad_bitmap_dao.pks
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/packages/pkgtkr_horarios_profesional_dao.pkb
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/packages/pkgtkr_horarios_profesional_dao.pks
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/packages/pkgtkr_preguntas_dao.pkb
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/packages/pkgtkr_preguntas_dao.pks
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/packages/pkgtkr_refrescar_agenda_dao.pkb
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/packages/pkgtkr_refrescar_agenda_dao.pks
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/packages/pkgtkr_test_asercion_dao.pkb
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/packages/pkgtkr_test_asercion_dao.pks
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/packages/pkgtkr_test_caso_dao.pkb
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/packages/pkgtkr_test_caso_dao.pks
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/packages/pkgtkr_test_detalle_ejecucion_dao.pkb
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/packages/pkgtkr_test_detalle_ejecucion_dao.pks
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/packages/pkgtkr_test_ejecucion_dao.pkb
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/packages/pkgtkr_test_ejecucion_dao.pks
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/packages/pkgtkr_test_mock_dato_dao.pkb
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/packages/pkgtkr_test_mock_dato_dao.pks
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/packages/pkgtkr_test_objeto_dao.pkb
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/packages/pkgtkr_test_objeto_dao.pks
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/packages/pkgtkr_test_suite_dao.pkb
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/packages/pkgtkr_test_suite_dao.pks
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/packages/pkgtkr_traza_config_dao.pkb
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/packages/pkgtkr_traza_config_dao.pks
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/packages/pkgtkr_traza_ejecucion_dao.pkb
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/packages/pkgtkr_traza_ejecucion_dao.pks
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/packages/pkgtkr_traza_estadistica_dao.pkb
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/packages/pkgtkr_traza_estadistica_dao.pks
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/packages/pkgtkr_traza_llamado_dao.pkb
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/packages/pkgtkr_traza_llamado_dao.pks
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/packages/plantillas_pkg.pks
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/packages/session_context.pkb
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/packages/session_context.pks
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/packages/uti_manejo_trazas_pkg.pkb
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/packages/uti_manejo_trazas_pkg.pks
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/packages/uti_zoom_request_pkg.pkb
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/packages/uti_zoom_request_pkg.pks
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/procedures/create_request.sql
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/procedures/eba_demo_ig_data.sql
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/procedures/f_traer_consulta_x_id.sql
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/procedures/log_debug.sql
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/procedures/mi_procedimiento_json.sql
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/procedures/p_autograbar_historia.sql
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/procedures/p_cadena_epayco.sql
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/procedures/p_ejecutar_python.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/procedures/p_ejecutar_script_pdf.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/procedures/p_ejecutar_script_pdf_bkp.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/procedures/p_ejecutar_script_pdf_debug.sql
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/procedures/p_exportar_database.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/procedures/p_reliquidar.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/procedures/p_reporte_diario_citas1.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/procedures/p_tkr_envios_bq_gcs.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/procedures/p_tkr_envios_bq_gcs_todas.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/procedures/p_tkr_recarga_bq_gcs.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/procedures/prc_corregir_flujo_14_sin_citas.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/procedures/prc_reconstruir_flujo_14.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/procedures/prc_reconstruir_logs_citas.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/procedures/prc_resumen.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/procedures/prc_valores_citas.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/procedures/sp_insert_patologias_usuario.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/procedures/sp_obtener_tarifas_usuario.sql
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/sequences/eba_demo_ig_dept_seq.sql
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/sequences/eba_demo_ig_emp_seq.sql
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/sequences/eba_demo_ig_people_seq.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/sequences/tkr_analisis_contactos_ghl_seq.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/sequences/tkr_asignacion_ids_ghl_seq.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/sequences/tkr_auditoria_envio_ghl_seq.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/sequences/tkr_bitacora_ghl_seq.sql
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/sequences/tkr_borrar_json_seq.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/sequences/tkr_busqueda_contacto_ghl_seq.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/sequences/tkr_cie10_seq.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/sequences/tkr_cie3_seq.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/sequences/tkr_citas_audit_update_seq.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/sequences/tkr_citas_eventos_ghl_seq.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/sequences/tkr_citas_hora_seq.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/sequences/tkr_citas_pipeline_ghl_seq.sql
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/sequences/tkr_conversiones_seq.sql
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/sequences/tkr_cuestionario_respuesta_seq.sql
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/sequences/tkr_disponibilidad_bitmap_seq.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/sequences/tkr_disponibilidad_seq.sql
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/sequences/tkr_franjas_profesional_seq.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/sequences/tkr_grupo_medicamentos_seq.sql
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/sequences/tkr_horarios_profesional_seq.sql
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/sequences/tkr_incidentes_novedades_seq.sql
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/sequences/tkr_incidentes_seq.sql
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/sequences/tkr_json_pagos_seq.sql
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/sequences/tkr_juicio_detalle_seq.sql
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/sequences/tkr_juicio_seq.sql
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/sequences/tkr_log_ingreso_seq.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/sequences/tkr_migracion_oport_ghl_seq.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/sequences/tkr_modelos_relacionales_seq.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/sequences/tkr_mov_citas_pipeline_ghl_seq.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/sequences/tkr_mov_oportunidad_ghl_seq.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/sequences/tkr_operadores_seq.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/sequences/tkr_oportunidades_ghl_seq.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/sequences/tkr_permisos_reporte_seq.sql
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/sequences/tkr_pregunta_asociativa_seq.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/sequences/tkr_rangos_interp_seq.sql
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/sequences/tkr_rangos_interpretacion_seq.sql
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/sequences/tkr_rangos_seq.sql
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/sequences/tkr_refrescar_agenda_seq.sql
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/sequences/tkr_respuesta_opciones_seq.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/sequences/tkr_solicitudes_workflow_ghl_seq.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/sequences/tkr_subgrupo_medicamentos_seq.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/sequences/tkr_tablas_auditorias_seq.sql
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/sequences/tkr_tiempos_atencion_seq.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/sequences/tkr_tipos_cuest_seq.sql
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/sequences/tkr_tipos_cuestionario_seq.sql
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/sequences/tkr_tipos_incidente_seq.sql
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/sequences/tkr_usuarios_api_seq.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/sequences/tkr_usuarios_temas_seq.sql
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/sequences/tkr_variables_calculadas_det_seq.sql
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/sequences/tkr_variables_calculadas_seq.sql
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/sequences/tkr_variables_lista_seq.sql
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/sequences/tkr_variables_medicas_seq.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/sequences/tkrbq_borrados_ghl_seq.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/sequences/trk_whatsapp_conversaciones_seq.sql
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/sequences/ts_estados_tarea_seq.sql
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/sequences/ts_log_tareas_seq.sql
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/sequences/ts_roles_seq.sql
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/sequences/ts_roles_usuario_seq.sql
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/sequences/ts_tareas_seq.sql
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/tables/borrar.sql
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/tables/eba_demo_ig_dept.sql
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/tables/eba_demo_ig_emp.sql
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/tables/eba_demo_ig_people.sql
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/tables/eba_ut_chart_projects.sql
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/tables/eba_ut_chart_tasks.sql
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/tables/eba_ut_demo_cards.sql
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/tables/fhir_code_system.sql
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/tables/fhir_content_type.sql
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/tables/fhir_endpoint.sql
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/tables/fhir_interaccion.sql
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/tables/fhir_param_busqueda.sql
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/tables/fhir_recurso.sql
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/tables/fhir_status_recurso.sql
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/tables/fhir_value_set.sql
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/tables/fhir_value_set_detalle.sql
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/tables/htmldb_plan_table.sql
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/tables/log_debug_apex.sql
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/tables/rel_endpoint_param.sql
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/tables/suppliers.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/tables/tabla_prueba_json.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/tables/tkr_360.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/tables/tkr_360_1.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/tables/tkr_360_2.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/tables/tkr_analisis_contactos_ghl.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/tables/tkr_asignacion_ids_ghl.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/tables/tkr_auditoria_citas_temp.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/tables/tkr_auditoria_envio_ghl.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/tables/tkr_bitacora_ghl.sql
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/tables/tkr_borrar_json.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/tables/tkr_borrrar.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/tables/tkr_busqueda_contacto_ghl.sql
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/tables/tkr_campos_consulta_b.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/tables/tkr_cargue_emsanar.sql
+[2026-10-29 19:43:16] [INFO]   [MODIFICADO] schema_objects/tables/tkr_citas.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/tables/tkr_citas_eventos_ghl.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/tables/tkr_citas_no_enviadas_ghl.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/tables/tkr_citas_pipeline_ghl.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/tables/tkr_computadores.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/tables/tkr_cons_bak_20261009_0813.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/tables/tkr_cons_bak_20261009_0818.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/tables/tkr_cons_bak_20261009_0819.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/tables/tkr_cons_bak_20261009_222847.sql
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/tables/tkr_consultas_err$.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/tables/tkr_contactos_ghl_subcuenta_obligatorio.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/tables/tkr_contactos_ghl_subcuenta_soporte.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/tables/tkr_contactos_ghl_subcuenta_teker.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/tables/tkr_contactos_ghl_temp.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/tables/tkr_cuestionario_respuesta_bkp_rec.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/tables/tkr_cuestionario_respuesta_px.sql
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/tables/tkr_disponibilidad_bitmap.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/tables/tkr_disponibilidad_temp.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/tables/tkr_envios_bq_gcs.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/tables/tkr_fhir_causas_externas.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/tables/tkr_fhir_envios.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/tables/tkr_fhir_especialidades.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/tables/tkr_fhir_estatus_consumo_medicamento.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/tables/tkr_fhir_generos.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/tables/tkr_fhir_medicamentos_mipres.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/tables/tkr_fhir_procedimientos.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/tables/tkr_fhir_tipos_diagnosticos.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/tables/tkr_fhir_tipos_identificacion.sql
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/tables/tkr_franjas_profesional.sql
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/tables/tkr_horarios_profesional.sql
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/tables/tkr_incidentes.sql
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/tables/tkr_incidentes_novedades.sql
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/tables/tkr_json_pagos.sql
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/tables/tkr_juicio.sql
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/tables/tkr_juicio_detalle.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/tables/tkr_lotes_bq_gcs.sql
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/tables/tkr_med_old.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/tables/tkr_medicamentos_nueva.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/tables/tkr_medicamentos_oavq.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/tables/tkr_migracion_oportunidades_ghl.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/tables/tkr_modelos_relacionales.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/tables/tkr_mov_citas_pipeline_ghl.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/tables/tkr_movimientos_oportunidad_ghl.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/tables/tkr_oportunidades_ghl.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/tables/tkr_permisos_reporte.sql
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/tables/tkr_plantillas_temp.sql
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/tables/tkr_prueba_enc.sql
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/tables/tkr_refrescar_agenda.sql
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/tables/tkr_reporte_citas.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/tables/tkr_reportes.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/tables/tkr_responsable.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/tables/tkr_respuesta_opciones_bkp_rec.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/tables/tkr_respuesta_opciones_px.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/tables/tkr_respuestas_bkp_rec.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/tables/tkr_respuestas_px.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/tables/tkr_seguimiento_emsanar.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/tables/tkr_solicitudes_workflow_ghl.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/tables/tkr_sync_bq_expr.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/tables/tkr_tareas.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/tables/tkr_temas_reporte.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/tables/tkr_temp_emsanar.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/tables/tkr_temp_sura.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/tables/tkr_temporal.sql
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/tables/tkr_tiempos_atencion.sql
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/tables/tkr_tipos_incidente.sql
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/tables/tkr_usuarios_api.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/tables/tkr_usuarios_temas.sql
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/tables/tkr_variables_listas.sql
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/tables/tkr_variables_rangos.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/tables/tkrbq_archivos.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/tables/tkrbq_auditorias.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/tables/tkrbq_ausencias_profesional.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/tables/tkrbq_borrados_ghl.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/tables/tkrbq_cie3.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/tables/tkrbq_citas_facturadas.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/tables/tkrbq_citas_medicas_notsync.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/tables/tkrbq_conceptos_pago.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/tables/tkrbq_cuestionario_respuesta.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/tables/tkrbq_cuestionarios.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/tables/tkrbq_detalle_contrato.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/tables/tkrbq_estados_pago.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/tables/tkrbq_fechas_contrato.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/tables/tkrbq_giris_facturar.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/tables/tkrbq_grupo_medicamentos.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/tables/tkrbq_horarios_doctor.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/tables/tkrbq_medicamentos.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/tables/tkrbq_observaciones_clinicas.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/tables/tkrbq_opciones_pregunta.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/tables/tkrbq_organizaciones.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/tables/tkrbq_pregunta_asociativa.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/tables/tkrbq_preguntas.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/tables/tkrbq_prescripciones.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/tables/tkrbq_rangos_interpretacion.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/tables/tkrbq_respuesta_opciones.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/tables/tkrbq_respuestas.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/tables/tkrbq_resultados_cuestionario.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/tables/tkrbq_secciones_cuestionario.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/tables/tkrbq_servicio_especialidad.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/tables/tkrbq_servicios_profesional.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/tables/tkrbq_subgrupo_medicamentos.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/tables/tkrbq_tipos_cuestionario.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/tables/tkrbq_variables_calculadas.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/tables/trk_whatsapp_conversaciones.sql
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/triggers/bi_eba_demo_ig_dept.sql
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/triggers/bi_eba_demo_ig_emp.sql
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/triggers/bi_eba_demo_ig_people.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/triggers/tkr_citas_audit_update.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/triggers/tkr_usuarios_temas_bi.sql
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/triggers/trg_au_tkr_bonos.sql
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/triggers/trg_au_tkr_citas.sql
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/triggers/trg_au_tkr_usuarios_grupo.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/triggers/trg_bi_tablas_auditorias.sql
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/triggers/trg_bi_tkr_borrar_json.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/triggers/trg_bi_tkr_cie10.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/triggers/trg_bi_tkr_cie3.sql
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/triggers/trg_bi_tkr_disp_bitmap.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/triggers/trg_bi_tkr_grupo_medicamentos.sql
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/triggers/trg_bi_tkr_horarios_prof.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/triggers/trg_bi_tkr_modelos_relacionales.sql
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/triggers/trg_bi_tkr_rangos_interpretacion.sql
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/triggers/trg_bi_tkr_refrescar_agenda.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/triggers/trg_bi_tkr_subgrupo_medicamentos.sql
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/triggers/trg_bi_tkr_tiempos_atencion.sql
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/triggers/trg_bi_tkr_usuarios_api.sql
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/triggers/trg_logs_cita_estado.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/triggers/trg_sync_tkr_archivos.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/triggers/trg_sync_tkr_auditorias.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/triggers/trg_sync_tkr_ausencias_profesional.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/triggers/trg_sync_tkr_cie3.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/triggers/trg_sync_tkr_citas_facturadas.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/triggers/trg_sync_tkr_conceptos_pago.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/triggers/trg_sync_tkr_cuestionario_respuesta.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/triggers/trg_sync_tkr_cuestionarios.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/triggers/trg_sync_tkr_detalle_contrato.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/triggers/trg_sync_tkr_estados_pago.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/triggers/trg_sync_tkr_fechas_contrato.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/triggers/trg_sync_tkr_giris_facturar.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/triggers/trg_sync_tkr_grupo_medicamentos.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/triggers/trg_sync_tkr_horarios_doctor.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/triggers/trg_sync_tkr_medicamentos.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/triggers/trg_sync_tkr_observaciones_clinicas.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/triggers/trg_sync_tkr_opciones_pregunta.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/triggers/trg_sync_tkr_organizaciones.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/triggers/trg_sync_tkr_pregunta_asociativa.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/triggers/trg_sync_tkr_preguntas.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/triggers/trg_sync_tkr_prescripciones.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/triggers/trg_sync_tkr_rangos_interpretacion.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/triggers/trg_sync_tkr_respuesta_opciones.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/triggers/trg_sync_tkr_respuestas.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/triggers/trg_sync_tkr_resultados_cuestionario.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/triggers/trg_sync_tkr_secciones_cuestionario.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/triggers/trg_sync_tkr_servicio_especialidad.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/triggers/trg_sync_tkr_servicios_profesional.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/triggers/trg_sync_tkr_subgrupo_medicamentos.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/triggers/trg_sync_tkr_tipos_cuestionario.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/triggers/trg_sync_tkr_variables_calculadas.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/triggers/trg_tareas_color.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/triggers/trg_tkr_operadores_bi.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/triggers/trg_tkr_rangos_interp_bi.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/triggers/trg_tkr_secciones_cuest_bi.sql
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/triggers/trg_tkr_secciones_cuestionario_bi.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/triggers/trg_tkr_tipos_cuest_bi.sql
+[2026-10-29 19:43:16] [INFO]   [ELIMINADO] schema_objects/triggers/trg_vl_tkr_fecha_unix_vl.sql
+[2026-10-29 19:43:16] [INFO]   [NUEVO] schema_objects/views/v_medico_especialidad.sql
+[2026-10-29 19:43:16] [INFO]   [MODIFICADO] schema_objects_borrados/jobs/job_process_sync_gcp.sql
+[2026-10-29 19:43:16] [INFO]   [RENOMBRADO] schema_objects/packages/pkgln_fhir.pkb -> schema_objects_borrados/packages/pkgln_fhir.pkb
+[2026-10-29 19:43:16] [INFO]   [MODIFICADO] schema_objects_borrados/packages/pkgln_fhir.pks
+[2026-10-29 19:43:16] [INFO]   [RENOMBRADO] schema_objects/packages/pkgtkr_convenios_tq_dao.pkb -> schema_objects_borrados/packages/pkgtkr_convenios_tq_dao.pkb
+[2026-10-29 19:43:16] [INFO]   [RENOMBRADO] schema_objects/packages/pkgtkr_convenios_tq_dao.pks -> schema_objects_borrados/packages/pkgtkr_convenios_tq_dao.pks
+[2026-10-29 19:43:16] [INFO]   [RENOMBRADO] schema_objects/procedures/p_enviar_aviso_teams.sql -> schema_objects_borrados/procedures/p_enviar_aviso_teams.sql
+[2026-10-29 19:43:16] [INFO]   [MODIFICADO] schema_objects_borrados/procedures/p_tkr_envios_bq_gcs_todas.sql
+[2026-10-29 19:43:16] [INFO]   [MODIFICADO] schema_objects_borrados/sequences/tkr_analisis_contactos_ghl_seq.sql
+[2026-10-29 19:43:16] [INFO]   [MODIFICADO] schema_objects_borrados/sequences/tkr_asignacion_ids_ghl_seq.sql
+[2026-10-29 19:43:16] [INFO]   [MODIFICADO] schema_objects_borrados/sequences/tkr_bitacora_ghl_seq.sql
+[2026-10-29 19:43:16] [INFO]   [MODIFICADO] schema_objects_borrados/sequences/tkr_citas_eventos_ghl_seq.sql
+[2026-10-29 19:43:16] [INFO]   [MODIFICADO] schema_objects_borrados/sequences/tkr_citas_pipeline_ghl_seq.sql
+[2026-10-29 19:43:16] [INFO]   [RENOMBRADO] schema_objects/sequences/tkr_fhir_auditoria_sura_seq.sql -> schema_objects_borrados/sequences/tkr_fhir_auditoria_sura_seq.sql
+[2026-10-29 19:43:16] [INFO]   [RENOMBRADO] schema_objects/sequences/tkr_fhir_lotes_sura_seq.sql -> schema_objects_borrados/sequences/tkr_fhir_lotes_sura_seq.sql
+[2026-10-29 19:43:16] [INFO]   [MODIFICADO] schema_objects_borrados/sequences/tkr_mov_citas_pipeline_ghl_seq.sql
+[2026-10-29 19:43:16] [INFO]   [MODIFICADO] schema_objects_borrados/sequences/tkr_mov_oportunidad_ghl_seq.sql
+[2026-10-29 19:43:16] [INFO]   [MODIFICADO] schema_objects_borrados/sequences/tkr_oportunidades_ghl_seq.sql
+[2026-10-29 19:43:16] [INFO]   [MODIFICADO] schema_objects_borrados/sequences/tkrbq_borrados_ghl_seq.sql
+[2026-10-29 19:43:16] [INFO]   [RENOMBRADO] schema_objects/tables/tkr_fhir_auditoria_sura.sql -> schema_objects_borrados/tables/tkr_fhir_auditoria_sura.sql
+[2026-10-29 19:43:16] [INFO]   [RENOMBRADO] schema_objects/tables/tkr_fhir_lotes_sura.sql -> schema_objects_borrados/tables/tkr_fhir_lotes_sura.sql
+[2026-10-29 19:43:16] [INFO]   [RENOMBRADO] schema_objects/tables/tkrbq_categorias_causa.sql -> schema_objects_borrados/tables/tkrbq_categorias_causa.sql
+[2026-10-29 19:43:16] [INFO]   [RENOMBRADO] schema_objects/tables/tkrbq_causas.sql -> schema_objects_borrados/tables/tkrbq_causas.sql
+[2026-10-29 19:43:16] [INFO]   [RENOMBRADO] schema_objects/tables/tkrbq_equipo_medico.sql -> schema_objects_borrados/tables/tkrbq_equipo_medico.sql
+[2026-10-29 19:43:16] [INFO]   [RENOMBRADO] schema_objects/tables/tkrbq_usuarios_variables.sql -> schema_objects_borrados/tables/tkrbq_usuarios_variables.sql
+[2026-10-29 19:43:16] [INFO]   [RENOMBRADO] schema_objects/tables/tkrbq_valores_usu_riesgo.sql -> schema_objects_borrados/tables/tkrbq_valores_usu_riesgo.sql
+[2026-10-29 19:43:16] [INFO]   [RENOMBRADO] schema_objects/tables/tkrbq_variables_medicas.sql -> schema_objects_borrados/tables/tkrbq_variables_medicas.sql
+[2026-10-29 19:43:16] [INFO]   [RENOMBRADO] schema_objects/tables/tkrbq_variables_monitoreo.sql -> schema_objects_borrados/tables/tkrbq_variables_monitoreo.sql
+[2026-10-29 19:43:16] [INFO]   [RENOMBRADO] schema_objects/triggers/trg_sync_tkr_categorias_causa.sql -> schema_objects_borrados/triggers/trg_sync_tkr_categorias_causa.sql
+[2026-10-29 19:43:16] [INFO]   [RENOMBRADO] schema_objects/triggers/trg_sync_tkr_causas.sql -> schema_objects_borrados/triggers/trg_sync_tkr_causas.sql
+[2026-10-29 19:43:16] [INFO]   [RENOMBRADO] schema_objects/triggers/trg_sync_tkr_equipo_medico.sql -> schema_objects_borrados/triggers/trg_sync_tkr_equipo_medico.sql
+[2026-10-29 19:43:16] [INFO]   [RENOMBRADO] schema_objects/triggers/trg_sync_tkr_usuarios_variables.sql -> schema_objects_borrados/triggers/trg_sync_tkr_usuarios_variables.sql
+[2026-10-29 19:43:16] [INFO]   [RENOMBRADO] schema_objects/triggers/trg_sync_tkr_valores_usu_riesgo.sql -> schema_objects_borrados/triggers/trg_sync_tkr_valores_usu_riesgo.sql
+[2026-10-29 19:43:16] [INFO]   [RENOMBRADO] schema_objects/triggers/trg_sync_tkr_variables_medicas.sql -> schema_objects_borrados/triggers/trg_sync_tkr_variables_medicas.sql
+[2026-10-29 19:43:16] [INFO]   [RENOMBRADO] schema_objects/triggers/trg_sync_tkr_variables_monitoreo.sql -> schema_objects_borrados/triggers/trg_sync_tkr_variables_monitoreo.sql
+[2026-10-29 19:43:17] [INFO] Commit realizado: chore(sync): backup objetos desarrollo [2026-10-29 19:43:16]
+[2026-10-29 19:43:21] [INFO] Push completado exitosamente a https://***@github.com/vqorlando68/agente_backup.git (rama desarrollo).
+[2026-10-29 19:43:21] [INFO] FIN DE PROCESO - DESARROLLO
+[2026-10-29 19:43:21] [INFO] ============================================================

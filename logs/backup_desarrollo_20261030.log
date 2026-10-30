@@ -1,0 +1,44 @@
+[2026-10-30 12:03:55] [INFO] ============================================================
+[2026-10-30 12:03:55] [INFO] INICIANDO AGENTE BACKUP - AMBIENTE: DESARROLLO
+[2026-10-30 12:03:55] [INFO] Conectando a samanya_high con usuario SAMANYA...
+[2026-10-30 12:03:55] [INFO] Utilizando Oracle Wallet en: C:\Repositorios\Backup_Samanya\agente_backup-desarrollo\wallet
+[2026-10-30 12:03:55] [INFO] Esquema objetivo: SAMANYA
+[2026-10-30 12:03:56] [INFO] Conexion a Oracle establecida con exito.
+[2026-10-30 12:03:57] [INFO] Vistas DBA_OBJECTS no accesibles. Utilizando catalogo ALL_OBJECTS...
+[2026-10-30 12:03:58] [INFO] Encontrados 618 objetos en el esquema SAMANYA
+[2026-10-30 12:04:00] [INFO] Cargados comentarios para 102 tablas.
+[2026-10-30 12:09:35] [INFO] Resumen extraccion: 618 extraidos/actualizados, 0 sin cambios (omitidos), 0 movidos a borrados.
+[2026-10-30 12:09:36] [INFO] Conexion a Oracle cerrada.
+[2026-10-30 12:09:36] [INFO] Catalogo de buscador actualizado en objects_index.json (618 objetos indexados para desarrollo).
+[2026-10-30 12:09:36] [INFO] Opcion --no-git activada. Se omite commit y push.
+[2026-10-30 12:09:36] [INFO] FIN DE PROCESO - DESARROLLO
+[2026-10-30 12:09:36] [INFO] ============================================================
+[2026-10-30 12:10:33] [INFO] ============================================================
+[2026-10-30 12:10:33] [INFO] INICIANDO AGENTE BACKUP - AMBIENTE: DESARROLLO
+[2026-10-30 12:10:33] [INFO] Conectando a samanya_high con usuario SAMANYA...
+[2026-10-30 12:10:33] [INFO] Utilizando Oracle Wallet en: C:\Repositorios\Backup_Samanya\agente_backup-desarrollo\wallet
+[2026-10-30 12:10:33] [INFO] Esquema objetivo: SAMANYA
+[2026-10-30 12:10:35] [ERROR] Error critico de conexion a Oracle: ORA-01017: invalid credential or not authorized; logon denied
+Help: https://docs.oracle.com/error-help/db/ora-01017/
+[2026-10-30 12:11:21] [INFO] ============================================================
+[2026-10-30 12:11:21] [INFO] INICIANDO AGENTE BACKUP - AMBIENTE: DESARROLLO
+[2026-10-30 12:11:21] [INFO] Conectando a samanya_high con usuario SAMANYA...
+[2026-10-30 12:11:21] [INFO] Utilizando Oracle Wallet en: C:\Repositorios\Backup_Samanya\agente_backup-desarrollo\wallet
+[2026-10-30 12:11:21] [INFO] Esquema objetivo: SAMANYA
+[2026-10-30 12:11:23] [ERROR] Error critico de conexion a Oracle: ORA-01017: invalid credential or not authorized; logon denied
+Help: https://docs.oracle.com/error-help/db/ora-01017/
+[2026-10-30 12:12:23] [INFO] ============================================================
+[2026-10-30 12:12:23] [INFO] INICIANDO AGENTE BACKUP - AMBIENTE: DESARROLLO
+[2026-10-30 12:12:23] [INFO] Conectando a samanya_high con usuario SAMANYA...
+[2026-10-30 12:12:23] [INFO] Utilizando Oracle Wallet en: C:\Repositorios\Backup_Samanya\agente_backup-desarrollo\wallet
+[2026-10-30 12:12:23] [INFO] Esquema objetivo: SAMANYA
+[2026-10-30 12:12:24] [INFO] Conexion a Oracle establecida con exito.
+[2026-10-30 12:12:24] [INFO] Posicionando repositorio en la rama 'desarrollo'...
+[2026-10-30 12:12:26] [INFO] Vistas DBA_OBJECTS no accesibles. Utilizando catalogo ALL_OBJECTS...
+[2026-10-30 12:12:27] [INFO] Encontrados 618 objetos en el esquema SAMANYA
+[2026-10-30 12:12:29] [INFO] Cargados comentarios para 102 tablas.
+[2026-10-30 12:12:30] [INFO] Resumen extraccion: 0 extraidos/actualizados, 618 sin cambios (omitidos), 0 movidos a borrados.
+[2026-10-30 12:12:30] [INFO] Conexion a Oracle cerrada.
+[2026-10-30 12:12:30] [INFO] Catalogo de buscador actualizado en objects_index.json (618 objetos indexados para desarrollo).
+[2026-10-30 12:12:30] [INFO] Iniciando sincronizacion con Git en la rama 'desarrollo'...
+[2026-10-30 12:12:30] [INFO] Creando rama local 'desarrollo'...

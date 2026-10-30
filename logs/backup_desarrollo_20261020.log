@@ -1,0 +1,29 @@
+[2026-10-20 13:48:48] [INFO] ============================================================
+[2026-10-20 13:48:48] [INFO] INICIANDO AGENTE BACKUP - AMBIENTE: DESARROLLO
+[2026-10-20 13:48:48] [INFO] Conectando a tekerapp-db.maxapex.net:1521/orclpdb1 con usuario USUARIO_BACKUP_AGENT...
+[2026-10-20 13:48:48] [INFO] Esquema objetivo: TEKER_DEV
+[2026-10-20 13:48:49] [INFO] Conexion a Oracle establecida con exito.
+[2026-10-20 13:48:52] [INFO] Encontrados 2312 objetos en el esquema TEKER_DEV
+[2026-10-20 13:48:55] [INFO] Cargados comentarios para 359 tablas.
+[2026-10-20 13:49:16] [INFO] Objeto borrado en BD detectado: packages\pkgca_tkr_param_membresia_ent.pkb -> movido a schema_objects_borrados/packages\pkgca_tkr_param_membresia_ent.pkb
+[2026-10-20 13:49:16] [INFO] Objeto borrado en BD detectado: packages\pkgca_tkr_param_membresia_ent.pks -> movido a schema_objects_borrados/packages\pkgca_tkr_param_membresia_ent.pks
+[2026-10-20 13:49:16] [INFO] Objeto borrado en BD detectado: packages\pkgca_tkr_servicios_categoria.pkb -> movido a schema_objects_borrados/packages\pkgca_tkr_servicios_categoria.pkb
+[2026-10-20 13:49:16] [INFO] Objeto borrado en BD detectado: packages\pkgca_tkr_servicios_categoria.pks -> movido a schema_objects_borrados/packages\pkgca_tkr_servicios_categoria.pks
+[2026-10-20 13:49:16] [INFO] Objeto borrado en BD detectado: packages\pkgcn_membresias.pkb -> movido a schema_objects_borrados/packages\pkgcn_membresias.pkb
+[2026-10-20 13:49:16] [INFO] Objeto borrado en BD detectado: packages\pkgcn_membresias.pks -> movido a schema_objects_borrados/packages\pkgcn_membresias.pks
+[2026-10-20 13:49:16] [INFO] Objeto borrado en BD detectado: packages\pkgln_envios.pkb -> movido a schema_objects_borrados/packages\pkgln_envios.pkb
+[2026-10-20 13:49:16] [INFO] Objeto borrado en BD detectado: packages\pkgln_envios.pks -> movido a schema_objects_borrados/packages\pkgln_envios.pks
+[2026-10-20 13:49:16] [INFO] Objeto borrado en BD detectado: packages\pkgln_estadisticas_bd.pkb -> movido a schema_objects_borrados/packages\pkgln_estadisticas_bd.pkb
+[2026-10-20 13:49:16] [INFO] Objeto borrado en BD detectado: packages\pkgln_estadisticas_bd.pks -> movido a schema_objects_borrados/packages\pkgln_estadisticas_bd.pks
+[2026-10-20 13:49:16] [INFO] Objeto borrado en BD detectado: packages\pkgln_membresias.pkb -> movido a schema_objects_borrados/packages\pkgln_membresias.pkb
+[2026-10-20 13:49:16] [INFO] Objeto borrado en BD detectado: packages\pkgln_membresias.pks -> movido a schema_objects_borrados/packages\pkgln_membresias.pks
+[2026-10-20 13:49:16] [INFO] Objeto borrado en BD detectado: packages\pkgtkr_param_membresia_ent_dao.pkb -> movido a schema_objects_borrados/packages\pkgtkr_param_membresia_ent_dao.pkb
+[2026-10-20 13:49:16] [INFO] Objeto borrado en BD detectado: packages\pkgtkr_param_membresia_ent_dao.pks -> movido a schema_objects_borrados/packages\pkgtkr_param_membresia_ent_dao.pks
+[2026-10-20 13:49:17] [INFO] Objeto borrado en BD detectado: packages\pkgtkr_servicios_categoria_dao.pkb -> movido a schema_objects_borrados/packages\pkgtkr_servicios_categoria_dao.pkb
+[2026-10-20 13:49:17] [INFO] Objeto borrado en BD detectado: packages\pkgtkr_servicios_categoria_dao.pks -> movido a schema_objects_borrados/packages\pkgtkr_servicios_categoria_dao.pks
+[2026-10-20 13:49:17] [INFO] Resumen extraccion: 12 extraidos/actualizados, 2300 sin cambios (omitidos), 16 movidos a borrados.
+[2026-10-20 13:49:17] [INFO] Conexion a Oracle cerrada.
+[2026-10-20 13:49:18] [INFO] Catalogo de buscador actualizado en objects_index.json (2336 objetos indexados para desarrollo).
+[2026-10-20 13:49:18] [INFO] Opcion --no-git activada. Se omite commit y push.
+[2026-10-20 13:49:18] [INFO] FIN DE PROCESO - DESARROLLO
+[2026-10-20 13:49:18] [INFO] ============================================================

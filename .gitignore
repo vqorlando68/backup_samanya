@@ -1,0 +1,18 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.venv/
+env/
+
+# Credenciales sensibles y configuracion local
+config/
+.env
+.env.*
+wallet/
+
+
+# IDEs
+.vscode/
+.idea/

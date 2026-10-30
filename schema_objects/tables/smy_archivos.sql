@@ -1,0 +1,64 @@
+CREATE TABLE SMY_ARCHIVOS 
+   (	"ID" NUMBER(10,0) NOT NULL ENABLE, 
+	"NOMBRE_ARCHIVO" VARCHAR2(255) COLLATE "USING_NLS_COMP" NOT NULL ENABLE, 
+	"NOMBRE_ARCHIVO_ALMACENADO" VARCHAR2(255) COLLATE "USING_NLS_COMP" NOT NULL ENABLE, 
+	"HASH_ARCHIVO" VARCHAR2(128) COLLATE "USING_NLS_COMP" NOT NULL ENABLE, 
+	"NOMBRE_DIRECTORIO_BD" VARCHAR2(128) COLLATE "USING_NLS_COMP", 
+	"RUTA_RELATIVA" VARCHAR2(1000) COLLATE "USING_NLS_COMP" NOT NULL ENABLE, 
+	"RUTA_COMPLETA_ALMACENAMIENTO" VARCHAR2(1500) COLLATE "USING_NLS_COMP" NOT NULL ENABLE, 
+	"EXTENSION" VARCHAR2(20) COLLATE "USING_NLS_COMP" NOT NULL ENABLE, 
+	"TIPO_MIME" VARCHAR2(100) COLLATE "USING_NLS_COMP" NOT NULL ENABLE, 
+	"TAMANO_BYTES" NUMBER(14,0) NOT NULL ENABLE, 
+	"ID_CLASE_ARCHIVO" NUMBER(10,0) NOT NULL ENABLE, 
+	"ID_CENTRO" NUMBER(10,0), 
+	"ID_RESIDENTE" NUMBER(10,0), 
+	"ID_EMPLEADO" NUMBER(10,0), 
+	"ID_ESTADO_ARCHIVO" NUMBER(10,0) DEFAULT 1 NOT NULL ENABLE, 
+	"TABLA_ORIGEN" VARCHAR2(50) COLLATE "USING_NLS_COMP", 
+	"ID_REGISTRO_ORIGEN" NUMBER(10,0), 
+	"METADATOS_JSON" CLOB COLLATE "USING_NLS_COMP", 
+	"FECHA_ELIMINACION" DATE, 
+	"ID_USUARIO_ELIMINACION" NUMBER(10,0), 
+	"FECHA_CREACION" DATE DEFAULT CAST(SYSTIMESTAMP AT TIME ZONE '-05:00' AS DATE) NOT NULL ENABLE, 
+	"FECHA_ULTIMA_MODIFICACION" DATE, 
+	"ID_USUARIO_ULTIMA_MODIFICACION" NUMBER(10,0), 
+	 CONSTRAINT "PK_SMY_ARCHIVOS" PRIMARY KEY ("ID")
+  USING INDEX  ENABLE, 
+	 CONSTRAINT "UQ_SMY_ARC_ALMACENADO" UNIQUE ("NOMBRE_ARCHIVO_ALMACENADO")
+  USING INDEX  ENABLE, 
+	 CONSTRAINT "FK_SMY_ARC_CLASE" FOREIGN KEY ("ID_CLASE_ARCHIVO")
+	  REFERENCES "SMY_CLASES_ARCHIVOS" ("ID") ENABLE, 
+	 CONSTRAINT "FK_SMY_ARC_CENTRO" FOREIGN KEY ("ID_CENTRO")
+	  REFERENCES "SMY_CENTROS" ("ID") ENABLE, 
+	 CONSTRAINT "FK_SMY_ARC_RESIDENTE" FOREIGN KEY ("ID_RESIDENTE")
+	  REFERENCES "SMY_RESIDENTES" ("ID") ENABLE, 
+	 CONSTRAINT "FK_SMY_ARC_EMPLEADO" FOREIGN KEY ("ID_EMPLEADO")
+	  REFERENCES "SMY_EMPLEADOS" ("ID") ENABLE, 
+	 CONSTRAINT "FK_SMY_ARC_ESTADO" FOREIGN KEY ("ID_ESTADO_ARCHIVO")
+	  REFERENCES "SMY_ESTADOS_ARCHIVOS" ("ID") ENABLE
+   )  DEFAULT COLLATION "USING_NLS_COMP" ;
+
+COMMENT ON TABLE SMY_ARCHIVOS IS 'Repositorio de metadatos de archivos físicos almacenados en servidor externo o directorio Oracle con nombres hasheados y ciclo de vida por estados.';
+COMMENT ON COLUMN SMY_ARCHIVOS.EXTENSION IS 'Extensión normalizada del archivo (.pdf, .jpg, .png).';
+COMMENT ON COLUMN SMY_ARCHIVOS.FECHA_CREACION IS 'Fecha y hora de registro con zona horaria legal de Bogotá (UTC-5).';
+COMMENT ON COLUMN SMY_ARCHIVOS.FECHA_ELIMINACION IS 'Fecha y hora en que se ejecutó el borrado lógico (ID_ESTADO_ARCHIVO = 2).';
+COMMENT ON COLUMN SMY_ARCHIVOS.FECHA_ULTIMA_MODIFICACION IS 'Fecha y hora de la última modificación en base de datos.';
+COMMENT ON COLUMN SMY_ARCHIVOS.HASH_ARCHIVO IS 'Hash criptográfico (SHA-256) del contenido para verificación de integridad y prevención de duplicados.';
+COMMENT ON COLUMN SMY_ARCHIVOS.ID IS 'Identificador único y clave primaria de la tabla SMY_ARCHIVOS.';
+COMMENT ON COLUMN SMY_ARCHIVOS.ID_CENTRO IS 'Clave foránea hacia SMY_CENTROS (permite aislamiento y partición de archivos por sede).';
+COMMENT ON COLUMN SMY_ARCHIVOS.ID_CLASE_ARCHIVO IS 'Clave foránea hacia SMY_CLASES_ARCHIVOS.';
+COMMENT ON COLUMN SMY_ARCHIVOS.ID_EMPLEADO IS 'Clave foránea hacia SMY_EMPLEADOS (permite carpetas específicas por colaborador / talento humano).';
+COMMENT ON COLUMN SMY_ARCHIVOS.ID_ESTADO_ARCHIVO IS 'Clave foránea hacia SMY_ESTADOS_ARCHIVOS (1=Activo/Disponible, 2=Eliminado/Papelera, etc.); reemplaza banderas binarias permitiendo trazabilidad de ciclo de vida.';
+COMMENT ON COLUMN SMY_ARCHIVOS.ID_REGISTRO_ORIGEN IS 'ID del registro en la tabla de negocio asociada.';
+COMMENT ON COLUMN SMY_ARCHIVOS.ID_RESIDENTE IS 'Clave foránea hacia SMY_RESIDENTES (permite carpetas específicas por residente).';
+COMMENT ON COLUMN SMY_ARCHIVOS.ID_USUARIO_ELIMINACION IS 'Identificador del usuario que ordenó la eliminación del archivo.';
+COMMENT ON COLUMN SMY_ARCHIVOS.ID_USUARIO_ULTIMA_MODIFICACION IS 'Identificador del usuario que realizó la última modificación.';
+COMMENT ON COLUMN SMY_ARCHIVOS.METADATOS_JSON IS 'Metadatos adicionales en formato JSON nativo (resolución, autor, escaneado, etc.).';
+COMMENT ON COLUMN SMY_ARCHIVOS.NOMBRE_ARCHIVO IS 'Nombre original con el que el usuario cargó el archivo (ej. cedula_carmen.pdf).';
+COMMENT ON COLUMN SMY_ARCHIVOS.NOMBRE_ARCHIVO_ALMACENADO IS 'Nombre único del archivo en el servidor de archivos basado en hash criptográfico (ej. e3b0c442...pdf).';
+COMMENT ON COLUMN SMY_ARCHIVOS.NOMBRE_DIRECTORIO_BD IS 'Nombre del Directory Object de Oracle (DIRECTORIO de BD creado con CREATE DIRECTORY) en el que se ubica el archivo; puede ser nulo si el archivo se aloja exclusivamente en storage externo o nube.';
+COMMENT ON COLUMN SMY_ARCHIVOS.RUTA_COMPLETA_ALMACENAMIENTO IS 'Ruta completa física o URI accesible por el servidor de almacenamiento.';
+COMMENT ON COLUMN SMY_ARCHIVOS.RUTA_RELATIVA IS 'Ruta relativa de directorios dinámica calculada según centro, residente y clase de archivo.';
+COMMENT ON COLUMN SMY_ARCHIVOS.TABLA_ORIGEN IS 'Nombre de la tabla de negocio asociada para relación polimórfica (ej. SMY_DOCUMENTOS_CLINICOS).';
+COMMENT ON COLUMN SMY_ARCHIVOS.TAMANO_BYTES IS 'Tamaño total del archivo medido en bytes.';
+COMMENT ON COLUMN SMY_ARCHIVOS.TIPO_MIME IS 'Tipo de contenido MIME del archivo (application/pdf, image/jpeg).';

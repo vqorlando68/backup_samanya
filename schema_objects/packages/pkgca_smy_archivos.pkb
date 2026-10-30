@@ -1,0 +1,108 @@
+CREATE OR REPLACE PACKAGE BODY PKGCA_SMY_ARCHIVOS 
+AS
+
+    FUNCTION fn_consultar_archivos_residente (
+        p_id_residente  IN smy_residentes.id%TYPE,
+        p_solo_visibles IN NUMBER DEFAULT 1
+    ) RETURN SYS_REFCURSOR
+    IS
+        l_cursor SYS_REFCURSOR;
+    BEGIN
+        OPEN l_cursor FOR
+            SELECT a.id,
+                   a.nombre_archivo,
+                   a.nombre_archivo_almacenado,
+                   a.hash_archivo,
+                   a.ruta_relativa,
+                   a.ruta_completa_almacenamiento,
+                   a.extension,
+                   a.tipo_mime,
+                   a.tamano_bytes,
+                   a.id_clase_archivo,
+                   c.nombre_clase,
+                   a.id_centro,
+                   a.id_residente,
+                   a.id_estado_archivo,
+                   e.nombre_estado_archivo,
+                   a.tabla_origen,
+                   a.id_registro_origen,
+                   a.metadatos_json,
+                   a.fecha_creacion,
+                   a.fecha_ultima_modificacion
+              FROM smy_archivos a,
+                   smy_clases_archivos c,
+                   smy_estados_archivos e
+             WHERE a.id_clase_archivo = c.id(+)
+               AND a.id_estado_archivo = e.id(+)
+               AND a.id_residente = p_id_residente
+               AND (p_solo_visibles = 0 OR a.id_estado_archivo = 1)
+             ORDER BY a.fecha_creacion DESC;
+
+        RETURN l_cursor;
+    END fn_consultar_archivos_residente;
+
+    FUNCTION fn_obtener_archivo_json (
+        p_id_archivo IN smy_archivos.id%TYPE
+    ) RETURN CLOB
+    IS
+        v_json CLOB;
+    BEGIN
+        SELECT JSON_OBJECT(
+                   'id' VALUE a.id,
+                   'nombre_archivo' VALUE a.nombre_archivo,
+                   'nombre_archivo_almacenado' VALUE a.nombre_archivo_almacenado,
+                   'hash_archivo' VALUE a.hash_archivo,
+                   'ruta_relativa' VALUE a.ruta_relativa,
+                   'ruta_completa_almacenamiento' VALUE a.ruta_completa_almacenamiento,
+                   'extension' VALUE a.extension,
+                   'tipo_mime' VALUE a.tipo_mime,
+                   'tamano_bytes' VALUE a.tamano_bytes,
+                   'id_clase_archivo' VALUE a.id_clase_archivo,
+                   'id_centro' VALUE a.id_centro,
+                   'id_residente' VALUE a.id_residente,
+                   'id_estado_archivo' VALUE a.id_estado_archivo,
+                   'tabla_origen' VALUE a.tabla_origen,
+                   'id_registro_origen' VALUE a.id_registro_origen,
+                   'metadatos_json' VALUE a.metadatos_json FORMAT JSON,
+                   'fecha_eliminacion' VALUE TO_CHAR(a.fecha_eliminacion, 'YYYY-MM-DD"T"HH24:MI:SS'),
+                   'fecha_creacion' VALUE TO_CHAR(a.fecha_creacion, 'YYYY-MM-DD"T"HH24:MI:SS'),
+                   'id_usuario_ultima_modificacion' VALUE a.id_usuario_ultima_modificacion
+                   RETURNING CLOB
+               )
+          INTO v_json
+          FROM smy_archivos a
+         WHERE a.id = p_id_archivo;
+
+        RETURN v_json;
+    EXCEPTION
+        WHEN NO_DATA_FOUND THEN
+            RETURN NULL;
+    END fn_obtener_archivo_json;
+
+    FUNCTION fn_obtener_id_por_almacenado (
+        pcl_json IN CLOB
+    ) RETURN NUMBER
+    IS
+        v_nombre_almacenado smy_archivos.nombre_archivo_almacenado%TYPE;
+        v_id                smy_archivos.id%TYPE;
+    BEGIN
+        v_nombre_almacenado := TRIM(JSON_VALUE(pcl_json, '$.nombreArchivoAlmacenado'));
+        IF v_nombre_almacenado IS NULL THEN
+            RETURN NULL;
+        END IF;
+
+        BEGIN
+            SELECT a.id
+              INTO v_id
+              FROM smy_archivos a
+             WHERE a.nombre_archivo_almacenado = v_nombre_almacenado
+               AND ROWNUM = 1;
+            RETURN v_id;
+        EXCEPTION
+            WHEN NO_DATA_FOUND THEN
+                RETURN NULL;
+        END;
+    END fn_obtener_id_por_almacenado;
+
+END PKGCA_SMY_ARCHIVOS;
+/
