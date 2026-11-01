@@ -1,0 +1,14 @@
+[2026-11-01 13:00:04] [INFO] ============================================================
+[2026-11-01 13:00:04] [INFO] INICIANDO AGENTE BACKUP - AMBIENTE: DESARROLLO
+[2026-11-01 13:00:04] [INFO] Conectando a samanya_high con usuario SAMANYA...
+[2026-11-01 13:00:04] [INFO] Utilizando Oracle Wallet en: C:\Repositorios\Backup_Samanya\agente_backup-desarrollo\wallet
+[2026-11-01 13:00:04] [INFO] Esquema objetivo: SAMANYA
+[2026-11-01 13:00:05] [INFO] Conexion a Oracle establecida con exito.
+[2026-11-01 13:00:05] [INFO] Posicionando repositorio en la rama 'desarrollo'...
+[2026-11-01 13:00:07] [INFO] Vistas DBA_OBJECTS no accesibles. Utilizando catalogo ALL_OBJECTS...
+[2026-11-01 13:00:09] [INFO] Encontrados 618 objetos en el esquema SAMANYA
+[2026-11-01 13:00:11] [INFO] Cargados comentarios para 102 tablas.
+[2026-11-01 13:00:12] [INFO] Resumen extraccion: 0 extraidos/actualizados, 618 sin cambios (omitidos), 0 movidos a borrados.
+[2026-11-01 13:00:12] [INFO] Conexion a Oracle cerrada.
+[2026-11-01 13:00:12] [INFO] Catalogo de buscador actualizado en objects_index.json (618 objetos indexados para desarrollo).
+[2026-11-01 13:00:12] [INFO] Iniciando sincronizacion con Git en la rama 'desarrollo'...
