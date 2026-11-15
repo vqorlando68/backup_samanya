@@ -45,5 +45,10 @@ AS
         p_json IN CLOB DEFAULT NULL
     ) RETURN CLOB;
 
+    -- 8. Obtener ID de asignación usuario-centro si existe
+    FUNCTION fn_obtener_centro_usuario_id (
+        p_json IN CLOB
+    ) RETURN NUMBER;
+
 END PKGCN_SUPERADMIN;
 /

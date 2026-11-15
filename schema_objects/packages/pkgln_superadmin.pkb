@@ -50,7 +50,7 @@ AS
             vro_auditoria.accion         := 'ACCESO_DENEGADO_ROL';
             vro_auditoria.direccion_ip   := SUBSTR(v_ip, 1, 45);
             vro_auditoria.detalles       := 'Acceso denegado: El usuario no es Superusuario (ID_TIPO_USUARIO = ' || v_id_tipo_usuario || ')';
-            vro_auditoria.fecha_creacion := f_fecha_actual;
+            vro_auditoria.fecha_creacion := CAST(SYSTIMESTAMP AT TIME ZONE '-05:00' AS DATE);
 
             pkgsmy_auditoria_accesos_dao.p_insertar(vro_auditoria);
             p_do_commit('pkgln_superadmin.pr_login');
@@ -102,7 +102,7 @@ AS
         vro_auditoria.accion         := SUBSTR(v_accion, 1, 50);
         vro_auditoria.direccion_ip   := SUBSTR(NVL(v_in_obj.get_string('direccionIp'), '127.0.0.1'), 1, 45);
         vro_auditoria.detalles       := SUBSTR(v_in_obj.get_string('detalles'), 1, 4000);
-        vro_auditoria.fecha_creacion := f_fecha_actual;
+        vro_auditoria.fecha_creacion := CAST(SYSTIMESTAMP AT TIME ZONE '-05:00' AS DATE);
 
         -- Inserción vía DAO (Sin INSERT directo)
         pkgsmy_auditoria_accesos_dao.p_insertar(vro_auditoria);
@@ -110,7 +110,7 @@ AS
         -- Si es login exitoso, actualizar último acceso con DAO (Sin UPDATE directo)
         IF v_accion = 'LOGIN_EXITOSO' AND v_id_usuario IS NOT NULL THEN
             IF pkgsmy_usuarios_dao.f_existe(v_id_usuario, vro_usuario) THEN
-                vro_usuario.ultimo_acceso := f_fecha_actual;
+                vro_usuario.ultimo_acceso := CAST(SYSTIMESTAMP AT TIME ZONE '-05:00' AS DATE);
                 pkgsmy_usuarios_dao.p_actualizar(vro_usuario);
             END IF;
         END IF;
@@ -180,8 +180,8 @@ AS
             vro_org.email_corporativo              := LOWER(TRIM(v_in_obj.get_string('emailCorporativo')));
             vro_org.telefono_contacto              := TRIM(v_in_obj.get_string('telefonoContacto'));
             vro_org.sitio_web                      := TRIM(v_in_obj.get_string('sitioWeb'));
-            vro_org.id_archivo_logo                := NVL(v_in_obj.get_number('idArchivoLogo'), v_in_obj.get_number('idArchivo'));
             vro_org.id_estado_organizacion         := NVL(v_in_obj.get_number('idEstadoOrganizacion'), vro_org.id_estado_organizacion);
+            vro_org.maneja_inventario              := NVL(UPPER(TRIM(v_in_obj.get_string('manejaInventario'))), vro_org.maneja_inventario);
             vro_org.id_usuario_ultima_modificacion := v_user_id;
 
             pkgsmy_organizaciones_dao.p_actualizar(vro_org);
@@ -196,9 +196,11 @@ AS
             vro_org.email_corporativo              := LOWER(TRIM(v_in_obj.get_string('emailCorporativo')));
             vro_org.telefono_contacto              := TRIM(v_in_obj.get_string('telefonoContacto'));
             vro_org.sitio_web                      := TRIM(v_in_obj.get_string('sitioWeb'));
-            vro_org.id_archivo_logo                := NVL(v_in_obj.get_number('idArchivoLogo'), v_in_obj.get_number('idArchivo'));
             vro_org.id_estado_organizacion         := NVL(v_in_obj.get_number('idEstadoOrganizacion'), 1);
-            vro_org.fecha_creacion                 := f_fecha_actual;
+            vro_org.maneja_inventario              := NVL(UPPER(TRIM(v_in_obj.get_string('manejaInventario'))), 'S');
+            vro_org.maneja_costos_inventario       := NVL(vro_org.maneja_costos_inventario, 'S');
+            vro_org.maneja_alimentacion            := NVL(vro_org.maneja_alimentacion, 'S');
+            vro_org.fecha_creacion                 := CAST(SYSTIMESTAMP AT TIME ZONE '-05:00' AS DATE);
             vro_org.id_usuario_ultima_modificacion := v_user_id;
 
             pkgsmy_organizaciones_dao.p_insertar(vro_org);
@@ -288,6 +290,7 @@ AS
             vro_cen.email_contacto                 := LOWER(TRIM(v_in_obj.get_string('emailContacto')));
             vro_cen.capacidad_residentes           := NVL(v_in_obj.get_number('capacidadResidentes'), vro_cen.capacidad_residentes);
             vro_cen.id_estado_centro               := NVL(v_in_obj.get_number('idEstadoCentro'), vro_cen.id_estado_centro);
+            vro_cen.maneja_inventario              := NVL(UPPER(TRIM(v_in_obj.get_string('manejaInventario'))), vro_cen.maneja_inventario);
             vro_cen.id_usuario_ultima_modificacion := v_user_id;
 
             pkgsmy_centros_dao.p_actualizar(vro_cen);
@@ -304,7 +307,10 @@ AS
             vro_cen.email_contacto                 := LOWER(TRIM(v_in_obj.get_string('emailContacto')));
             vro_cen.capacidad_residentes           := NVL(v_in_obj.get_number('capacidadResidentes'), 0);
             vro_cen.id_estado_centro               := NVL(v_in_obj.get_number('idEstadoCentro'), 1);
-            vro_cen.fecha_creacion                 := f_fecha_actual;
+            vro_cen.maneja_inventario              := NVL(UPPER(TRIM(v_in_obj.get_string('manejaInventario'))), 'S');
+            vro_cen.maneja_costos_inventario       := NVL(vro_cen.maneja_costos_inventario, 'S');
+            vro_cen.maneja_alimentacion            := NVL(vro_cen.maneja_alimentacion, 'S');
+            vro_cen.fecha_creacion                 := CAST(SYSTIMESTAMP AT TIME ZONE '-05:00' AS DATE);
             vro_cen.id_usuario_ultima_modificacion := v_user_id;
 
             pkgsmy_centros_dao.p_insertar(vro_cen);
@@ -368,17 +374,25 @@ AS
     PROCEDURE pr_guardar_usuario (
         p_json IN OUT NOCOPY CLOB
     ) IS
-        v_in_obj   JSON_OBJECT_T;
-        v_out_obj  JSON_OBJECT_T;
-        vro_usu    smy_usuarios%ROWTYPE;
-        v_id       NUMBER(10);
-        v_pass     VARCHAR2(255);
-        v_user_id  NUMBER(10);
+        v_in_obj        JSON_OBJECT_T;
+        v_out_obj       JSON_OBJECT_T;
+        vro_usu         smy_usuarios%ROWTYPE;
+        vro_cen         smy_centros%ROWTYPE;
+        vro_cu          smy_centro_usuarios%ROWTYPE;
+        v_id            NUMBER(10);
+        v_pass          VARCHAR2(255);
+        v_user_id       NUMBER(10);
+        v_id_centro     NUMBER(10);
+        v_es_principal  CHAR(1);
+        v_id_cu         NUMBER(10);
+        v_cu_obj        JSON_OBJECT_T;
     BEGIN
-        v_in_obj  := JSON_OBJECT_T.parse(p_json);
-        v_id      := v_in_obj.get_number('id');
-        v_pass    := v_in_obj.get_string('passwordHash');
-        v_user_id := v_in_obj.get_number('idUsuarioAccion');
+        v_in_obj       := JSON_OBJECT_T.parse(p_json);
+        v_id           := v_in_obj.get_number('id');
+        v_pass         := v_in_obj.get_string('passwordHash');
+        v_user_id      := v_in_obj.get_number('idUsuarioAccion');
+        v_id_centro    := v_in_obj.get_number('idCentro');
+        v_es_principal := NVL(UPPER(TRIM(v_in_obj.get_string('esSedePrincipal'))), 'S');
 
         IF v_id IS NOT NULL AND v_id > 0 AND pkgsmy_usuarios_dao.f_existe(v_id, vro_usu) THEN
             -- Actualización con DAO (Sin UPDATE directo)
@@ -391,7 +405,6 @@ AS
             END IF;
             vro_usu.nombre_completo                := TRIM(v_in_obj.get_string('nombreCompleto'));
             vro_usu.telefono                       := TRIM(v_in_obj.get_string('telefono'));
-            vro_usu.id_archivo_foto_perfil         := NVL(v_in_obj.get_number('idArchivoFotoPerfil'), v_in_obj.get_number('idArchivo'));
             vro_usu.id_canal_notif_pref            := NVL(v_in_obj.get_number('idCanalNotifPref'), vro_usu.id_canal_notif_pref);
             vro_usu.id_estado_usuario              := NVL(v_in_obj.get_number('idEstadoUsuario'), vro_usu.id_estado_usuario);
             vro_usu.id_usuario_ultima_modificacion := v_user_id;
@@ -407,13 +420,44 @@ AS
             vro_usu.password_hash                  := v_pass;
             vro_usu.nombre_completo                := TRIM(v_in_obj.get_string('nombreCompleto'));
             vro_usu.telefono                       := TRIM(v_in_obj.get_string('telefono'));
-            vro_usu.id_archivo_foto_perfil         := NVL(v_in_obj.get_number('idArchivoFotoPerfil'), v_in_obj.get_number('idArchivo'));
             vro_usu.id_canal_notif_pref            := NVL(v_in_obj.get_number('idCanalNotifPref'), 1);
             vro_usu.id_estado_usuario              := NVL(v_in_obj.get_number('idEstadoUsuario'), 1);
-            vro_usu.fecha_creacion                 := f_fecha_actual;
+            vro_usu.fecha_creacion                 := CAST(SYSTIMESTAMP AT TIME ZONE '-05:00' AS DATE);
             vro_usu.id_usuario_ultima_modificacion := v_user_id;
 
             pkgsmy_usuarios_dao.p_insertar(vro_usu);
+        END IF;
+
+        -- Asignación del usuario/administrador a la Sede / Centro (SMY_CENTRO_USUARIOS)
+        IF v_id_centro IS NOT NULL AND v_id_centro > 0 THEN
+            IF NOT pkgsmy_centros_dao.f_existe(v_id_centro, vro_cen) THEN
+                RAISE_APPLICATION_ERROR(-20003, 'La sede o centro seleccionado no existe.');
+            END IF;
+
+            v_cu_obj := JSON_OBJECT_T();
+            v_cu_obj.put('idUsuario', vro_usu.id);
+            v_cu_obj.put('idCentro', v_id_centro);
+
+            v_id_cu := pkgcn_superadmin.fn_obtener_centro_usuario_id(v_cu_obj.to_clob());
+
+            IF v_id_cu IS NOT NULL AND pkgsmy_centro_usuarios_dao.f_existe(v_id_cu, vro_cu) THEN
+                vro_cu.id_rol                         := vro_usu.id_rol;
+                vro_cu.es_sede_principal              := v_es_principal;
+                vro_cu.estado_activo                  := 'S';
+                vro_cu.id_usuario_ultima_modificacion := v_user_id;
+                pkgsmy_centro_usuarios_dao.p_actualizar(vro_cu);
+            ELSE
+                vro_cu.id                             := SEQ_SMY_CENTRO_USUARIOS.NEXTVAL;
+                vro_cu.id_centro                      := v_id_centro;
+                vro_cu.id_usuario                     := vro_usu.id;
+                vro_cu.id_rol                         := vro_usu.id_rol;
+                vro_cu.es_sede_principal              := v_es_principal;
+                vro_cu.estado_activo                  := 'S';
+                vro_cu.fecha_asignacion               := CAST(SYSTIMESTAMP AT TIME ZONE '-05:00' AS DATE);
+                vro_cu.fecha_creacion                 := CAST(SYSTIMESTAMP AT TIME ZONE '-05:00' AS DATE);
+                vro_cu.id_usuario_ultima_modificacion := v_user_id;
+                pkgsmy_centro_usuarios_dao.p_insertar(vro_cu);
+            END IF;
         END IF;
 
         p_do_commit('pkgln_superadmin.pr_guardar_usuario');
@@ -498,7 +542,7 @@ AS
             vro_par.es_encriptado                  := NVL(v_in_obj.get_string('esEncriptado'), 'N');
             vro_par.es_sistema                     := NVL(v_in_obj.get_string('esSistema'), 'N');
             vro_par.id_estado_parametro            := NVL(v_in_obj.get_number('idEstadoParametro'), 1);
-            vro_par.fecha_ultima_modificacion      := f_fecha_actual;
+            vro_par.fecha_ultima_modificacion      := CAST(SYSTIMESTAMP AT TIME ZONE '-05:00' AS DATE);
             vro_par.id_usuario_ultima_modificacion := v_user_id;
 
             pkgsmy_parametros_dao.p_actualizar(vro_par);
@@ -517,8 +561,8 @@ AS
             vro_par.es_encriptado                  := NVL(v_in_obj.get_string('esEncriptado'), 'N');
             vro_par.es_sistema                     := NVL(v_in_obj.get_string('esSistema'), 'N');
             vro_par.id_estado_parametro            := NVL(v_in_obj.get_number('idEstadoParametro'), 1);
-            vro_par.fecha_creacion                 := f_fecha_actual;
-            vro_par.fecha_ultima_modificacion      := f_fecha_actual;
+            vro_par.fecha_creacion                 := CAST(SYSTIMESTAMP AT TIME ZONE '-05:00' AS DATE);
+            vro_par.fecha_ultima_modificacion      := CAST(SYSTIMESTAMP AT TIME ZONE '-05:00' AS DATE);
             vro_par.id_usuario_ultima_modificacion := v_user_id;
 
             pkgsmy_parametros_dao.p_insertar(vro_par);
@@ -633,7 +677,7 @@ AS
                     vro_tu.id_organizacion := v_id_org;
                     vro_tu.nombre_tipo_usuario := v_nombre;
                     vro_tu.descripcion := v_desc;
-                    vro_tu.fecha_creacion := f_fecha_actual;
+                    vro_tu.fecha_creacion := CAST(SYSTIMESTAMP AT TIME ZONE '-05:00' AS DATE);
                     vro_tu.id_usuario_ultima_modificacion := v_user_id;
                     pkgsmy_tipos_usuarios_dao.p_insertar(vro_tu);
                     v_id := vro_tu.id;
@@ -654,7 +698,7 @@ AS
                     vro_rol.nombre := v_nombre;
                     vro_rol.descripcion := v_desc;
                     vro_rol.id_estado_rol := 1;
-                    vro_rol.fecha_creacion := f_fecha_actual;
+                    vro_rol.fecha_creacion := CAST(SYSTIMESTAMP AT TIME ZONE '-05:00' AS DATE);
                     vro_rol.id_usuario_ultima_modificacion := v_user_id;
                     pkgsmy_roles_dao.p_insertar(vro_rol);
                     v_id := vro_rol.id;
@@ -670,7 +714,7 @@ AS
                     vro_er.id := SEQ_SMY_ESTADOS_ROLES.NEXTVAL;
                     vro_er.id_organizacion := v_id_org;
                     vro_er.nombre_estado_rol := v_nombre;
-                    vro_er.fecha_creacion := f_fecha_actual;
+                    vro_er.fecha_creacion := CAST(SYSTIMESTAMP AT TIME ZONE '-05:00' AS DATE);
                     vro_er.id_usuario_ultima_modificacion := v_user_id;
                     pkgsmy_estados_roles_dao.p_insertar(vro_er);
                     v_id := vro_er.id;
@@ -686,7 +730,7 @@ AS
                     vro_eu.id := SEQ_SMY_ESTADOS_USUARIOS.NEXTVAL;
                     vro_eu.id_organizacion := v_id_org;
                     vro_eu.nombre_estado_usuario := v_nombre;
-                    vro_eu.fecha_creacion := f_fecha_actual;
+                    vro_eu.fecha_creacion := CAST(SYSTIMESTAMP AT TIME ZONE '-05:00' AS DATE);
                     vro_eu.id_usuario_ultima_modificacion := v_user_id;
                     pkgsmy_estados_usuarios_dao.p_insertar(vro_eu);
                     v_id := vro_eu.id;
@@ -702,7 +746,7 @@ AS
                     vro_cn.id := SEQ_SMY_CANALES_NOTIFICACION.NEXTVAL;
                     vro_cn.id_organizacion := v_id_org;
                     vro_cn.nombre_canal_notificacion := v_nombre;
-                    vro_cn.fecha_creacion := f_fecha_actual;
+                    vro_cn.fecha_creacion := CAST(SYSTIMESTAMP AT TIME ZONE '-05:00' AS DATE);
                     vro_cn.id_usuario_ultima_modificacion := v_user_id;
                     pkgsmy_canales_notificacion_dao.p_insertar(vro_cn);
                     v_id := vro_cn.id;
@@ -720,7 +764,7 @@ AS
                     vro_ti.id_organizacion := v_id_org;
                     vro_ti.nombre_tipo_identificacion := v_nombre;
                     vro_ti.sigla := NVL(v_codigo, UPPER(SUBSTR(v_nombre, 1, 10)));
-                    vro_ti.fecha_creacion := f_fecha_actual;
+                    vro_ti.fecha_creacion := CAST(SYSTIMESTAMP AT TIME ZONE '-05:00' AS DATE);
                     vro_ti.id_usuario_ultima_modificacion := v_user_id;
                     pkgsmy_tipos_identificacion_dao.p_insertar(vro_ti);
                     v_id := vro_ti.id;
@@ -736,7 +780,7 @@ AS
                     vro_eo.id := SEQ_SMY_ESTADOS_ORGANIZACIONES.NEXTVAL;
                     vro_eo.nombre_estado := v_nombre;
                     vro_eo.descripcion := v_desc;
-                    vro_eo.fecha_creacion := f_fecha_actual;
+                    vro_eo.fecha_creacion := CAST(SYSTIMESTAMP AT TIME ZONE '-05:00' AS DATE);
                     vro_eo.id_usuario_ultima_modificacion := v_user_id;
                     pkgsmy_estados_organizaciones_dao.p_insertar(vro_eo);
                     v_id := vro_eo.id;
@@ -754,7 +798,7 @@ AS
                     vro_ep.id_organizacion := v_id_org;
                     vro_ep.nombre_estado_parametro := v_nombre;
                     vro_ep.descripcion := v_desc;
-                    vro_ep.fecha_creacion := f_fecha_actual;
+                    vro_ep.fecha_creacion := CAST(SYSTIMESTAMP AT TIME ZONE '-05:00' AS DATE);
                     vro_ep.id_usuario_ultima_modificacion := v_user_id;
                     pkgsmy_estados_parametros_dao.p_insertar(vro_ep);
                     v_id := vro_ep.id;
@@ -770,7 +814,7 @@ AS
                     vro_ae.id := SEQ_SMY_AREAS_EMPLEADOS.NEXTVAL;
                     vro_ae.id_organizacion := v_id_org;
                     vro_ae.nombre_area_empleado := v_nombre;
-                    vro_ae.fecha_creacion := f_fecha_actual;
+                    vro_ae.fecha_creacion := CAST(SYSTIMESTAMP AT TIME ZONE '-05:00' AS DATE);
                     vro_ae.id_usuario_ultima_modificacion := v_user_id;
                     pkgsmy_areas_empleados_dao.p_insertar(vro_ae);
                     v_id := vro_ae.id;
@@ -786,7 +830,7 @@ AS
                     vro_ce.id := SEQ_SMY_CARGOS_EMPLEADOS.NEXTVAL;
                     vro_ce.id_organizacion := v_id_org;
                     vro_ce.nombre_cargo_empleado := v_nombre;
-                    vro_ce.fecha_creacion := f_fecha_actual;
+                    vro_ce.fecha_creacion := CAST(SYSTIMESTAMP AT TIME ZONE '-05:00' AS DATE);
                     vro_ce.id_usuario_ultima_modificacion := v_user_id;
                     pkgsmy_cargos_empleados_dao.p_insertar(vro_ce);
                     v_id := vro_ce.id;
@@ -802,7 +846,7 @@ AS
                     vro_gen.id := SEQ_SMY_GENEROS.NEXTVAL;
                     vro_gen.id_organizacion := v_id_org;
                     vro_gen.nombre_genero := v_nombre;
-                    vro_gen.fecha_creacion := f_fecha_actual;
+                    vro_gen.fecha_creacion := CAST(SYSTIMESTAMP AT TIME ZONE '-05:00' AS DATE);
                     vro_gen.id_usuario_ultima_modificacion := v_user_id;
                     pkgsmy_generos_dao.p_insertar(vro_gen);
                     v_id := vro_gen.id;
@@ -818,7 +862,7 @@ AS
                     vro_nm.id := SEQ_SMY_NIVELES_MOVILIDAD.NEXTVAL;
                     vro_nm.id_organizacion := v_id_org;
                     vro_nm.nombre_nivel_movilidad := v_nombre;
-                    vro_nm.fecha_creacion := f_fecha_actual;
+                    vro_nm.fecha_creacion := CAST(SYSTIMESTAMP AT TIME ZONE '-05:00' AS DATE);
                     vro_nm.id_usuario_ultima_modificacion := v_user_id;
                     pkgsmy_niveles_movilidad_dao.p_insertar(vro_nm);
                     v_id := vro_nm.id;
@@ -836,7 +880,7 @@ AS
                     vro_td.id_organizacion := v_id_org;
                     vro_td.nombre_tipo_dieta := v_nombre;
                     vro_td.descripcion := v_desc;
-                    vro_td.fecha_creacion := f_fecha_actual;
+                    vro_td.fecha_creacion := CAST(SYSTIMESTAMP AT TIME ZONE '-05:00' AS DATE);
                     vro_td.id_usuario_ultima_modificacion := v_user_id;
                     pkgsmy_tipos_dietas_dao.p_insertar(vro_td);
                     v_id := vro_td.id;
@@ -852,7 +896,7 @@ AS
                     vro_res.id := SEQ_SMY_ESTADOS_RESIDENTES.NEXTVAL;
                     vro_res.id_organizacion := v_id_org;
                     vro_res.nombre_estado_residente := v_nombre;
-                    vro_res.fecha_creacion := f_fecha_actual;
+                    vro_res.fecha_creacion := CAST(SYSTIMESTAMP AT TIME ZONE '-05:00' AS DATE);
                     vro_res.id_usuario_ultima_modificacion := v_user_id;
                     pkgsmy_estados_residentes_dao.p_insertar(vro_res);
                     v_id := vro_res.id;
@@ -868,7 +912,7 @@ AS
                     vro_par.id := SEQ_SMY_PARENTESCOS.NEXTVAL;
                     vro_par.id_organizacion := v_id_org;
                     vro_par.nombre_parentesco := v_nombre;
-                    vro_par.fecha_creacion := f_fecha_actual;
+                    vro_par.fecha_creacion := CAST(SYSTIMESTAMP AT TIME ZONE '-05:00' AS DATE);
                     vro_par.id_usuario_ultima_modificacion := v_user_id;
                     pkgsmy_parentescos_dao.p_insertar(vro_par);
                     v_id := vro_par.id;

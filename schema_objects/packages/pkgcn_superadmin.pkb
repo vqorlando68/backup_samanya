@@ -25,8 +25,7 @@ AS
                    'passwordHash'         VALUE u.password_hash,
                    'nombreCompleto'       VALUE u.nombre_completo,
                    'telefono'             VALUE u.telefono,
-                   'idArchivo'            VALUE u.id_archivo_foto_perfil,
-                   'avatarUrl'            VALUE arc.ruta_completa_almacenamiento,
+                   'avatarUrl'            VALUE TO_CHAR(NULL),
                    'idTipoUsuario'        VALUE u.id_tipo_usuario,
                    'nombreTipoUsuario'    VALUE tu.nombre_tipo_usuario,
                    'idRol'                VALUE u.id_rol,
@@ -41,10 +40,8 @@ AS
           FROM smy_usuarios u,
                smy_tipos_usuarios tu,
                smy_roles r,
-               smy_estados_usuarios eu,
-               smy_archivos arc
+               smy_estados_usuarios eu
          WHERE tu.id = u.id_tipo_usuario
-           AND u.id_archivo_foto_perfil = arc.id(+)
            AND r.id = u.id_rol
            AND eu.id = u.id_estado_usuario
            AND (LOWER(u.username) = LOWER(TRIM(v_usuario_o_email))
@@ -79,10 +76,10 @@ AS
                        'emailCorporativo'         VALUE o.email_corporativo,
                        'telefonoContacto'         VALUE o.telefono_contacto,
                        'sitioWeb'                 VALUE o.sitio_web,
-                       'idArchivo'                VALUE o.id_archivo_logo,
-                       'logoUrl'                  VALUE arc.ruta_completa_almacenamiento,
+                       'logoUrl'                  VALUE TO_CHAR(NULL),
                        'idEstadoOrganizacion'     VALUE o.id_estado_organizacion,
                        'nombreEstadoOrganizacion' VALUE eo.nombre_estado,
+                       'manejaInventario'         VALUE o.maneja_inventario,
                        'fechaCreacion'            VALUE TO_CHAR(o.fecha_creacion, 'YYYY-MM-DD"T"HH24:MI:SS'),
                        'totalCentros'             VALUE (SELECT COUNT(*) FROM smy_centros c WHERE c.id_organizacion = o.id)
                        RETURNING CLOB
@@ -92,10 +89,8 @@ AS
           INTO v_clob
           FROM smy_organizaciones o,
                smy_tipos_identificacion ti,
-               smy_estados_organizaciones eo,
-               smy_archivos arc
+               smy_estados_organizaciones eo
          WHERE ti.id = o.id_tipo_identificacion
-           AND o.id_archivo_logo = arc.id(+)
            AND eo.id = o.id_estado_organizacion
          ORDER BY o.id DESC;
 
@@ -133,6 +128,7 @@ AS
                        'emailContacto'       VALUE c.email_contacto,
                        'capacidadResidentes' VALUE c.capacidad_residentes,
                        'idEstadoCentro'      VALUE c.id_estado_centro,
+                       'manejaInventario'    VALUE c.maneja_inventario,
                        'fechaCreacion'       VALUE TO_CHAR(c.fecha_creacion, 'YYYY-MM-DD"T"HH24:MI:SS'),
                        'totalResidentes'     VALUE (SELECT COUNT(*) FROM smy_residentes r WHERE r.id_centro = c.id)
                        RETURNING CLOB
@@ -182,12 +178,23 @@ AS
                        'email'                    VALUE u.email,
                        'nombreCompleto'           VALUE u.nombre_completo,
                        'telefono'                 VALUE u.telefono,
-                       'idArchivo'                VALUE u.id_archivo_foto_perfil,
-                       'avatarUrl'                VALUE arc.ruta_completa_almacenamiento,
+                       'avatarUrl'                VALUE TO_CHAR(NULL),
                        'idCanalNotifPref'         VALUE u.id_canal_notif_pref,
                        'nombreCanalNotificacion'  VALUE cn.nombre_canal_notificacion,
                        'idEstadoUsuario'          VALUE u.id_estado_usuario,
                        'nombreEstadoUsuario'      VALUE eu.nombre_estado_usuario,
+                       'idCentro'                 VALUE (SELECT MAX(cu.id_centro) KEEP (DENSE_RANK FIRST ORDER BY cu.es_sede_principal DESC, cu.id DESC)
+                                                           FROM smy_centro_usuarios cu
+                                                          WHERE cu.id_usuario = u.id AND cu.estado_activo = 'S'),
+                       'nombreCentro'             VALUE (SELECT MAX(c.nombre_centro) KEEP (DENSE_RANK FIRST ORDER BY cu.es_sede_principal DESC, cu.id DESC)
+                                                           FROM smy_centro_usuarios cu, smy_centros c
+                                                          WHERE cu.id_usuario = u.id AND cu.estado_activo = 'S' AND c.id = cu.id_centro),
+                       'idOrganizacion'           VALUE (SELECT MAX(c.id_organizacion) KEEP (DENSE_RANK FIRST ORDER BY cu.es_sede_principal DESC, cu.id DESC)
+                                                           FROM smy_centro_usuarios cu, smy_centros c
+                                                          WHERE cu.id_usuario = u.id AND cu.estado_activo = 'S' AND c.id = cu.id_centro),
+                       'nombreOrganizacion'       VALUE (SELECT MAX(o.nombre_comercial) KEEP (DENSE_RANK FIRST ORDER BY cu.es_sede_principal DESC, cu.id DESC)
+                                                           FROM smy_centro_usuarios cu, smy_centros c, smy_organizaciones o
+                                                          WHERE cu.id_usuario = u.id AND cu.estado_activo = 'S' AND c.id = cu.id_centro AND o.id = c.id_organizacion),
                        'ultimoAcceso'             VALUE TO_CHAR(u.ultimo_acceso, 'YYYY-MM-DD"T"HH24:MI:SS'),
                        'fechaCreacion'            VALUE TO_CHAR(u.fecha_creacion, 'YYYY-MM-DD"T"HH24:MI:SS')
                        RETURNING CLOB
@@ -199,10 +206,8 @@ AS
                smy_roles r,
                smy_tipos_usuarios tu,
                smy_canales_notificacion cn,
-               smy_estados_usuarios eu,
-               smy_archivos arc
+               smy_estados_usuarios eu
          WHERE r.id = u.id_rol
-           AND u.id_archivo_foto_perfil = arc.id(+)
            AND tu.id = u.id_tipo_usuario
            AND cn.id = u.id_canal_notif_pref
            AND eu.id = u.id_estado_usuario
@@ -730,6 +735,29 @@ AS
 
         RETURN v_resultado;
     END fn_obtener_metricas_dashboard_json;
+
+    -- -------------------------------------------------------------------------
+    -- 8. OBTENER ID DE ASIGNACIÓN USUARIO-CENTRO
+    -- -------------------------------------------------------------------------
+    FUNCTION fn_obtener_centro_usuario_id (
+        p_json IN CLOB
+    ) RETURN NUMBER
+    IS
+        v_id_usuario NUMBER(10);
+        v_id_centro  NUMBER(10);
+        v_id         NUMBER(10);
+    BEGIN
+        v_id_usuario := JSON_VALUE(p_json, '$.idUsuario' RETURNING NUMBER);
+        v_id_centro  := JSON_VALUE(p_json, '$.idCentro' RETURNING NUMBER);
+
+        SELECT MAX(cu.id)
+          INTO v_id
+          FROM smy_centro_usuarios cu
+         WHERE cu.id_usuario = v_id_usuario
+           AND cu.id_centro  = v_id_centro;
+
+        RETURN v_id;
+    END fn_obtener_centro_usuario_id;
 
 END PKGCN_SUPERADMIN;
 /
