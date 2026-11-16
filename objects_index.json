@@ -533,7 +533,7 @@
     "type": "packages",
     "status": "active",
     "path": "schema_objects/packages/pkgca_smy_usuarios.pkb",
-    "size": 1654,
+    "size": 1693,
     "envs": [
       "desarrollo",
       "samanya"
@@ -839,7 +839,7 @@
     "type": "packages",
     "status": "active",
     "path": "schema_objects/packages/pkgcn_superadmin.pkb",
-    "size": 38847,
+    "size": 39017,
     "envs": [
       "desarrollo",
       "samanya"
@@ -8528,7 +8528,7 @@
     "type": "tables",
     "status": "active",
     "path": "schema_objects/tables/smy_usuarios.sql",
-    "size": 3536,
+    "size": 3861,
     "envs": [
       "desarrollo",
       "samanya"

@@ -35,6 +35,7 @@ AS
                    u.id_archivo_foto_perfil,
                    arc.ruta_completa_almacenamiento AS avatar_url,
                    u.id_estado_usuario,
+                   u.id_organizacion,
                    r.codigo AS codigo_rol,
                    r.nombre AS nombre_rol,
                    e.nombre_estado_usuario

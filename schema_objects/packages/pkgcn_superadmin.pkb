@@ -127,9 +127,11 @@ AS
                        'telefono'            VALUE c.telefono,
                        'emailContacto'       VALUE c.email_contacto,
                        'capacidadResidentes' VALUE c.capacidad_residentes,
-                       'idEstadoCentro'      VALUE c.id_estado_centro,
-                       'manejaInventario'    VALUE c.maneja_inventario,
-                       'fechaCreacion'       VALUE TO_CHAR(c.fecha_creacion, 'YYYY-MM-DD"T"HH24:MI:SS'),
+                       'idEstadoCentro'         VALUE c.id_estado_centro,
+                       'manejaInventario'       VALUE c.maneja_inventario,
+                       'manejaCostosInventario' VALUE c.maneja_costos_inventario,
+                       'manejaAlimentacion'     VALUE c.maneja_alimentacion,
+                       'fechaCreacion'          VALUE TO_CHAR(c.fecha_creacion, 'YYYY-MM-DD"T"HH24:MI:SS'),
                        'totalResidentes'     VALUE (SELECT COUNT(*) FROM smy_residentes r WHERE r.id_centro = c.id)
                        RETURNING CLOB
                    )

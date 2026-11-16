@@ -12,3 +12,11 @@
 [2026-11-15 13:00:15] [INFO] Conexion a Oracle cerrada.
 [2026-11-15 13:00:15] [INFO] Catalogo de buscador actualizado en objects_index.json (618 objetos indexados para desarrollo).
 [2026-11-15 13:00:15] [INFO] Iniciando sincronizacion con Git en la rama 'desarrollo'...
+[2026-11-15 13:00:16] [INFO] Se detectaron 3 archivo(s) de objetos para subir a Git:
+[2026-11-15 13:00:16] [INFO]   [MODIFICADO] schema_objects/packages/pkgcn_superadmin.pkb
+[2026-11-15 13:00:16] [INFO]   [MODIFICADO] schema_objects/packages/pkgcn_superadmin.pks
+[2026-11-15 13:00:16] [INFO]   [MODIFICADO] schema_objects/packages/pkgln_superadmin.pkb
+[2026-11-15 13:00:16] [INFO] Commit realizado: chore(sync): backup objetos desarrollo [2026-11-15 13:00:16]
+[2026-11-15 13:00:20] [INFO] Push completado exitosamente a https://***@github.com/vqorlando68/backup_samanya.git (rama desarrollo).
+[2026-11-15 13:00:20] [INFO] FIN DE PROCESO - DESARROLLO
+[2026-11-15 13:00:20] [INFO] ============================================================

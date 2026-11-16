@@ -3,21 +3,21 @@
     "ambiente": "Desarrollo",
     "esquema": "SAMANYA",
     "rama": "desarrollo",
-    "ultima_ejecucion": "2026-11-15 13:00:16",
-    "commit_hash": "2af6520",
-    "commit_mensaje": "chore(sync): backup objetos desarrollo [2026-11-15 13:00:16]",
-    "commit_url": "https://github.com/vqorlando68/backup_samanya/commit/2af6520",
+    "ultima_ejecucion": "2026-11-16 13:00:21",
+    "commit_hash": "a07769f",
+    "commit_mensaje": "chore(sync): backup objetos desarrollo [2026-11-16 13:00:21]",
+    "commit_url": "https://github.com/vqorlando68/backup_samanya/commit/a07769f",
     "objetos_totales": 618,
-    "objetos_actualizados": 3,
-    "objetos_omitidos": 615,
+    "objetos_actualizados": 9,
+    "objetos_omitidos": 609,
     "objetos_borrados": 0,
     "estado": "EXITOSO",
-    "duracion_segundos": 11,
-    "archivo_log": "logs/backup_desarrollo_20261115.log",
+    "duracion_segundos": 19,
+    "archivo_log": "logs/backup_desarrollo_20261116.log",
     "archivos_cambiados": [
+      "M  schema_objects/packages/pkgca_smy_usuarios.pkb",
       "M  schema_objects/packages/pkgcn_superadmin.pkb",
-      "M  schema_objects/packages/pkgcn_superadmin.pks",
-      "M  schema_objects/packages/pkgln_superadmin.pkb"
+      "M  schema_objects/tables/smy_usuarios.sql"
     ]
   },
   "produccion": {
