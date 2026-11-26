@@ -1,0 +1,6 @@
+[2026-11-25 13:00:04] [INFO] ============================================================
+[2026-11-25 13:00:04] [INFO] INICIANDO AGENTE BACKUP - AMBIENTE: DESARROLLO
+[2026-11-25 13:00:04] [INFO] Conectando a samanya_high con usuario SAMANYA...
+[2026-11-25 13:00:04] [INFO] Utilizando Oracle Wallet en: C:\Repositorios\Backup_Samanya\agente_backup-desarrollo\wallet
+[2026-11-25 13:00:04] [INFO] Esquema objetivo: SAMANYA
+[2026-11-25 13:00:04] [ERROR] Error critico de conexion a Oracle: [Errno 11001] getaddrinfo failed
